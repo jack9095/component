@@ -1,0 +1,97 @@
+
+// TODO 基础库
+static def allModuleDependencies(DependencyHandler dependencyHandler) {
+    dependencyHandler.implementation "com.android.support:appcompat-v7:28.0.0"
+    dependencyHandler.implementation "com.android.support:design:28.0.0"
+    dependencyHandler.implementation "com.android.support:recyclerview-v7:28.0.0"
+    dependencyHandler.implementation "com.android.support:cardview-v7:28.0.0"
+    dependencyHandler.implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}
+ext.allModuleDependencies = this.&allModuleDependencies
+
+// TODO 解决方法数超过65555的解决办法
+static def multiDex(DependencyHandler dependencyHandler) {
+    dependencyHandler.api ('com.android.support:multidex:1.0.3'){
+        exclude group: 'com.android.support'
+    }
+}
+ext.multiDex = this.&multiDex   
+
+// TODO JetPack 的相关库
+static def jetPack(DependencyHandler dependencyHandler) {
+    //room
+//    dependencyHandler.implementation 'androidx.room:room-runtime:2.0.0'
+//    dependencyHandler.annotationProcessor 'androidx.room:room-compiler:2.0.0'
+//    dependencyHandler.implementation 'androidx.room:room-rxjava2:2.0.0'
+//    dependencyHandler.implementation 'androidx.room:room-guava:2.0.0'
+//    dependencyHandler.testImplementation 'androidx.room:room-testing:2.0.0'
+
+    dependencyHandler.implementation 'android.arch.lifecycle:extensions:1.1.1'
+    dependencyHandler.annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+    dependencyHandler.implementation 'android.arch.lifecycle:runtime:1.1.1'
+}
+ext.jetPack = this.&jetPack
+
+// TODO 网络 的相关库
+static def netWork(DependencyHandler dependencyHandler) {
+
+    // okHttp 系列
+    dependencyHandler.implementation ('com.squareup.okhttp3:okhttp:3.12.1'){
+        exclude group: 'com.android.support'
+    }
+    dependencyHandler.implementation ('com.squareup.okhttp3:logging-interceptor:3.12.1'){
+        exclude group: 'com.android.support'
+    }
+    // retrofit 系列
+    dependencyHandler.implementation ('com.squareup.retrofit2:retrofit:2.5.0'){
+        exclude group: 'com.android.support'
+    }
+    dependencyHandler.implementation ('com.squareup.retrofit2:converter-gson:2.5.0'){
+        exclude group: 'com.android.support'
+    }
+    dependencyHandler.implementation ('com.squareup.retrofit2:adapter-rxjava2:2.5.0'){
+        exclude group: 'com.android.support'
+    }
+}
+ext.netWork = this.&netWork
+
+// TODO 通用 的 库
+static def common(DependencyHandler dependencyHandler) {
+
+    // 阿里路由
+    dependencyHandler.implementation ('com.alibaba:arouter-api:1.4.1'){
+        exclude group: 'com.android.support'
+    }
+    dependencyHandler.annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+    // rx系列
+    dependencyHandler.implementation ('io.reactivex.rxjava2:rxandroid:2.1.1'){
+        exclude group: 'com.android.support'
+    }
+    dependencyHandler.implementation ('io.reactivex.rxjava2:rxjava:2.2.8'){
+        exclude group: 'com.android.support'
+    }
+
+    // 滚轮选择器  没加混淆
+    dependencyHandler.implementation ('com.contrarywind:Android-PickerView:4.1.8'){
+        exclude group: 'com.android.support'
+    }
+
+    // 动态请求权限框架
+    dependencyHandler.implementation('com.github.tbruyelle:rxpermissions:0.10.2') {
+        exclude group: 'com.android.support'
+        exclude group: 'io.reactivex.rxjava2'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+
+    // 刷新加载框架  官方解释不需要混淆
+    dependencyHandler.implementation('com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-25') {
+        exclude group: 'com.android.support'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+
+}
+ext.common = this.&common
+
