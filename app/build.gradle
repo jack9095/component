@@ -14,6 +14,13 @@ android {
         versionName rootProject.ext.versionName
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // TODO 每个模块都要添加下面的代码支持 ARouter 跨模块跳转
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -34,4 +41,6 @@ dependencies {
     rootProject.common(dependencies)
     rootProject.jetPack(dependencies)
     rootProject.multiDex(dependencies)
+
+    implementation project(path: ':baselibrary')
 }
