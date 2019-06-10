@@ -9,7 +9,7 @@ import com.base.library.base.datamodel.BaseDataModel;
 import com.base.library.utils.ReflectUtil;
 
 /**
- * jetPack新组件使用 ViewModel  LiveData
+ * jetPack组件使用 ViewModel  LiveData
  * @param <T>
  */
 public class NetWorkBaseViewModel<T extends BaseDataModel> extends AndroidViewModel {

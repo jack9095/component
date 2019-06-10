@@ -1,8 +1,5 @@
 package com.base.library.base.datamodel;
 
-
-//import com.dingxin.workspace.base.network.schedulers.SchedulerProvider;
-
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import com.base.library.base.network.schedulers.BaseSchedulerProvider;

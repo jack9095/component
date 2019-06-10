@@ -1,6 +1,5 @@
 package com.base.library.base.network.api;
 
-
 import com.base.library.base.datamodel.BaseDataModel;
 
 public class ApiDataModel extends BaseDataModel {

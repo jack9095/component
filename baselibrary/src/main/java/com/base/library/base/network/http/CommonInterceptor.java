@@ -60,7 +60,7 @@ public class CommonInterceptor implements Interceptor {
         LogUtil.e(TAG + "   response", "response body:" + content);
         if (!TextUtils.isEmpty(content)) {
             BaseResponse baseBean = GsonUtils.toObject(content, BaseResponse.class);
-            if (baseBean != null && baseBean.code == 99) { // 未登录或会话已失效
+            if (baseBean != null && baseBean.code == 9) { // 未登录或会话已失效
                 ARouter.getInstance().build("/main/login").navigation();
             }
         }

@@ -31,9 +31,9 @@ public class MyApplication extends Application {
 
         initLog();
         HttpHelper.getInstance().init(URLConfig.BASE_URL);
-        SharedPreferencesUtils.getInstance("dx_fl", this.getApplicationContext());
-        LogUtil.e("WorkApplication初始化次数");
-        Bugly.init(getApplicationContext(), "8f8a57c0dc", false);
+        SharedPreferencesUtils.getInstance("demo_fl", this.getApplicationContext());
+        LogUtil.e("MyApplication 初始化次数");
+        Bugly.init(getApplicationContext(), "897534689", false);
     }
 
     public static MyApplication getInstance() {

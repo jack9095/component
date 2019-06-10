@@ -26,7 +26,7 @@ public class JSInterface {
     @JavascriptInterface
     public String getWorkNum(){
         LogUtil.e("js数据= ");
-        return SharedPreferencesUtils.getSharePrefString(SpUtils.WORK_NUMBER);
+        return SharedPreferencesUtils.getSharePrefString(SpUtils.TOKEN);
     }
 
     @JavascriptInterface
