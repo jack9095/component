@@ -22,10 +22,51 @@ android {
             }
         }
     }
-    buildTypes {
+
+    signingConfigs {
+        debug {
+            storeFile file(keystoreConfig)
+            storePassword storePasswordConfig
+            keyAlias keyAliasConfig
+            keyPassword keyPasswordConfig
+        }
+
         release {
+            storeFile file(keystoreConfig)
+            storePassword storePasswordConfig
+            keyAlias keyAliasConfig
+            keyPassword keyPasswordConfig
+        }
+    }
+
+    buildTypes {
+
+        debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+        }
+
+        release {
+            // 混淆开启
+            minifyEnabled true
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+
+            // 签名配置
+            signingConfig signingConfigs.release
+
+            //Zipalign优化
+            zipAlignEnabled true
+
+            // 移除无用的resource文件
+            shrinkResources true
+
+            // 不显示日志
+            buildConfigField "boolean", "LOG_DEBUG", "true"
         }
     }
 }
@@ -41,6 +82,7 @@ dependencies {
     rootProject.common(dependencies)
     rootProject.jetPack(dependencies)
     rootProject.multiDex(dependencies)
+    rootProject.bugly(dependencies)
 
     implementation project(path: ':baselibrary')
 }
