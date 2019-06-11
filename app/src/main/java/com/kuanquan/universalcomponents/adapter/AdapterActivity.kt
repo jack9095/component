@@ -9,10 +9,6 @@ import com.base.library.utils.LogUtil
 import com.kuanquan.universalcomponents.R
 
 class AdapterActivity : AppCompatActivity(), KotlinAdapter.IKotlinItemClickListener {
-    override fun onItemClickListener(position: Int) {
-        LogUtil.e("AdapterActivity","adapter的点击事件")
-    }
-
     // 创建一个数据集合
 //   private var lists: ArrayList<String>? = ArrayList()
     private var lists = ArrayList<String>()
@@ -49,5 +45,9 @@ class AdapterActivity : AppCompatActivity(), KotlinAdapter.IKotlinItemClickListe
             // 这种写法表示如果为空可以抛出空指针异常
             lists!!?.add("我是条目" + i.toString())
         }
+    }
+
+    override fun onItemClickListener(position: Int) {
+        LogUtil.e("AdapterActivity","adapter的点击事件")
     }
 }

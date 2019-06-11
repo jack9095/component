@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".rx.RxActivity"/>
+        <activity android:name=".kotlinTest.TestActivity"/>
     </application>
 
 </manifest>
