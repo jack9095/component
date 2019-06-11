@@ -4,13 +4,24 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
+import com.base.library.utils.LogUtil
 import com.kuanquan.universalcomponents.R
 import java.util.*
+import kotlin.collections.HashMap
 
 /**
  * 一些常用的 kotlin 的写法
+ * 在 Kotlin 中，三个等号 === 表示比较对象地址，两个 == 表示比较两个值大小
  */
 class TestActivity : AppCompatActivity() {
+
+    val TAG: String = TestActivity::class.java.simpleName
+
+    // 只读 list  只能读取，不能添加,删除
+    val listsf = listOf<String>("a","b","c")
+
+    // 只读 map
+    val map = mapOf("a" to 1,"b" to 2,"c" to 3)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,11 +30,18 @@ class TestActivity : AppCompatActivity() {
         val stringExtra = intent.getStringExtra("aa")
         Log.e("TestActivity", "onCreate$stringExtra")
 
+        // 创建一个map
+        val hashMap = HashMap<String,String>()
+        hashMap["aa"] = "99"
+
+        Log.e(TAG,"hashMap and " + hashMap["aa"])
+
         // 创建一个 ArrayList
         var lists =  ArrayList<String>()
 
         lists.add("3")
         lists.add("4")
+
 
         // 类型转换
         test(lists)
@@ -31,10 +49,20 @@ class TestActivity : AppCompatActivity() {
         // 循环
         for (str in lists){
             Log.e("TestActivity","str 的值是 $str")
+
+            // 过滤 lists 集合
+            val filter = lists.filter { str == "3" }
+            LogUtil.e(TAG, "filter = $filter")
+
+            if (lists.contains("3")) {
+                LogUtil.e(TAG, "包含3")
+            }
         }
+
+
         // 循环出下标
         for (index in lists.indices){
-            Log.e("TestActivity","index 的值是 $index  and ${lists[index]}")
+            Log.e("TestActivity","index 的值是 $index  and  ${lists[index]}")
         }
 
         // if 判断语句
@@ -60,6 +88,7 @@ class TestActivity : AppCompatActivity() {
         Log.e("MainActivity", "首页" + sun(3,6))
         Log.e("MainActivity", "首页" + sum(3,6))
     }
+
 
     // 求和函数带返回值
     fun sun(a: Int, b: Int): Int {
@@ -185,9 +214,9 @@ class TestActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-//        super.onBackPressed()
+        super.onBackPressed()
         // 把当前 activity 运行至后台
-        moveTaskToBack(true)
+//        moveTaskToBack(true)
     }
 
 }

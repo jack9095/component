@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".rx.RxActivity"/>
         <activity android:name=".kotlinTest.TestActivity"/>
+        <activity android:name=".kotlinTest.DemoKotlin"/>
     </application>
 
 </manifest>
