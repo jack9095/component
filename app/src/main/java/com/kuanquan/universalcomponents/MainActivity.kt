@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         text_view.text = "哈哈"
 
         jump_test.setOnClickListener(this)
+        jump_home.setOnClickListener(this)
     }
 
     // 这里的 Unit 可以省略不写
@@ -54,6 +55,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.jump_test -> {
                 val intent = Intent(this, TestActivity::class.java)
                 intent.putExtra("aa","哈哈大笑")
+                startActivity(intent)
+            }
+            R.id.jump_home -> {
+                val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             }
         }
