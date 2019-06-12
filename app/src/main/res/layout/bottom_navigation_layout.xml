@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:clipChildren="false"
+              android:layout_height="48dp"
+              android:background="#ffffff">
+    <Button
+            android:id="@+id/tab_btn_message"
+            style="@style/main_tab_button"
+            android:drawableTop="@drawable/tab_home"
+            android:text="首页"/>
+
+    <Button
+            android:id="@+id/tab_btn_mail"
+            style="@style/main_tab_button"
+            android:drawableTop="@drawable/tab_exchange"
+            android:text="分类"/>
+
+    <!--<Button-->
+            <!--android:id="@+id/tab_btn_work"-->
+            <!--android:layout_marginTop="-25dp"-->
+            <!--android:visibility="gone"-->
+            <!--style="@style/main_tab_button"-->
+            <!--android:drawableTop="@drawable/tab_star"-->
+            <!--android:text="明星馆"/>-->
+
+    <RelativeLayout
+            android:id="@+id/star_rl"
+            android:clipChildren="false"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:id="@+id/star_im"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tab_star"/>
+
+        <Button
+                android:id="@+id/tab_btn_work"
+                android:layout_below="@+id/star_im"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_bottom_button"
+                android:textSize="12dp"
+                android:text="直播"/>
+    </RelativeLayout>
+
+    <Button
+            android:id="@+id/tab_btn_shop"
+            style="@style/main_tab_button"
+            android:drawableTop="@drawable/tab_message"
+            android:text="读书"/>
+
+    <Button
+            android:id="@+id/tab_btn_mine"
+            style="@style/main_tab_button"
+            android:drawableTop="@drawable/tab_mine"
+            android:text="我的"/>
+
+</LinearLayout>
