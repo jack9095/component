@@ -85,5 +85,9 @@ dependencies {
     rootProject.multiDex(dependencies)
     rootProject.bugly(dependencies)
 
+    if (isNeedMineModule.toBoolean()) {
+//        implementation project(path: ':mine')
+    }
     implementation project(path: ':baselibrary')
+
 }
