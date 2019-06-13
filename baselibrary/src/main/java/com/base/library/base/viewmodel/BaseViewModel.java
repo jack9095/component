@@ -2,8 +2,13 @@ package com.base.library.base.viewmodel;
 
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.ObservableTransformer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * 基础ViewModel类，管理LiveData
@@ -11,6 +16,18 @@ import io.reactivex.disposables.Disposable;
 public class BaseViewModel extends ViewModel {
     public MutableLiveData<String> loadState = new MutableLiveData<>(); // 网络加载状态的 LiveData
 //    private Map<String, MutableLiveData> maps;
+
+
+    // RxJava 线程切换的封装  使用 .compose(io_main())
+    public ObservableTransformer io_main() {
+        return new ObservableTransformer() {
+            @Override
+            public ObservableSource apply(Observable upstream) {
+                return upstream.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread());
+            }
+        };
+    }
 
     /**
      * 构造函数（在ViewModelProvider里通过class.newInstance创建实例）

@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.View
 import com.base.library.utils.LogUtil
 import com.kuanquan.universalcomponents.R
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
-import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
 
@@ -23,9 +21,9 @@ class AdapterActivity : AppCompatActivity(), KotlinAdapter.IKotlinItemClickListe
 //    private var adapter: KotlinAdapter? = null
     private var recyclerView: RecyclerView? = null
 
-    var refreshLayout: SmartRefreshLayout? = null
+    private var refreshLayout: SmartRefreshLayout? = null
 
-    var adapter: KotlinAdapter? = null
+    private var adapter: KotlinAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

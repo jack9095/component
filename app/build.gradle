@@ -69,6 +69,11 @@ android {
             buildConfigField "boolean", "LOG_DEBUG", "true"
         }
     }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
 dependencies {
@@ -84,6 +89,7 @@ dependencies {
     rootProject.jetPack(dependencies)
     rootProject.multiDex(dependencies)
     rootProject.bugly(dependencies)
+    rootProject.netWork(dependencies)
 
     if (isNeedMineModule.toBoolean()) {
         implementation project(path: ':mine')

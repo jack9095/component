@@ -1,5 +1,6 @@
 package com.kuanquan.universalcomponents.fragment
 
+import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.view.View
 import com.base.library.base.BaseViewModelFragment
@@ -33,6 +34,9 @@ class CartFragment : BaseViewModelFragment<CartViewModel>() {
     }
 
     override fun dataObserver() {
-
+        mViewModel.liberate.observe(this, Observer { bean ->
+            bean?.name = "2"
+            bean?.code = "9"
+        })
     }
 }
