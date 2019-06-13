@@ -22,7 +22,7 @@ class HomeActivity : BaseViewModelActivity<MainViewModel>() {
     override fun initData() {
         if (bottom_navigation_view != null) {
             bottom_navigation_view.initView(this, R.id.main_frame,
-                HomeFragment(), ClassifyFragment(), StarFragment(), ShopCartFragment(), MineFragment()
+                HomeFragment(), ClassifyFragment(), StarFragment(), CartFragment(), MineFragment()
             )
         } else {
             LogUtil.e("View 为空")
@@ -47,6 +47,7 @@ class HomeActivity : BaseViewModelActivity<MainViewModel>() {
 
     @SuppressLint("MissingSuperCall")
     override fun onSaveInstanceState(outState: Bundle?) {
+        outState?.putInt("index", bottom_navigation_view.index)
 //        super.onSaveInstanceState(outState)
     }
 

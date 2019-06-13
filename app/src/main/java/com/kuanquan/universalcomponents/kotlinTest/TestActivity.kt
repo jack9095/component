@@ -59,7 +59,6 @@ class TestActivity : AppCompatActivity() {
             }
         }
 
-
         // 循环出下标
         for (index in lists.indices){
             Log.e("TestActivity","index 的值是 $index  and  ${lists[index]}")

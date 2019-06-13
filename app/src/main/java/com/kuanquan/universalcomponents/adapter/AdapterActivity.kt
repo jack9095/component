@@ -40,7 +40,7 @@ class AdapterActivity : AppCompatActivity(), KotlinAdapter.IKotlinItemClickListe
     }
 
     private fun initData(){
-        for (i in 1..20){
+        for (i in 1..100){
 //            lists.add(i.toString())
             // 这种写法表示如果为空可以抛出空指针异常
             lists!!?.add("我是条目" + i.toString())
