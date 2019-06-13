@@ -21,7 +21,7 @@ class StarFragment : BaseViewModelFragment<StarViewModel>() {
 
     override fun initView() {
         super.initView()
-        top_navigation_a_f.setTvTitle("明星馆")
+        top_navigation_a_f.setTvTitle("行星")
         top_navigation_a_f.setHintLeftTextView(true)
     }
 

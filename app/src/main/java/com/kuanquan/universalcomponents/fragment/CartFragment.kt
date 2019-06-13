@@ -21,7 +21,7 @@ class CartFragment : BaseViewModelFragment<CartViewModel>() {
 
     override fun initView() {
         super.initView()
-        top_navigation_a_f.setTvTitle("购物车")
+        top_navigation_a_f.setTvTitle("卡车")
         top_navigation_a_f.setHintLeftTextView(true)
     }
 
