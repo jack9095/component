@@ -14,6 +14,9 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import org.reactivestreams.Subscription;
 
+/**
+ * 基础操作 和 被压操作
+ */
 public class RxActivity extends AppCompatActivity {
 
     private static final String TAG = RxActivity.class.getSimpleName();
@@ -23,13 +26,35 @@ public class RxActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rx_activity);
 
+//        RxClass.justOne();
+//        RxClass.fromOne();
+//        RxClass.deferOne();  // 预创建 懒加载
+//        RxClass.errorOne();
+//        RxClass.rangeOne();  // 一组整数序列
+//        RxClass.intervalOne();  // 倒计时
+//        RxClass.bufferOne();   // 转换数据
+//        RxClass.mapOne();   // 转换数据类型
+//        RxClass.flatMapOne();
+//        RxClass.filterOne();   // 过滤
+//        RxClass.takeOne();   //
+//        RxClass.skipOne();   // 与 take 操作符有异曲同工之妙
+//        RxClass.elementAtOne();   // 指定发射哪一个数据
+//        RxClass.distinctOne();   // 去重
+//        RxClass.startWithOne();   // 组合
+//        RxClass.mergeOne();   // 合并操作符
+        RxClass.zipOne();   //
+
+
+
+
 
         Observable.create(new ObservableOnSubscribe<Object>() {
             @Override
             public void subscribe(ObservableEmitter<Object> emitter) throws Exception {
+                // 子线程
                 emitter.onNext("哈哈"); // 把数据发射出去
                 emitter.onComplete();
-                LogUtil.e(TAG,"subscribe   " + Thread.currentThread().getName());
+//                LogUtil.e(TAG,"subscribe   " + Thread.currentThread().getName());
             }
         })
                 .compose(SchedulerProvider.getInstance().applySchedulers())
@@ -38,13 +63,15 @@ public class RxActivity extends AppCompatActivity {
                 .doOnNext(new Consumer<Object>() {
                     @Override
                     public void accept(Object o) throws Exception {
-                        LogUtil.e(TAG,"doOnNext   " + Thread.currentThread().getName());
+                        // 主线程 doOnNext 方法在 onNext 前面执行
+//                        LogUtil.e(TAG,"doOnNext   " + Thread.currentThread().getName());
                     }
                 })
                 .doOnComplete(new Action() {
                     @Override
                     public void run() throws Exception {
-                        LogUtil.e(TAG,"doOnComplete   " + Thread.currentThread().getName());
+                        // 主线程  doOnComplete 在  onComplete方法之前执行
+//                        LogUtil.e(TAG,"doOnComplete   " + Thread.currentThread().getName());
                     }
                 })
                 .doOnError(new Consumer<Throwable>() {
@@ -57,12 +84,14 @@ public class RxActivity extends AppCompatActivity {
                 .subscribe(new Observer<Object>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtil.e(TAG,"onSubscribe     " + Thread.currentThread().getName());
+                        // 主线程
+//                        LogUtil.e(TAG,"onSubscribe     " + Thread.currentThread().getName());
                     }
 
                     @Override
                     public void onNext(Object o) {
-                        LogUtil.e(TAG,"onNext    " + Thread.currentThread().getName());
+                        // 主线程
+//                        LogUtil.e(TAG,"onNext    " + Thread.currentThread().getName());
                     }
 
                     @Override
@@ -72,10 +101,10 @@ public class RxActivity extends AppCompatActivity {
 
                     @Override
                     public void onComplete() {
-                        LogUtil.e(TAG,"onComplete   " + Thread.currentThread().getName());
+                        // 主线程
+//                        LogUtil.e(TAG,"onComplete   " + Thread.currentThread().getName());
                     }
                 });
-
     }
 
     // 被压

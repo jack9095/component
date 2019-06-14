@@ -12,6 +12,7 @@ import kotlin.collections.HashMap
 /**
  * 一些常用的 kotlin 的写法
  * 在 Kotlin 中，三个等号 === 表示比较对象地址，两个 == 表示比较两个值大小
+ * b?. 若为null 返回null b!!. 若为null 返回null exception
  */
 class TestActivity : AppCompatActivity() {
 

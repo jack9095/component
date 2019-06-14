@@ -43,11 +43,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?): Unit {
         when (v?.id) {
             R.id.jump_rx -> {
-                LogUtil.e("主页的点击事件")
                 val intent = Intent(this, RxActivity::class.java)
                 startActivity(intent)
             }
             R.id.jump_adapter -> {
+                LogUtil.e("主页的点击事件")
                 val intent: Intent = Intent(this, AdapterActivity::class.java)
                 startActivity(intent)
             }
