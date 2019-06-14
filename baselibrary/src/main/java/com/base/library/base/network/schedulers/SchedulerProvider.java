@@ -48,6 +48,7 @@ public class SchedulerProvider implements BaseSchedulerProvider {
         return AndroidSchedulers.mainThread();
     }
 
+    // 转换器
     @NonNull
     @Override
     public <T> ObservableTransformer<T, T> applySchedulers() {

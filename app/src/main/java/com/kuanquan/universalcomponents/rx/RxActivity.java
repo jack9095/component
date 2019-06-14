@@ -3,6 +3,7 @@ package com.kuanquan.universalcomponents.rx;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import com.base.library.base.network.schedulers.SchedulerProvider;
 import com.base.library.utils.LogUtil;
 import com.kuanquan.universalcomponents.R;
 import io.reactivex.*;
@@ -31,8 +32,9 @@ public class RxActivity extends AppCompatActivity {
                 LogUtil.e(TAG,"subscribe   " + Thread.currentThread().getName());
             }
         })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .compose(SchedulerProvider.getInstance().applySchedulers())
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext(new Consumer<Object>() {
                     @Override
                     public void accept(Object o) throws Exception {
