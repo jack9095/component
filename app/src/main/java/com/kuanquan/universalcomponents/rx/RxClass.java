@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * RxJava 中 操作符
  * https://blog.csdn.net/itchosen/article/details/86572976
+ * https://www.jianshu.com/p/299fbeeb3c51
  */
 @SuppressLint("CheckResult")
 public class RxClass {
@@ -340,6 +341,8 @@ public class RxClass {
     /**
      * zip 操作符
      * 按照自己的规则发射与发射数据项最少的相同的数据
+     *
+     * 这个是更灵活的合并或者选择返回数据的规则
      */
     public static void zipOne() {
         Observable.zip(Observable.just(1, 8, 7),
