@@ -6,12 +6,10 @@ import com.base.library.base.network.schedulers.SchedulerProvider
 import com.kuanquan.universalcomponents.kotlinTest.UserBean
 
 class CartViewModel : MainBaseViewModel() {
-
     var liberate: MutableLiveData<UserBean> = MutableLiveData()
 
     fun requestData(){
         val baseResponseObservable = serviceApi?.postInfo()
-
         addDisposable(
             baseResponseObservable
 //                ?.subscribeOn(Schedulers.io())
