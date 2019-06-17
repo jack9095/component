@@ -8,6 +8,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.kuanquan.universalcomponents.R
 
+/**
+ * 对象声明。总是在 object 关键字后跟一个名称。 就像变量声明一样，对象声明不是一个表达式，不能用在赋值语句的右边
+ * 对象声明的初始化过程是线程安全的
+ */
 class KotlinAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 //    var lists = ArrayList<String>()

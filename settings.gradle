@@ -1,1 +1,1 @@
-include ':app', ':baselibrary', ':home', ':mine'
+include ':app', ':baselibrary', ':home', ':mine', ':rolling'
