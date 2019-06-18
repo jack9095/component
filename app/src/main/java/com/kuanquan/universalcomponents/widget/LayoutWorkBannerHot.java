@@ -54,7 +54,8 @@ public class LayoutWorkBannerHot extends FrameLayout implements AppBanner.OnPage
     private void initView() {
         View root = LayoutInflater.from(getContext()).inflate(R.layout.layout_work_banner_hot, this, true);
         mAppBanner = root.findViewById(R.id.app_banner);
-        mLinearLayout = root.findViewById(R.id.ll_hot);
+        mLinearLayout = root.findViewById(R.id.ll_hot_f);
+        mLinearLayout.setVisibility(View.VISIBLE);
     }
 
     public void setData(List<BannerBean> lists) {
@@ -65,7 +66,7 @@ public class LayoutWorkBannerHot extends FrameLayout implements AppBanner.OnPage
             mAppBanner.setScrollSpeed(mAppBanner);
             try {
                 dotsList.clear();
-                mLinearLayout.removeAllViews();
+//                mLinearLayout.removeAllViews();
                 for (int i = 0; i < lists.size(); i++) {
                     ImageView view = new ImageView(getContext());
                     if (i == 0) {

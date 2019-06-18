@@ -110,6 +110,11 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
         homeAdapterBean.itemType = 0
         homeAdapterBean.bannerBeans.add(bannerBean1)
 
+        var bannerBean2 = BannerBean()
+        bannerBean2.url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560864006096&di=6ab8f7c79c618100038ae6394509d155&imgtype=0&src=http%3A%2F%2Fimg1.juimg.com%2F141016%2F330696-14101619164480.jpg"
+        homeAdapterBean.itemType = 0
+        homeAdapterBean.bannerBeans.add(bannerBean2)
+
         lists.add(homeAdapterBean)
 
         for (i in 1..500) {
