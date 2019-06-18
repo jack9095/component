@@ -35,9 +35,5 @@
                 android:layout_height="match_parent"
                 android:gravity="center"/>
     </RelativeLayout>
-     <!--<com.base.library.widget.TopNavigationLayout
-             android:id="@+id/top_navigation_a_f"
-             android:background="#ffffff"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content" />-->
+
 </RelativeLayout>

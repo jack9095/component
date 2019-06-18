@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
-import com.kuanquan.universalcomponents.adapter.AdapterActivity
+import com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity
 import com.kuanquan.universalcomponents.kotlinTest.TestActivity
 import com.kuanquan.universalcomponents.rx.RxActivity
 import kotlinx.android.synthetic.main.activity_main.*

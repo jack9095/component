@@ -1,4 +1,4 @@
-package com.kuanquan.universalcomponents.adapter
+package com.kuanquan.universalcomponents.kotlinTest.adapter
 
 import android.annotation.SuppressLint
 import android.support.v7.widget.RecyclerView

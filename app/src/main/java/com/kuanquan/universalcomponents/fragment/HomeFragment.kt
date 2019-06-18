@@ -10,7 +10,10 @@ import android.widget.RelativeLayout
 import com.base.library.base.BaseViewModelFragment
 import com.base.library.utils.LogUtil
 import com.kuanquan.universalcomponents.R
-import com.kuanquan.universalcomponents.adapter.KotlinAdapter
+import com.kuanquan.universalcomponents.adapter.HomeAdapter
+import com.kuanquan.universalcomponents.bean.BannerBean
+import com.kuanquan.universalcomponents.bean.HomeAdapterBean
+import com.kuanquan.universalcomponents.kotlinTest.adapter.KotlinAdapter
 import com.kuanquan.universalcomponents.viewmodel.HomeViewModel
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
@@ -30,11 +33,11 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
     var titleBar: FrameLayout? = null
     var titleRl: RelativeLayout? = null
     private var recyclerView: RecyclerView? = null
-    var refreshLayout: SmartRefreshLayout? = null
-    var adapter: KotlinAdapter? = null
-    var lists = ArrayList<String>()
-    var linearLayoutManager: LinearLayoutManager? = null
-    var overallXScroll: Int = 0
+    private var refreshLayout: SmartRefreshLayout? = null
+    private var adapter: HomeAdapter? = null
+    private var lists = ArrayList<HomeAdapterBean>()
+    private var linearLayoutManager: LinearLayoutManager? = null
+    var overallXScroll = 0
     private val height = 640 // 滑动开始变色的高,真实项目中此高度是由广告轮播或其他首页view高度决定
 
     override fun onClick(v: View?) {
@@ -51,8 +54,8 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
 
     override fun initView() {
         super.initView()
-        titleBar = view.findViewById<FrameLayout>(R.id.title_bar)
-        titleBar?.getBackground()?.setAlpha(0)
+        titleBar = view.findViewById(R.id.title_bar)
+        titleBar?.background?.alpha = 0
 
         titleRl = view.findViewById(R.id.rl_title)
         recyclerView = view.findViewById(R.id.common_recycler_view)
@@ -64,10 +67,9 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
         // 设置布局
         recyclerView?.layoutManager = linearLayoutManager
         // 设置动画
-        recyclerView!!.itemAnimator = DefaultItemAnimator() as RecyclerView.ItemAnimator?
-        adapter = KotlinAdapter()
+        recyclerView!!.itemAnimator = DefaultItemAnimator()
+        adapter = HomeAdapter()
         recyclerView!!.adapter = adapter
-        adapter?.setData(lists)
 
         initRefreshLayout()
     }
@@ -78,12 +80,9 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
 
         refreshLayout?.setOnRefreshListener(OnRefreshListener { refreshlayout ->
 
-            lists.clear()
-            for (i in 1..500) {
-                // 这种写法表示如果为空可以抛出空指针异常
-                lists.add("我是条目$i")
-            }
-            adapter?.setData(lists)
+//            lists.clear()
+
+//            adapter?.setData(lists)
             refreshlayout.finishRefresh(1000/*,false*/) //传入false表示刷新失败
 
         })
@@ -91,20 +90,36 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
         refreshLayout?.setOnLoadMoreListener(OnLoadMoreListener { refreshlayout ->
 
             refreshlayout.finishLoadMore(500/*,false*/)//传入false表示加载失败
-            LogUtil.e(TAG, "lists  ->  ${lists.size}")
-            for (i in 1..500) {
-                // 这种写法表示如果为空可以抛出空指针异常
-                lists.add("我是条目$i")
-            }
-            adapter?.setData(lists)
+//            LogUtil.e(TAG, "lists  ->  ${lists.size}")
+
+//            adapter?.setData(lists)
         })
     }
 
     override fun initData(savedInstanceState: Bundle?) {
+
+        var homeAdapterBean = HomeAdapterBean()
+
+        var bannerBean = BannerBean()
+        bannerBean.url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560861148821&di=c8ecc814e3bdf21b08c7970d141b316f&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201312%2F06%2F211346rdqzode7loq7oo5o.jpg"
+        homeAdapterBean.bannerBeans.add(bannerBean)
+        homeAdapterBean.itemType = 0
+
+        var bannerBean1 = BannerBean()
+        bannerBean1.url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560861148820&di=f9a1c7e3d9d460a2c6beaf38153831ad&imgtype=0&src=http%3A%2F%2Ft1.mmonly.cc%2Fuploads%2Ftu%2F201612%2F47%2F109409840.jpg"
+        homeAdapterBean.itemType = 0
+        homeAdapterBean.bannerBeans.add(bannerBean1)
+
+        lists.add(homeAdapterBean)
+
         for (i in 1..500) {
             // 这种写法表示如果为空可以抛出空指针异常
-            lists.add("我是条目$i")
+            var homeBean = HomeAdapterBean()
+            homeBean.itemType = 1
+            lists.add(homeBean)
         }
+
+        adapter?.setData(lists)
 
         //滑动监听事件
         recyclerView?.addOnScrollListener(object :RecyclerView.OnScrollListener(){
@@ -114,14 +129,15 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
 
                 // 第三种方法
                 overallXScroll += dy// 累加y值 解决滑动一半y值为0
-                if (overallXScroll <= 0) {   //设置标题的背景颜色
-                    titleBar?.background?.alpha = 0
-                } else if (overallXScroll in 1..height) { //滑动距离小于banner图的高度时，设置背景和字体颜色颜色透明度渐变
-                    val scale = overallXScroll.toFloat() / height
-                    val alpha = 255 * scale
-                    titleBar?.background?.alpha = alpha.toInt()
-                } else {
-                    titleBar?.background?.alpha = 255
+                when {
+                    overallXScroll <= 0 -> //设置标题的背景颜色
+                        titleBar?.background?.alpha = 0
+                    overallXScroll in 1..height -> { //滑动距离小于banner图的高度时，设置背景和字体颜色颜色透明度渐变
+                        val scale = overallXScroll.toFloat() / height
+                        val alpha = 255 * scale
+                        titleBar?.background?.alpha = alpha.toInt()
+                    }
+                    else -> titleBar?.background?.alpha = 255
                 }
 
                 if (overallXScroll > 800) {

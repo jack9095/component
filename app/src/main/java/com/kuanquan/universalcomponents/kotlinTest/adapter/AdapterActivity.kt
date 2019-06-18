@@ -1,4 +1,4 @@
-package com.kuanquan.universalcomponents.adapter
+package com.kuanquan.universalcomponents.kotlinTest.adapter
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
