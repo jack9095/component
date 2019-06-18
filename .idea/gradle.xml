@@ -12,7 +12,6 @@
             <option value="$PROJECT_DIR$/baselibrary" />
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/mine" />
-            <option value="$PROJECT_DIR$/rolling" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

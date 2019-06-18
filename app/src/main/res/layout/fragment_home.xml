@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
                 android:background="@color/f2">
 
     <include
@@ -12,6 +13,7 @@
     <FrameLayout
             android:id="@+id/title_bar"
             android:background="#ffffff"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="48dp">
         <TextView
@@ -20,8 +22,22 @@
                 android:layout_height="match_parent"
                 android:gravity="center"/>
     </FrameLayout>
-    <!-- <com.base.library.widget.TopNavigationLayout
+
+    <RelativeLayout
+            android:id="@+id/rl_title"
+            android:background="#ffffff"
+            android:layout_below="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+        <TextView
+                android:layout_width="match_parent"
+                android:text="直播"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+    </RelativeLayout>
+     <!--<com.base.library.widget.TopNavigationLayout
              android:id="@+id/top_navigation_a_f"
+             android:background="#ffffff"
              android:layout_width="match_parent"
              android:layout_height="wrap_content" />-->
 </RelativeLayout>

@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.RelativeLayout
 import com.base.library.base.BaseViewModelFragment
 import com.base.library.utils.LogUtil
 import com.base.library.widget.TopNavigationLayout
@@ -29,6 +30,7 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
 
     val TAG: String = HomeFragment::class.java.simpleName
     var titlebar: FrameLayout? = null
+    var titleRl: RelativeLayout? = null
     var recyclerView: RecyclerView? = null
     var refreshLayout: SmartRefreshLayout? = null
     var adapter: KotlinAdapter? = null
@@ -57,6 +59,7 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
 //        mTopNavigationLayout.setHintLeftTextView(true)
         setSystemBarAlpha(0)
 
+        titleRl = view.findViewById(R.id.rl_title)
         recyclerView = view.findViewById(R.id.common_recycler_view)
         recyclerView?.isFocusable = false
         recyclerView?.isNestedScrollingEnabled = false
@@ -151,6 +154,13 @@ class HomeFragment : BaseViewModelFragment<HomeViewModel>() {
                 } else {
                     titlebar?.background?.alpha = 255
 //                    titlebar?.setBackgroundColor(Color.argb(255, 41, 193, 246))
+                }
+
+
+                if (overallXScroll > 800) {
+                    titleRl?.visibility = View.VISIBLE
+                } else {
+                    titleRl?.visibility = View.GONE
                 }
             }
         })
