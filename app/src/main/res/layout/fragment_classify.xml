@@ -9,4 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <include
+            layout="@layout/common_refresh_smart_layout"
+            android:layout_below="@+id/top_navigation_a_f"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+
 </RelativeLayout>
