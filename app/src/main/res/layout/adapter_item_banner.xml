@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="@dimen/mar_195">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mar_195"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- 轮播图 -->
     <com.kuanquan.universalcomponents.widget.LayoutWorkBannerHot
@@ -9,4 +10,4 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/mar_195" />
 
-</LinearLayout>
+</RelativeLayout>

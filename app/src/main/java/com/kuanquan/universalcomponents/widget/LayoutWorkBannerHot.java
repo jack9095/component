@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import com.base.library.utils.LogUtil;
 import com.base.library.utils.ToastUtils;
+import com.base.library.widget.BannerIndicatorView;
 import com.kuanquan.universalcomponents.R;
 import com.kuanquan.universalcomponents.bean.BannerBean;
 
@@ -27,6 +28,7 @@ public class LayoutWorkBannerHot extends FrameLayout implements AppBanner.OnPage
 
     AppBanner mAppBanner;
     LinearLayout mLinearLayout;
+    BannerIndicatorView mBannerIndicatorView;
     ArrayList<ImageView> dotsList = new ArrayList<>();
     List<BannerBean> datas = new ArrayList<>();
 
@@ -56,6 +58,8 @@ public class LayoutWorkBannerHot extends FrameLayout implements AppBanner.OnPage
         mAppBanner = root.findViewById(R.id.app_banner);
         mLinearLayout = root.findViewById(R.id.ll_hot_f);
         mLinearLayout.setVisibility(View.VISIBLE);
+
+       mBannerIndicatorView = root.findViewById(R.id.indicator_view);
     }
 
     public void setData(List<BannerBean> lists) {
@@ -64,23 +68,28 @@ public class LayoutWorkBannerHot extends FrameLayout implements AppBanner.OnPage
             datas.addAll(lists);
             mAppBanner.setData(lists, this);
             mAppBanner.setScrollSpeed(mAppBanner);
-            try {
-                dotsList.clear();
-//                mLinearLayout.removeAllViews();
-                for (int i = 0; i < lists.size(); i++) {
-                    ImageView view = new ImageView(getContext());
-                    if (i == 0) {
-                        view.setImageResource(R.drawable.dots_focus);
-                    } else {
-                        view.setImageResource(R.drawable.dots_normal);
-                    }
-                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(18, 18);
-                    params.setMargins(5, 0, 5, 0);
-                    mLinearLayout.addView(view, params);
-                    dotsList.add(view);
+
+            mBannerIndicatorView.bindWithViewPager(mAppBanner,lists.size());
+            mBannerIndicatorView.setCurrentPosition(0);
+
+            dotsList.clear();
+            mLinearLayout.removeAllViews();
+            for (int i = 0; i < lists.size(); i++) {
+                ImageView view = new ImageView(getContext());
+                if (i == 0) {
+                    view.setImageResource(R.drawable.dots_focus);
+                    LogUtil.e("小圆点 = " + i);
+                } else {
+                    view.setImageResource(R.drawable.dots_normal);
+                    LogUtil.e("小圆点 = " + i);
                 }
-            } catch (Exception e) {
-                LogUtil.e("小圆点异常 = " + e);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(18, 18);
+                params.setMargins(5, 0, 5, 0);
+                LogUtil.e("小圆点view = " + view);
+                mLinearLayout.addView(view, params);
+                View childAt = mLinearLayout.getChildAt(0);
+                LogUtil.e("获取到的子控件 = " + childAt);
+                dotsList.add(view);
             }
         }
     }

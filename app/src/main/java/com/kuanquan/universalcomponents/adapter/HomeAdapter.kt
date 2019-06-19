@@ -1,16 +1,22 @@
 package com.kuanquan.universalcomponents.adapter
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import com.base.library.utils.LogUtil
+import com.base.library.widget.BannerIndicatorView
 import com.kuanquan.universalcomponents.R
+import com.kuanquan.universalcomponents.bean.BannerBean
 import com.kuanquan.universalcomponents.bean.HomeAdapterBean
 import com.kuanquan.universalcomponents.widget.LayoutWorkBannerHot
 
 /**
  * https://www.runoob.com/kotlin/kotlin-class-object.html
- * 非空属性必须在定义的时候初始化,kotlin提供了一种可以延迟初始化的方案,使用 lateinit 关键字描述属性：
+ * 非空属性必须在定义的时候初始化,kotlin 提供了一种可以延迟初始化的方案,使用 lateinit 关键字描述属性：
  */
 class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -18,6 +24,7 @@ class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     val TWO = 1
 
     var lists: ArrayList<HomeAdapterBean>? = null
+    var context: Context? = null
 
     fun setData(lists: ArrayList<HomeAdapterBean>){
         this.lists = lists
@@ -25,6 +32,7 @@ class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): RecyclerView.ViewHolder {
+        context = parent.context
         val inflater = LayoutInflater.from(parent.context)
         lateinit var layoutView: View
         when (getItemViewType(position)) {
@@ -55,7 +63,11 @@ class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, p1: Int) {
         if (holder is BannerClass) {
-            holder.bannerHot.setData(lists?.get(p1)?.bannerBeans)
+            var bannerLists = lists?.get(p1)?.bannerBeans
+            holder.bannerHot.setData(bannerLists)
+                if (bannerLists != null && bannerLists.size > 0) {
+
+                }
         }
     }
 
