@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':e_l_m'
 include ':baselibrary'
 include ':home'
 include ':mine'

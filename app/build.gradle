@@ -91,12 +91,11 @@ dependencies {
     rootProject.bugly(dependencies)
     rootProject.netWork(dependencies)
 
-    if (isNeedMineModule.toBoolean()) {
-        implementation project(path: ':mine')
-    }
+//    if (isNeedMineModule.toBoolean()) {
+//        implementation project(path: ':mine')
+//    }
     if (isNeedHomeModule.toBoolean()) {
         implementation project(path: ':home')
     }
     implementation project(path: ':baselibrary')
-
 }
