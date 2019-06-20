@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/f2">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eeeeee">
 
     <com.base.library.widget.TopNavigationLayout
-        android:id="@+id/top_navigation_a_f"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            android:id="@+id/top_navigation_a_f"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <include
-            layout="@layout/common_refresh_smart_layout"
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/common_refresh_Layout_classify"
             android:layout_below="@+id/top_navigation_a_f"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/common_recycler_view_classify"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="#0000ff"
+                android:overScrollMode="never"/>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </RelativeLayout>
