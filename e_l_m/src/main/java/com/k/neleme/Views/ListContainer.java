@@ -177,7 +177,10 @@ public class ListContainer extends LinearLayout {
 						recyclerView.smoothScrollBy(0, top);
 					}
 				} else {
+
+					// 返回指定位置下的 View
 					View stickyInfoView = recyclerView.findChildViewUnder(stickView.getMeasuredWidth() / 2, 5);
+
 					if (stickyInfoView != null && stickyInfoView.getContentDescription() != null) {
 						tvStickyHeaderView.setText(String.valueOf(stickyInfoView.getContentDescription()));
 						typeAdapter.setType(String.valueOf(stickyInfoView.getContentDescription()));
