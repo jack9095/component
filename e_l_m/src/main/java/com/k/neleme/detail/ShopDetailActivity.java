@@ -10,9 +10,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 /**
- * Created by k on 2017/10/30.
+ * 购物详情页面
  */
-
 public class ShopDetailActivity extends BaseActivity implements View.OnClickListener {
 
     private SimpleDraweeView iv_shop;

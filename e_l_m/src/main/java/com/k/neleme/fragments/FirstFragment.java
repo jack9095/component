@@ -10,6 +10,9 @@ import com.k.neleme.adapters.FoodAdapter;
 import com.k.neleme.adapters.TypeAdapter;
 import com.shizhefei.fragment.LazyFragment;
 
+/**
+ * 商品页面
+ */
 public class FirstFragment extends LazyFragment {
 
 	private ListContainer listContainer;

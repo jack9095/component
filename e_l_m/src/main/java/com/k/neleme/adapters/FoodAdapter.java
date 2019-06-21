@@ -12,6 +12,9 @@ import com.k.neleme.bean.FoodBean;
 
 import java.util.List;
 
+/**
+ * 联动右侧列表的适配器
+ */
 public class FoodAdapter extends BaseQuickAdapter<FoodBean, BaseViewHolder> {
 	public static final int FIRST_STICKY_VIEW = 1;
 	public static final int HAS_STICKY_VIEW = 2;

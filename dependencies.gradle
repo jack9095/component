@@ -102,6 +102,9 @@ static def common(DependencyHandler dependencyHandler) {
         exclude group: 'com.android.support'
     }
 
+    // RecyclerView 适配器的通用库
+    dependencyHandler.implementation ('com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46')
+
     // 图片加载库
     dependencyHandler.implementation ('com.github.bumptech.glide:glide:4.8.0'){
         exclude group: 'com.android.support'

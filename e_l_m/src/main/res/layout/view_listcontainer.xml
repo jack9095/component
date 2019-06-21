@@ -6,26 +6,27 @@
               android:splitMotionEvents="false"
               android:orientation="horizontal">
 
-
+    <!--左边的列表-->
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler1"
-        android:layout_width="70dp"
-        android:layout_height="match_parent"
-        android:background="@color/type_gray"
-        android:overScrollMode="never"
-        app:layout_behavior="@string/scroll_behavior"/>
-
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler2"
-            android:layout_width="match_parent"
+            android:id="@+id/recycler1"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
+            android:background="@color/type_gray"
             android:overScrollMode="never"
             app:layout_behavior="@string/scroll_behavior"/>
+
+    <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        <!--右边的列表-->
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                app:layout_behavior="@string/scroll_behavior"/>
 
         <include layout="@layout/view_stick_header"/>
     </FrameLayout>

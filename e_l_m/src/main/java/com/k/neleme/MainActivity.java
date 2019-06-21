@@ -43,14 +43,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
+/**
+ * 左右联动列表
+ */
 public class MainActivity extends BaseActivity implements AddWidget.OnAddClick {
 
     public static final String CAR_ACTION = "handleCar";
     public static final String CLEARCAR_ACTION = "clearCar";
     private CoordinatorLayout rootview;
     public BottomSheetBehavior behavior;
-    public View scroll_container;
+    public View scroll_container; // 指示器和 ViewPager 的外层布局
     private FirstFragment firstFragment;
     public static CarAdapter carAdapter;
     private ShopCarView shopCarView;
@@ -64,11 +66,13 @@ public class MainActivity extends BaseActivity implements AddWidget.OnAddClick {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initViews();
+        // 注册广播
         IntentFilter intentFilter = new IntentFilter(CAR_ACTION);
         intentFilter.addAction(CLEARCAR_ACTION);
         registerReceiver(broadcastReceiver, intentFilter);
     }
 
+    // 广播
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -105,8 +109,11 @@ public class MainActivity extends BaseActivity implements AddWidget.OnAddClick {
 
     private void initViews() {
         rootview = (CoordinatorLayout) findViewById(R.id.rootview);
+        // 给左上角图标的左边加上一个返回的图标 可返回
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         initViewpager();
+
         initShopCar();
     }
 
@@ -125,16 +132,23 @@ public class MainActivity extends BaseActivity implements AddWidget.OnAddClick {
 
     private void initViewpager() {
         scroll_container = findViewById(R.id.scroll_container);
+
+        // TabLayout 的指示器
         ScrollIndicatorView mSv = (ScrollIndicatorView) findViewById(R.id.indicator);
         ColorBar colorBar = new ColorBar(mContext, ContextCompat.getColor(mContext, R.color.dicator_line_blue), 6,
                 ScrollBar.Gravity.BOTTOM);
         colorBar.setWidth(ViewUtils.dip2px(mContext, 30));
+
         mSv.setScrollBar(colorBar);
         mSv.setSplitAuto(false);
         mSv.setOnTransitionListener(new OnTransitionTextListener().setColor(ContextCompat.getColor(mContext, R.color.dicator_line_blue),
                 ContextCompat.getColor(mContext, R.color.black)));
+
+
         ViewPager mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        // 指示器和 ViewPager 关联
         IndicatorViewPager indicatorViewPager = new IndicatorViewPager(mSv, mViewPager);
+
         firstFragment = new FirstFragment();
         ViewpagerAdapter myAdapter = new ViewpagerAdapter(getSupportFragmentManager());
         indicatorViewPager.setAdapter(myAdapter);
@@ -233,6 +247,7 @@ public class MainActivity extends BaseActivity implements AddWidget.OnAddClick {
         shopCarView.updateAmount(amount);
     }
 
+    // 指示器和 ViewPager 的外层布局 垂直滑动的动画实现
     public void expendCut(View view) {
         float cty = scroll_container.getTranslationY();
         if (!ViewUtils.isFastClick()) {
@@ -244,6 +259,7 @@ public class MainActivity extends BaseActivity implements AddWidget.OnAddClick {
         }
     }
 
+    // 清空购物车
     public void clearCar(View view) {
         ViewUtils.showClearCar(mContext, new DialogInterface.OnClickListener() {
             @Override
@@ -273,6 +289,7 @@ public class MainActivity extends BaseActivity implements AddWidget.OnAddClick {
         System.exit(0);
     }
 
+    // 跳转购物详情页面
     public void toShopDetail(View view) {
         ShopInfoContainer shopInfoContainer = (ShopInfoContainer) findViewById(R.id.shopcontainer);
         if (android.os.Build.VERSION.SDK_INT > 20) {

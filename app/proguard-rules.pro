@@ -294,3 +294,13 @@
 -keep class com.tencent.mid.** {* ;}
 -keep public class * extends com.qq.taf.jce.JceStruct{*;}
 # 信鸽 end
+
+# RecyclerView 适配器的通用库
+-keep class com.chad.library.adapter.** {
+*;
+}
+-keep public class * extends com.chad.library.adapter.base.BaseQuickAdapter
+-keep public class * extends com.chad.library.adapter.base.BaseViewHolder
+-keepclassmembers  class **$** extends com.chad.library.adapter.base.BaseViewHolder {
+     <init>(...);
+}

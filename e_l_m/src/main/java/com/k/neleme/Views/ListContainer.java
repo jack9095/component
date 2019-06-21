@@ -1,6 +1,7 @@
 package com.k.neleme.Views;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -49,15 +50,25 @@ public class ListContainer extends LinearLayout {
 		super(context, attrs);
 		mContext = context;
 		inflate(mContext, R.layout.view_listcontainer, this);
+
+		// 左边的列表
 		RecyclerView recyclerView1 = findViewById(R.id.recycler1);
 		recyclerView1.setLayoutManager(new LinearLayoutManager(mContext));
+
+		// 适配器 并设置数据
 		typeAdapter = new TypeAdapter(BaseUtils.getTypes());
-		View view = new View(mContext);
-		view.setMinimumHeight(ViewUtils.dip2px(mContext, 50));
-		typeAdapter.addFooterView(view);
-		typeAdapter.bindToRecyclerView(recyclerView1);
-		recyclerView1.addItemDecoration(new SimpleDividerDecoration(mContext));
-		((DefaultItemAnimator) recyclerView1.getItemAnimator()).setSupportsChangeAnimations(false);
+
+//		View view = new View(mContext);
+//		view.setMinimumHeight(ViewUtils.dip2px(mContext, 50));
+//		typeAdapter.addFooterView(view); // 添加脚部view
+
+//		typeAdapter.bindToRecyclerView(recyclerView1); // RecyclerView和适配器关联起来
+		recyclerView1.setAdapter(typeAdapter);
+
+//		recyclerView1.addItemDecoration(new SimpleDividerDecoration(mContext));
+//		((DefaultItemAnimator) recyclerView1.getItemAnimator()).setSupportsChangeAnimations(false);
+
+		// item 的点击事件
 		recyclerView1.addOnItemTouchListener(new OnItemClickListener() {
 			@Override
 			public void onSimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -76,12 +87,17 @@ public class ListContainer extends LinearLayout {
 				}
 			}
 		});
+
+		// 右边的列表
 		recyclerView2 = findViewById(R.id.recycler2);
 		linearLayoutManager = new LinearLayoutManager(mContext);
 		recyclerView2.setLayoutManager(linearLayoutManager);
-		((DefaultItemAnimator) recyclerView2.getItemAnimator()).setSupportsChangeAnimations(false);
+
+//		((DefaultItemAnimator) recyclerView2.getItemAnimator()).setSupportsChangeAnimations(false);
+
 		foodBeanList = BaseUtils.getDatas(mContext);
 		commandList = BaseUtils.getDetails(foodBeanList);
+
 		recyclerView2.addOnItemTouchListener(new OnItemClickListener() {
 			@Override
 			public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
@@ -115,23 +131,29 @@ public class ListContainer extends LinearLayout {
 			int top = recyclerView2.getChildAt(n - firstItem).getTop();
 			recyclerView2.scrollBy(0, top);
 		} else {
-			//当要置顶的项在当前显示的最后一项的后面时
+			// 当要置顶的项在当前显示的最后一项的后面时
 			recyclerView2.scrollToPosition(n);
-			//这里这个变量是用在RecyclerView滚动监听里面的
+			// 这里这个变量是用在 RecyclerView 滚动监听里面的
 			move = true;
 		}
 	}
 
-
+	@SuppressLint("ClickableViewAccessibility")
 	public void setAddClick(AddWidget.OnAddClick onAddClick) {
+
 		foodAdapter = new FoodAdapter(foodBeanList, onAddClick);
+
 		View view = new View(mContext);
 		view.setMinimumHeight(ViewUtils.dip2px(mContext, 50));
 		foodAdapter.addFooterView(view);
+
 		foodAdapter.bindToRecyclerView(recyclerView2);
+
+		// 粘性头部
 		stickView = findViewById(R.id.stick_header);
 		tvStickyHeaderView = findViewById(R.id.tv_header);
 		tvStickyHeaderView.setText("类别0");
+
         recyclerView2.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -139,6 +161,7 @@ public class ListContainer extends LinearLayout {
                 return false;
             }
         });
+
 		recyclerView2.addOnScrollListener(new RecyclerView.OnScrollListener() {
 			@Override
 			public void onScrolled(RecyclerView recyclerView, int dx, int dy) {

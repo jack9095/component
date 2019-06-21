@@ -17,6 +17,9 @@ import com.shizhefei.fragment.LazyFragment;
 
 import java.util.ArrayList;
 
+/**
+ * 评价页面
+ */
 public class SecondFragment extends LazyFragment implements BaseQuickAdapter.RequestLoadMoreListener {
 	private Context mContext;
 	private ArrayList<CommentBean> cList = new ArrayList<>();

@@ -85,6 +85,7 @@
         android:onClick="toShopDetail"
         app:layout_behavior="com.k.neleme.behaviors.ShopContainerBehavior" />
 
+    <!--顶部标题栏-->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -134,10 +135,13 @@
             android:overScrollMode="never" />
     </LinearLayout>
 
+    <!-- 底部弹出的黑色遮罩背景 -->
     <include layout="@layout/view_black" />
 
+    <!-- 底部弹出的已选商品 -->
     <include layout="@layout/view_carpop" />
 
+    <!-- 底部购物车 -->
     <include layout="@layout/view_car" />
 
 </android.support.design.widget.CoordinatorLayout>
