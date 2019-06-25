@@ -29,23 +29,51 @@
             android:textSize="16sp"
             app:drawableDel="@mipmap/edit_delete" />
 
-    <com.base.library.widget.ClearEditText
-            android:id="@+id/et_earch"
-            android:singleLine="true"
-            android:imeOptions="actionSearch"
-            android:maxLines="1"
+    <RelativeLayout
+            android:background="#f5f5f5"
+            android:paddingLeft="15dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/edit_bg"
-            android:drawableLeft="@mipmap/search"
-            android:drawableRight="@mipmap/edit_delete"
-            android:hint="搜索资料"
-            android:textColor="#333333"
-            android:textColorHint="#999999"
-            android:drawableStart="@mipmap/search"
-            android:drawableEnd="@mipmap/edit_delete"/>
+            android:layout_height="64dp">
+
+        <com.base.library.widget.ClearEditText
+                android:id="@+id/et_earch"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginRight="71dp"
+                android:background="@drawable/edit_bg"
+                android:drawableLeft="@mipmap/search"
+                android:drawableRight="@mipmap/edit_delete"
+                android:hint="搜索"
+                android:textColor="#333333"
+                android:textColorHint="#999999"
+                android:drawableStart="@mipmap/search"
+                android:drawableEnd="@mipmap/edit_delete"/>
+
+        <TextView
+                android:id="@+id/search_cancel"
+                android:text="取消"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:textColor="#FF8300"
+                android:textSize="16dp"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#999999"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/search_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:overScrollMode="never" />
 
 </RelativeLayout>

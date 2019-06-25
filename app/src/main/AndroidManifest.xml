@@ -26,10 +26,11 @@
         <activity android:name=".rx.RxActivity"/>
         <activity android:name=".kotlinTest.TestActivity"/>
         <activity android:name=".kotlinTest.DemoKotlin"/>
-        <activity android:name=".SearchActivity"
+        <activity android:name=".SearchDemoActivity"
                   android:screenOrientation="nosensor"
                   android:windowSoftInputMode="stateAlwaysVisible|adjustPan"/>
         <activity android:name=".CommodityDetailsActivity"/>
+        <activity android:name=".SearchActivity"/>
     </application>
 
 </manifest>
