@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         jump_test.setOnClickListener(this)
         jump_home.setOnClickListener(this)
+        button.setOnClickListener(this)
     }
 
     // 这里的 Unit 可以省略不写
@@ -59,6 +60,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.jump_home -> {
                 val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.button -> {
+                val intent = Intent(this, SearchActivity::class.java)
                 startActivity(intent)
             }
         }

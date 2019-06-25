@@ -75,4 +75,9 @@
             <enum name="RECT" value="1"/>
         </attr>
     </declare-styleable>
+
+    <!--搜索框-->
+    <declare-styleable name="SearchEditText">
+        <attr name="drawableDel" format="reference" />
+    </declare-styleable>
 </resources>
