@@ -17,8 +17,8 @@
 
             <com.kuanquan.universalcomponents.widget.LayoutDetailsTopHot
                     android:id="@+id/details_top_ban"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
             <TextView
                     android:id="@+id/details_price"
@@ -28,9 +28,299 @@
                     android:layout_marginTop="4dp"
                     android:text="¥135.00"
                     android:textColor="#FFFF8300"
-                    android:textSize="18dp"
-            />
+                    android:textSize="18dp"/>
 
+            <TextView
+                    android:id="@+id/counter_price"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="反分价：¥135.00"
+                    android:textColor="#FFFF8300"
+                    android:textSize="18dp"/>
+
+            <!--开通会员-->
+            <RelativeLayout
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:id="@+id/member_iv"
+                        android:contentDescription="@string/app_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/member_tv"
+                        android:singleLine="true"
+                        android:text="尊享会员专享价￥42.90，立省￥4.10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/open_member_tv"
+                        android:layout_alignParentRight="true"
+                        android:text="开通会员"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <!-- 自营 -->
+            <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/self_support_tv"
+                        android:text="自营"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/title_tv"
+                        android:singleLine="true"
+                        android:text="威露士洗衣液多效3kg+精华内衣净300g"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/content_tv"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:singleLine="true"
+                    android:text="深层洁净，温和护肤"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="#efefef"/>
+
+            <!--领劵-->
+            <RelativeLayout
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+                <TextView
+                        android:id="@+id/securities_tv"
+                        android:singleLine="true"
+                        android:text="领劵"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/coupon_tv"
+                        android:layout_toRightOf="@+id/securities_tv"
+                        android:layout_marginLeft="12dp"
+                        android:singleLine="true"
+                        android:text="劵"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/content_integral_deduction"
+                        android:layout_toRightOf="@+id/coupon_tv"
+                        android:layout_marginLeft="10dp"
+                        android:singleLine="true"
+                        android:layout_marginRight="20dp"
+                        android:ellipsize="end"
+                        android:text="满128送1000积分劵，满150送1500积分劵；伯垭口"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <ImageView
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="#efefef"/>
+
+            <!--优惠-->
+            <RelativeLayout
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+                <TextView
+                        android:id="@+id/discount_tv"
+                        android:singleLine="true"
+                        android:text="优惠"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/bonus_points_tv"
+                        android:layout_toRightOf="@+id/discount_tv"
+                        android:layout_marginLeft="12dp"
+                        android:singleLine="true"
+                        android:text="赠分"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/content_bonus_points"
+                        android:layout_toRightOf="@+id/bonus_points_tv"
+                        android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:ellipsize="end"
+                        android:text="买一组送1000积分劵"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <ImageView
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="#efefef"/>
+
+            <!--服务-->
+            <RelativeLayout
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+                <TextView
+                        android:id="@+id/service_tv"
+                        android:singleLine="true"
+                        android:text="服务"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/self_points_tv"
+                        android:layout_toRightOf="@+id/service_tv"
+                        android:layout_marginLeft="12dp"
+                        android:singleLine="true"
+                        android:text="自营"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/rapid_distribution"
+                        android:layout_toRightOf="@+id/self_points_tv"
+                        android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:ellipsize="end"
+                        android:text="快速配送"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/support_store_self"
+                        android:layout_toRightOf="@+id/rapid_distribution"
+                        android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:ellipsize="end"
+                        android:text="支持门店自提"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/free_shipping"
+                        android:layout_toRightOf="@+id/support_store_self"
+                        android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:ellipsize="end"
+                        android:text="满128包邮"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="#efefef"/>
+
+            <!-- 用户评价 -->
+            <RelativeLayout
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+                <TextView
+                        android:id="@+id/user_evaluation"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:text="用户评价（72）"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/user_praise"
+                        android:singleLine="true"
+                        android:layout_alignParentRight="true"
+                        android:ellipsize="end"
+                        android:text="98.6%好评"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#efefef"/>
+
+            <!--评价列表 横向-->
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/evaluation_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:overScrollMode="never" />
+
+            <!--大家都在看 24小时热销-->
+            <android.support.design.widget.TabLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <android.support.design.widget.TabItem
+                        android:text="大家都在看"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <android.support.design.widget.TabItem
+                        android:text="24小时热销"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </android.support.design.widget.TabLayout>
+
+
+            <!--最下面的长图片-->
+            <ImageView
+                    android:id="@+id/long_picture"
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
