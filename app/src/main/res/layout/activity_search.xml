@@ -32,6 +32,8 @@
     <com.base.library.widget.ClearEditText
             android:id="@+id/et_earch"
             android:singleLine="true"
+            android:imeOptions="actionSearch"
+            android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_centerVertical="true"

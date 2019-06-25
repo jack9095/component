@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+            android:id="@+id/detail_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:overScrollMode="never">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <com.kuanquan.universalcomponents.widget.LayoutDetailsTopHot
+                    android:id="@+id/details_top_ban"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/details_price"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="¥135.00"
+                    android:textColor="#FFFF8300"
+                    android:textSize="18dp"
+            />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <!--标题栏-->
+    <FrameLayout
+            android:id="@+id/title_bar"
+            android:background="#ffffff"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+        <TextView
+                android:layout_width="match_parent"
+                android:text="首页"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+    </FrameLayout>
+
+</RelativeLayout>

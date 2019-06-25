@@ -1,6 +1,7 @@
 package com.kuanquan.universalcomponents.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.base.library.utils.CollectionsUtil
 import com.base.library.utils.glide.invocation.ImageLoaderManager
+import com.kuanquan.universalcomponents.CommodityDetailsActivity
 import com.kuanquan.universalcomponents.R
 import com.kuanquan.universalcomponents.kotlinTest.UserBean
 
@@ -40,6 +42,13 @@ class ClassifyAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         if (holder is ClassifyitemAdapter) {
 //            CollectionsUtil.setTextView(holder.tv_classify_item,bean?.name)
             ImageLoaderManager.getInstance().displayImageNetUrl(context,bean?.sex,R.mipmap.ic_launcher,holder.im_classify_item)
+
+            holder.itemView.setOnClickListener(object : View.OnClickListener{
+
+                override fun onClick(v: View?) {
+                    context?.startActivity(Intent(context, CommodityDetailsActivity::class.java))
+                }
+            })
         }
     }
 
