@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@drawable/shape_round_rectangle_user_bg"
+              android:layout_width="246dp"
+              android:layout_height="100dp">
+
+    <RelativeLayout
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/user_head_iv"
+                android:contentDescription="@string/app_name"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="28dp"
+                android:layout_height="28dp"/>
+
+        <TextView
+                android:id="@+id/user_name_tv"
+                android:text="李**"
+                android:textSize="12dp"
+                android:textColor="#333333"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/user_head_iv"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <ImageView
+                android:id="@+id/user_vip_iv"
+                android:contentDescription="@string/app_name"
+                android:layout_toRightOf="@+id/user_name_tv"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="28dp"
+                android:layout_height="28dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+            android:id="@+id/user_content_tv"
+            android:text="非常满意"
+            android:textSize="12dp"
+            android:textColor="#333333"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="23dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>
