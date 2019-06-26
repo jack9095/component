@@ -415,6 +415,11 @@
                     android:background="#fff"
                     android:overScrollMode="never"/>
 
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#efefef"/>
+
             <!--大家都在看 24小时热销-->
             <android.support.design.widget.TabLayout
                     app:tabIndicatorColor="#FF8300"
