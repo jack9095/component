@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:background="#fff"
                 xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                 android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -449,23 +450,73 @@
                     android:id="@+id/long_picture"
                     android:contentDescription="@string/app_name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="800dp"/>
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
     <!--标题栏-->
-    <FrameLayout
+    <RelativeLayout
             android:id="@+id/title_bar"
             android:background="#ffffff"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="48dp">
-        <TextView
-                android:layout_width="match_parent"
-                android:text="首页"
-                android:layout_height="match_parent"
-                android:gravity="center"/>
-    </FrameLayout>
+
+        <ImageView
+                android:id="@+id/back_iv"
+                android:src="@mipmap/detail_back_white"
+                android:scaleType="centerInside"
+                android:background="@drawable/shape_back_gradual"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/app_name"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+
+        <!--中间标题-->
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/shop_good"
+                    android:layout_width="wrap_content"
+                    android:text="商品"
+                    android:textColor="#333333"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:drawablePadding="5dp"
+                    android:drawableBottom="@drawable/shape_indicator"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"/>
+            <TextView
+                    android:id="@+id/shop_detail"
+                    android:layout_width="wrap_content"
+                    android:textColor="#333333"
+                    android:padding="5dp"
+                    android:layout_marginLeft="6dp"
+                    android:textSize="16dp"
+                    android:text="详情"
+                    android:drawablePadding="5dp"
+                    android:drawableBottom="@drawable/shape_indicator_empty"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"/>
+        </LinearLayout>
+
+        <ImageView
+                android:id="@+id/share_iv"
+                android:src="@mipmap/more_left"
+                android:scaleType="centerInside"
+                android:background="@drawable/shape_back_gradual"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:contentDescription="@string/app_name"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+    </RelativeLayout>
 
 </RelativeLayout>
