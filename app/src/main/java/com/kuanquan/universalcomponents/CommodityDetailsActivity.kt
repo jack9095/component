@@ -33,6 +33,32 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
         addOnClickListeners(this, R.id.back_iv, R.id.shop_good, R.id.shop_detail, R.id.share_iv)
         // 头部渐变
         headGradient()
+
+//        tab_item_one.setOnClickListener(object : View.OnClickListener{
+//            override fun onClick(v: View?) {
+//                LogUtil.e("点击1")
+//            }
+//        })
+
+        // 拦截tablayout点击事件
+//        val tabOnClickListener = object : View.OnTouchListener{
+//            @SuppressLint("ClickableViewAccessibility")
+//            override fun onTouch(view: View, event: MotionEvent): Boolean {
+//                val pos = view.tag as Int
+//                if (pos==0) {
+//                    // 拦截第一个item点击添加自定义逻辑
+//                    LogUtil.e("点击了1")
+//                    return true
+//                }
+//                if (pos==1) {
+//                    // 拦截第二个item点击
+//                    LogUtil.e("点击了2")
+//                    return true
+//                }
+//                return false
+//            }
+//        }
+//        TabLayoutAddOnClickHelper.AddOnClick(tab_layout,tabOnClickListener)
     }
 
     val height = 640 // 滑动开始变色的高
@@ -91,12 +117,14 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
         CollectionsUtil.setTextView(user_evaluation, "用户评价（72）")
         CollectionsUtil.setTextView(user_praise, "98.6%好评")
 
+        // 用户评价
         evaluation_recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         mUserEvaluationAdapter = UserEvaluationAdapter(mViewModel.userList())
         evaluation_recycler_view.adapter = mUserEvaluationAdapter
 
-        val imageUrl = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1056731044,2207586648&fm=26&gp=0.jpg"
+         pager_hot.setData(mViewModel.userHot())
 
+        val imageUrl = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1056731044,2207586648&fm=26&gp=0.jpg"
         ImageLoaderManager.getInstance().displayImageNetUrl(this, imageUrl, R.mipmap.ic_launcher, long_picture)
 
     }
@@ -148,6 +176,12 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
                 shop_detail.textSize = 18f
                 shop_good.typeface = Typeface.defaultFromStyle(Typeface.NORMAL)
                 shop_good.textSize = 16f
+            }
+            R.id.tab_item_one ->{
+                LogUtil.e("点击了1")
+            }
+            R.id.tab_item_two ->{
+                LogUtil.e("点击了2")
             }
         }
     }
