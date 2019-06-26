@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="12dp"
+                android:paddingLeft="12dp"
+                android:background="#ffffff"
+                android:layout_height="wrap_content">
+
+    <ImageView
+            android:id="@+id/right_recycler_iv"
+            android:contentDescription="@string/app_name"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="180dp"
+            android:layout_height="180dp"/>
+
+    <!--标题-->
+    <TextView
+            android:id="@+id/right_self_support"
+            android:layout_below="@+id/right_recycler_iv"
+            android:text="自营"
+            android:textSize="10dp"
+            android:textColor="#FF5C5C"
+            android:background="@drawable/shape_category_bg"
+            android:visibility="gone"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/right_title"
+            android:layout_below="@+id/right_recycler_iv"
+            android:layout_marginTop="9dp"
+            android:text=" 自营,离离原上草，一岁一枯荣，野火烧不尽，春风出有声哈哈哈啊哈"
+            android:textSize="14dp"
+            android:layout_marginLeft="2dp"
+            android:layout_gravity="center_vertical"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textColor="#333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <!--送积分-->
+    <TextView
+            android:id="@+id/right_send_integrals"
+            android:text="买1组送50积分"
+            android:textSize="10dp"
+            android:singleLine="true"
+            android:layout_below="@+id/right_title"
+            android:ellipsize="end"
+            android:textColor="#FF8300"
+            android:layout_marginTop="3dp"
+            android:paddingRight="7dp"
+            android:paddingLeft="6dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:background="@drawable/shape_category_integral_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/right_one_price"
+            android:layout_below="@+id/right_send_integrals"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:text="¥799.00"
+            android:textColor="#FFFF8300"
+            android:textSize="14dp"/>
+
+    <!--价格-->
+    <RelativeLayout
+            android:layout_below="@+id/right_send_integrals"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+        <TextView
+                android:id="@+id/right_two_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:text="¥759"
+                android:textColor="#FF333333"
+                android:textSize="12dp"/>
+
+        <TextView
+                android:id="@+id/right_integral"
+                android:layout_toRightOf="@+id/right_two_price"
+                android:layout_marginLeft="7dp"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF8300"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="返分价"
+                android:textColor="#FFFFFFFF"
+                android:textSize="8dp"
+        />
+
+        <!--添加进购物车事件-->
+        <ImageView
+                android:id="@+id/add_shop_card"
+                android:contentDescription="@string/app_name"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerInside"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#FFFFFFFF"
+                tools:ignore="RtlHardcoded"/>
+    </RelativeLayout>
+
+</RelativeLayout>

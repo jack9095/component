@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v4.widget.NestedScrollView
             android:id="@+id/detail_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#fff"
             android:overScrollMode="never">
 
         <LinearLayout
                 android:orientation="vertical"
+                android:background="#fff"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+            <!--顶部banner-->
             <com.kuanquan.universalcomponents.widget.LayoutDetailsTopHot
                     android:id="@+id/details_top_ban"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
+            <!--价格-->
             <TextView
                     android:id="@+id/details_price"
                     android:layout_marginLeft="16dp"
@@ -44,17 +46,27 @@
             <RelativeLayout
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#FFF4E8"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="32dp">
 
                 <ImageView
                         android:id="@+id/member_iv"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/search"
                         android:contentDescription="@string/app_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"/>
 
                 <TextView
                         android:id="@+id/member_tv"
+                        android:layout_toRightOf="@+id/member_iv"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="12dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="#333333"
                         android:singleLine="true"
                         android:text="尊享会员专享价￥42.90，立省￥4.10"
                         android:layout_width="wrap_content"
@@ -63,7 +75,13 @@
                 <TextView
                         android:id="@+id/open_member_tv"
                         android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
                         android:text="开通会员"
+                        android:layout_marginRight="12dp"
+                        android:drawableRight="@mipmap/more_right"
+                        android:drawablePadding="10dp"
+                        android:textColor="#333333"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
             </RelativeLayout>
@@ -72,35 +90,85 @@
             <LinearLayout
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                 <TextView
                         android:id="@+id/self_support_tv"
+                        android:layout_below="@+id/right_recycler_iv"
                         android:text="自营"
+                        android:textSize="10dp"
+                        android:textColor="#FF5C5C"
+                        android:background="@drawable/shape_category_bg"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                 <TextView
                         android:id="@+id/title_tv"
                         android:singleLine="true"
+                        android:textColor="#333333"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="16dp"
                         android:text="威露士洗衣液多效3kg+精华内衣净300g"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <TextView
-                    android:id="@+id/content_tv"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:singleLine="true"
-                    android:text="深层洁净，温和护肤"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+            <!--内容-->
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/content_tv"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="#666666"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="12dp"
+                        android:singleLine="true"
+                        android:text="深层洁净，温和护肤"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <ImageView
+                        android:src="@mipmap/more_down"
+                        android:contentDescription="@string/app_name"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:scaleType="centerInside"
+                        android:layout_width="50dp"
+                        android:layout_height="48dp"/>
+
+            </RelativeLayout>
 
             <View
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="1dp"
+                    android:background="#ebebeb"/>
+
+            <!--特殊说明-->
+            <TextView
+                    android:id="@+id/special_note"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:text="特殊说明"
+                    android:textColor="#FFFF8300"
+                    android:textSize="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
                     android:background="#efefef"/>
 
             <!--领劵-->
@@ -114,23 +182,35 @@
                 <TextView
                         android:id="@+id/securities_tv"
                         android:singleLine="true"
+                        android:textSize="12dp"
+                        android:textColor="#999999"
                         android:text="领劵"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                 <TextView
                         android:id="@+id/coupon_tv"
-                        android:layout_toRightOf="@+id/securities_tv"
-                        android:layout_marginLeft="12dp"
-                        android:singleLine="true"
                         android:text="劵"
+                        android:singleLine="true"
+                        android:layout_toRightOf="@+id/securities_tv"
+                        android:layout_marginLeft="10dp"
+                        android:ellipsize="end"
+                        android:textSize="10dp"
+                        android:textColor="#FF8300"
+                        android:paddingRight="7dp"
+                        android:paddingLeft="6dp"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:background="@drawable/shape_category_integral_bg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                 <TextView
                         android:id="@+id/content_integral_deduction"
                         android:layout_toRightOf="@+id/coupon_tv"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="13dp"
+                        android:textColor="#666666"
                         android:singleLine="true"
                         android:layout_marginRight="20dp"
                         android:ellipsize="end"
@@ -140,13 +220,14 @@
 
                 <ImageView
                         android:layout_alignParentRight="true"
+                        android:src="@mipmap/more_right"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
             </RelativeLayout>
 
             <View
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:background="#efefef"/>
 
             <!--优惠-->
@@ -160,6 +241,8 @@
                 <TextView
                         android:id="@+id/discount_tv"
                         android:singleLine="true"
+                        android:textSize="12dp"
+                        android:textColor="#999999"
                         android:text="优惠"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -167,8 +250,16 @@
                 <TextView
                         android:id="@+id/bonus_points_tv"
                         android:layout_toRightOf="@+id/discount_tv"
-                        android:layout_marginLeft="12dp"
                         android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:ellipsize="end"
+                        android:textSize="10dp"
+                        android:textColor="#FF8300"
+                        android:paddingRight="7dp"
+                        android:paddingLeft="6dp"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:background="@drawable/shape_category_integral_bg"
                         android:text="赠分"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -177,7 +268,9 @@
                         android:id="@+id/content_bonus_points"
                         android:layout_toRightOf="@+id/bonus_points_tv"
                         android:singleLine="true"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="13dp"
+                        android:textColor="#666666"
                         android:layout_marginRight="20dp"
                         android:ellipsize="end"
                         android:text="买一组送1000积分劵"
@@ -186,13 +279,14 @@
 
                 <ImageView
                         android:layout_alignParentRight="true"
+                        android:src="@mipmap/more_right"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
             </RelativeLayout>
 
             <View
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:background="#efefef"/>
 
             <!--服务-->
@@ -206,6 +300,8 @@
                 <TextView
                         android:id="@+id/service_tv"
                         android:singleLine="true"
+                        android:textSize="12dp"
+                        android:textColor="#999999"
                         android:text="服务"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -213,8 +309,12 @@
                 <TextView
                         android:id="@+id/self_points_tv"
                         android:layout_toRightOf="@+id/service_tv"
-                        android:layout_marginLeft="12dp"
                         android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:drawableLeft="@drawable/shape_dots_category"
+                        android:drawablePadding="4dp"
+                        android:textSize="13dp"
+                        android:textColor="#666666"
                         android:text="自营"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -224,7 +324,10 @@
                         android:layout_toRightOf="@+id/self_points_tv"
                         android:singleLine="true"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="20dp"
+                        android:drawableLeft="@drawable/shape_dots_category"
+                        android:drawablePadding="4dp"
+                        android:textSize="13dp"
+                        android:textColor="#666666"
                         android:ellipsize="end"
                         android:text="快速配送"
                         android:layout_width="wrap_content"
@@ -235,7 +338,10 @@
                         android:layout_toRightOf="@+id/rapid_distribution"
                         android:singleLine="true"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="20dp"
+                        android:drawableLeft="@drawable/shape_dots_category"
+                        android:drawablePadding="4dp"
+                        android:textSize="13dp"
+                        android:textColor="#666666"
                         android:ellipsize="end"
                         android:text="支持门店自提"
                         android:layout_width="wrap_content"
@@ -246,17 +352,21 @@
                         android:layout_toRightOf="@+id/support_store_self"
                         android:singleLine="true"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="20dp"
+                        android:drawableLeft="@drawable/shape_dots_category"
+                        android:drawablePadding="4dp"
+                        android:textSize="13dp"
+                        android:textColor="#666666"
                         android:ellipsize="end"
                         android:text="满128包邮"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText"/>
 
             </RelativeLayout>
 
             <View
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:background="#efefef"/>
 
             <!-- 用户评价 -->
@@ -269,6 +379,8 @@
 
                 <TextView
                         android:id="@+id/user_evaluation"
+                        android:textColor="#333333"
+                        android:textSize="14dp"
                         android:singleLine="true"
                         android:ellipsize="end"
                         android:text="用户评价（72）"
@@ -280,6 +392,10 @@
                         android:singleLine="true"
                         android:layout_alignParentRight="true"
                         android:ellipsize="end"
+                        android:textColor="#3f3f3f"
+                        android:drawableRight="@mipmap/more_right"
+                        android:drawablePadding="10dp"
+                        android:textSize="14dp"
                         android:text="98.6%好评"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -297,10 +413,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#fff"
-                    android:overScrollMode="never" />
+                    android:overScrollMode="never"/>
 
             <!--大家都在看 24小时热销-->
             <android.support.design.widget.TabLayout
+                    app:tabIndicatorColor="#FF8300"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabSelectedTextColor="#FF8300"
+                    app:tabTextColor="#333333"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 <android.support.design.widget.TabItem
@@ -313,6 +433,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
             </android.support.design.widget.TabLayout>
+
+            <com.kuanquan.universalcomponents.widget.LayoutViewPagerHot
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
 
             <!--最下面的长图片-->

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.kuanquan.universalcomponents.widget.ViewPagerIndicator
+        android:id="@+id/app_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.base.library.widget.BannerIndicatorView
+            android:id="@+id/indicator_view"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#00000000"
+            app:app_cell_count="3"
+            app:app_current_position="1"
+            app:app_cell_radius="2dp"
+            app:app_cell_margin="6dp"
+            app:app_normal_color="#cccccc"
+            app:app_selected_color="#FF8300"
+            app:app_indicator_style="RECT"
+    />
+
+</RelativeLayout>
