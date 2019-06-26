@@ -10,16 +10,10 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.base.library.utils.CollectionsUtil;
-import com.base.library.utils.LogUtil;
 import com.base.library.utils.ToastUtils;
-import com.base.library.widget.BannerIndicatorView;
 import com.kuanquan.universalcomponents.R;
 import com.kuanquan.universalcomponents.bean.BannerBean;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,6 +74,6 @@ public class LayoutDetailsTopHot extends FrameLayout implements CommodityDetails
 
     @Override
     public void onPageSelected(int position) {
-        mTextView.setText(Html.fromHtml("<font color= '#ffffff'><big><big>" + (position + 1) + "</big></big></font>" + "/" + datas.size()));
+        mTextView.setText(Html.fromHtml("<font color= '#ffffff'><big><big>" + (position % datas.size() + 1) + "</big></big></font>" + "/" + datas.size()));
     }
 }

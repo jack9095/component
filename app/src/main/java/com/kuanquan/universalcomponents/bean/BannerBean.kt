@@ -9,7 +9,6 @@ import java.util.ArrayList
 open class BannerBean : Serializable {
     lateinit var title: String
     lateinit var url: String
-//    var url: String = ""
     var id: String = ""  // 默认实现 get 和 set 方法
 
     val datas = ArrayList<AllWatchBean>()

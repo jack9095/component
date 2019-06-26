@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:background="#fff"
+                android:background="#ffffff"
                 xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                 android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -8,13 +8,14 @@
             android:id="@+id/detail_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#ffffff"
             android:overScrollMode="never">
 
         <LinearLayout
                 android:orientation="vertical"
-                android:background="#fff"
+                android:background="#ffffff"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
             <!--顶部banner-->
             <com.kuanquan.universalcomponents.widget.LayoutDetailsTopHot
@@ -39,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="反分价：¥135.00"
+                    android:text="返分价：¥135.00"
                     android:textColor="#FFFF8300"
                     android:textSize="18dp"/>
 
@@ -56,7 +57,7 @@
                         android:id="@+id/member_iv"
                         android:layout_marginLeft="10dp"
                         android:layout_centerVertical="true"
-                        android:src="@mipmap/search"
+                        android:src="@mipmap/vip_small"
                         android:contentDescription="@string/app_name"
                         android:layout_width="16dp"
                         android:layout_height="16dp"/>
@@ -174,6 +175,7 @@
 
             <!--领劵-->
             <RelativeLayout
+                    android:visibility="gone"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:gravity="center_vertical"
@@ -227,12 +229,14 @@
             </RelativeLayout>
 
             <View
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     android:background="#efefef"/>
 
             <!--优惠-->
             <RelativeLayout
+                    android:visibility="gone"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:gravity="center_vertical"
@@ -286,6 +290,7 @@
             </RelativeLayout>
 
             <View
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     android:background="#efefef"/>
