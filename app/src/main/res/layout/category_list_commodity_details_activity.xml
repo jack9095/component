@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:background="#ffffff"
-                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:background="#ffffff"
+                android:layout_width="match_parent" android:layout_height="match_parent">
 
     <android.support.v4.widget.NestedScrollView
             android:id="@+id/detail_scroll_view"
@@ -448,11 +448,33 @@
                         android:layout_height="wrap_content"/>
             </android.support.design.widget.TabLayout>
 
-            <com.kuanquan.universalcomponents.widget.LayoutViewPagerHot
-                    android:id="@+id/pager_hot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <com.kuanquan.universalcomponents.widget.ViewPagerIndicator
+                        android:id="@+id/pager_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"/>
 
+                <com.base.library.widget.BannerIndicatorView
+                        android:id="@+id/indicator_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="13dp"
+                        android:padding="10dp"
+                        android:background="#00000000"
+                        app:app_cell_count="3"
+                        app:app_current_position="1"
+                        app:app_cell_radius="2dp"
+                        app:app_cell_margin="6dp"
+                        app:app_normal_color="#cccccc"
+                        app:app_selected_color="#FF8300"
+                        app:app_indicator_style="RECT"
+                />
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#efefef"/>
 
             <!--最下面的长图片-->
             <ImageView

@@ -50,11 +50,11 @@ class CommodityDetailsViewModel : MainBaseViewModel() {
 
             for (j in 0..2){
                 mAllWatchBean = AllWatchBean()
-                mAllWatchBean.des = "大风起兮云飞扬，下面的忘记了"
+                mAllWatchBean.des = "买1组送50积分"
                 mAllWatchBean.imageUrl = "http://img5.imgtn.bdimg.com/it/u=3987907653,720009510&fm=26&gp=0.jpg"
                 mAllWatchBean.price = "34.89"
                 mAllWatchBean.price_integral = "45.76"
-                mAllWatchBean.title = "这是一个标题"
+                mAllWatchBean.title = "商品名商品名商…"
                 bannerBean.datas.add(mAllWatchBean)
             }
 

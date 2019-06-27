@@ -72,8 +72,8 @@ public class LayoutViewPagerHot extends FrameLayout implements ViewPagerIndicato
 //        getContext().startActivity(intent);
     }
 
-    @Override
-    public void onPageSelected(int position) {
-
-    }
+//    @Override
+//    public void onPageSelected(int position) {
+//
+//    }
 }

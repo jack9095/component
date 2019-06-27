@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#ffffff"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                                        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/view_pager_recycler"
+                                        android:paddingRight="16dp"
+                                        android:paddingLeft="2dp"
+                                        android:background="#ffffff"
+                                        android:overScrollMode="never"
+                                        android:scrollbars="none"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="RtlSymmetry">
 
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/view_pager_recycler"
-            android:overScrollMode="never"
-            android:scrollbars="none"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+</android.support.v7.widget.RecyclerView>
 
-    </android.support.v7.widget.RecyclerView>
-
-</FrameLayout>

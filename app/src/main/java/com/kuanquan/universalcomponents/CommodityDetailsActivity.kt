@@ -10,15 +10,20 @@ import com.base.library.utils.CollectionsUtil
 import com.base.library.utils.LogUtil
 import com.base.library.utils.glide.invocation.ImageLoaderManager
 import com.kuanquan.universalcomponents.adapter.UserEvaluationAdapter
+import com.kuanquan.universalcomponents.bean.BannerBean
 import com.kuanquan.universalcomponents.viewmodel.CommodityDetailsViewModel
+import com.kuanquan.universalcomponents.widget.ViewPagerIndicator
 import kotlinx.android.synthetic.main.category_list_commodity_details_activity.*
 
 /**
  *  商品详情
  */
-class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel>() {
+class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel>(), ViewPagerIndicator.OnPageClickListener {
+    override fun onPageClick(info: BannerBean?) {
 
-   lateinit var mUserEvaluationAdapter: UserEvaluationAdapter
+    }
+
+    lateinit var mUserEvaluationAdapter: UserEvaluationAdapter
 
     override fun getLayoutId(): Int {
         return R.layout.category_list_commodity_details_activity
@@ -39,26 +44,6 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
 //                LogUtil.e("点击1")
 //            }
 //        })
-
-        // 拦截tablayout点击事件
-//        val tabOnClickListener = object : View.OnTouchListener{
-//            @SuppressLint("ClickableViewAccessibility")
-//            override fun onTouch(view: View, event: MotionEvent): Boolean {
-//                val pos = view.tag as Int
-//                if (pos==0) {
-//                    // 拦截第一个item点击添加自定义逻辑
-//                    LogUtil.e("点击了1")
-//                    return true
-//                }
-//                if (pos==1) {
-//                    // 拦截第二个item点击
-//                    LogUtil.e("点击了2")
-//                    return true
-//                }
-//                return false
-//            }
-//        }
-//        TabLayoutAddOnClickHelper.AddOnClick(tab_layout,tabOnClickListener)
     }
 
     val height = 640 // 滑动开始变色的高
@@ -122,7 +107,9 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
         mUserEvaluationAdapter = UserEvaluationAdapter(mViewModel.userList())
         evaluation_recycler_view.adapter = mUserEvaluationAdapter
 
-         pager_hot.setData(mViewModel.userHot())
+        pager_indicator.setData(mViewModel.userHot(), this)
+        indicator_view.bindWithViewPager(pager_indicator, mViewModel.userHot().size)
+        indicator_view.currentPosition = 0
 
         val imageUrl = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1056731044,2207586648&fm=26&gp=0.jpg"
         ImageLoaderManager.getInstance().displayImageNetUrl(this, imageUrl, R.mipmap.ic_launcher, long_picture)

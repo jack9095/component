@@ -88,7 +88,7 @@ public class ViewPagerIndicator extends ViewPager {
             @Override
             public void onPageSelected(int position) {
                 if (onPageClickListener != null) {
-                    onPageClickListener.onPageSelected(position);
+//                    onPageClickListener.onPageSelected(position);
                 }
 //                BannerBean bannersBean = mAdapter.getItem(position);
             }
@@ -181,6 +181,6 @@ public class ViewPagerIndicator extends ViewPager {
     public OnPageClickListener onPageClickListener;
     public interface OnPageClickListener {
         void onPageClick(BannerBean info);
-        void onPageSelected(int position);
+//        void onPageSelected(int position);
     }
 }

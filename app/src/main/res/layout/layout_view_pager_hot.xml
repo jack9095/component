@@ -6,7 +6,7 @@
     <com.kuanquan.universalcomponents.widget.ViewPagerIndicator
         android:id="@+id/app_banner"
         android:layout_width="match_parent"
-        android:layout_height="375dp" />
+        android:layout_height="wrap_content" />
 
     <com.base.library.widget.BannerIndicatorView
             android:id="@+id/indicator_view"

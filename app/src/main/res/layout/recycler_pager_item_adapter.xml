@@ -2,12 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
-                android:layout_gravity="center"
                 android:gravity="center"
-                android:paddingTop="15dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="12dp"
-                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="9dp"
+                android:paddingLeft="16dp"
                 android:background="#ffffff"
                 android:layout_height="wrap_content">
 
@@ -15,9 +13,8 @@
             android:id="@+id/right_recycler_iv"
             android:contentDescription="@string/app_name"
             android:layout_centerHorizontal="true"
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="180dp"
-            android:layout_height="180dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="104dp"/>
 
     <!--标题-->
     <TextView
@@ -48,7 +45,7 @@
             android:ellipsize="end"
             android:textColor="#333333"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="18dp"/>
 
     <!--送积分-->
     <TextView
@@ -59,32 +56,30 @@
             android:layout_below="@+id/right_title"
             android:ellipsize="end"
             android:textColor="#FF8300"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="5dp"
             android:paddingRight="7dp"
             android:paddingLeft="6dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="2dp"
+            android:gravity="center_vertical"
             android:background="@drawable/shape_category_integral_bg"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="18dp"/>
 
     <TextView
             android:id="@+id/right_one_price"
             android:layout_below="@+id/right_send_integrals"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="18dp"
             android:layout_gravity="bottom"
-            android:layout_alignParentBottom="true"
             android:text="¥799.00"
             android:textColor="#FFFF8300"
             android:textSize="14dp"/>
 
     <!--价格-->
     <RelativeLayout
-            android:layout_below="@+id/right_send_integrals"
+            android:layout_below="@+id/right_one_price"
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="20dp">
 
         <TextView
                 android:id="@+id/right_two_price"
@@ -112,20 +107,6 @@
                 android:textColor="#FFFFFFFF"
                 android:textSize="8dp"
         />
-
-        <!--添加进购物车事件-->
-        <ImageView
-                android:id="@+id/add_shop_card"
-                android:contentDescription="@string/app_name"
-                android:visibility="gone"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:scaleType="centerInside"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="#FFFFFFFF"
-                tools:ignore="RtlHardcoded"/>
     </RelativeLayout>
 
 </RelativeLayout>
