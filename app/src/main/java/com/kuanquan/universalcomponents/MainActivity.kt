@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
+import com.kuanquan.universalcomponents.dialog.CouponActivity
 import com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity
 import com.kuanquan.universalcomponents.kotlinTest.TestActivity
 import com.kuanquan.universalcomponents.rx.RxActivity
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         jump_test.setOnClickListener(this)
         jump_home.setOnClickListener(this)
         button.setOnClickListener(this)
+        dialog.setOnClickListener(this)
     }
 
     // 这里的 Unit 可以省略不写
@@ -49,7 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.jump_adapter -> {
                 LogUtil.e("主页的点击事件")
-                val intent: Intent = Intent(this, AdapterActivity::class.java)
+                val intent = Intent(this, AdapterActivity::class.java)
                 startActivity(intent)
             }
 
@@ -64,6 +66,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.button -> {
                 val intent = Intent(this, SearchActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.dialog -> {
+                val intent = Intent(this, CouponActivity::class.java)
                 startActivity(intent)
             }
         }

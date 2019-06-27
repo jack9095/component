@@ -12,10 +12,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".HomeActivity">
+        <activity android:name=".dialog.GetCouponActivity">
         </activity>
-        <activity android:name="com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity">
-        </activity>
+        <activity
+                android:name=".dialog.CouponActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppThemeDialogIsTranslucent"
+                android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:name=".HomeActivity"/>
+        <activity android:name=".kotlinTest.adapter.AdapterActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -26,9 +31,10 @@
         <activity android:name=".rx.RxActivity"/>
         <activity android:name=".kotlinTest.TestActivity"/>
         <activity android:name=".kotlinTest.DemoKotlin"/>
-        <activity android:name=".SearchDemoActivity"
-                  android:screenOrientation="nosensor"
-                  android:windowSoftInputMode="stateAlwaysVisible|adjustPan"/>
+        <activity
+                android:name=".SearchDemoActivity"
+                android:screenOrientation="nosensor"
+                android:windowSoftInputMode="stateAlwaysVisible|adjustPan"/>
         <activity android:name=".CommodityDetailsActivity"/>
         <activity android:name=".SearchActivity"/>
     </application>

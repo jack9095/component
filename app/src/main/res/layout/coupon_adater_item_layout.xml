@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:paddingLeft="16dp"
+                android:orientation="vertical"
+                android:layout_height="50dp">
+
+    <LinearLayout
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" tools:ignore="UselessParent">
+
+        <TextView
+                android:id="@+id/self_support_tv"
+                android:layout_below="@+id/right_recycler_iv"
+                android:text="自营"
+                android:textSize="10dp"
+                android:textColor="#ff8300"
+                android:background="@drawable/shape_category_integral_bg"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/title_adapter_coupon"
+                android:textSize="13dp"
+                android:textColor="#333333"
+                android:layout_marginLeft="6dp"
+                android:text="新人首单专享，已降¥14.1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EBEBEB"/>
+</RelativeLayout>
