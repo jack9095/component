@@ -1,10 +1,14 @@
 package com.kuanquan.universalcomponents
 
+import android.content.Intent
 import android.graphics.Typeface
+import android.support.design.widget.TabItem
+import android.support.design.widget.TabLayout
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Html
 import android.view.View
+import android.widget.TextView
 import com.base.library.base.BaseViewModelActivity
 import com.base.library.utils.CollectionsUtil
 import com.base.library.utils.LogUtil
@@ -17,10 +21,12 @@ import kotlinx.android.synthetic.main.category_list_commodity_details_activity.*
 
 /**
  *  商品详情
+ *  https://www.jianshu.com/p/88679fed9ecb   TabLayout 详解
  */
 class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel>(), ViewPagerIndicator.OnPageClickListener {
     override fun onPageClick(info: BannerBean?) {
-
+        val intent = Intent(this,CommodityDetailsActivity::class.java)
+        startActivity(intent)
     }
 
     lateinit var mUserEvaluationAdapter: UserEvaluationAdapter
@@ -39,11 +45,47 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
         // 头部渐变
         headGradient()
 
-//        tab_item_one.setOnClickListener(object : View.OnClickListener{
-//            override fun onClick(v: View?) {
-//                LogUtil.e("点击1")
-//            }
-//        })
+        tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                //再次选中tab的逻辑
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                // 未选中tab的逻辑
+            }
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                // 选中了tab的逻辑
+                when(tab?.position){
+                    0 -> {
+                        selectedHotGoods(0)
+                    }
+                    1 -> {
+                        selectedHotGoods(1)
+                    }
+                }
+            }
+        })
+
+//        val tab = tab_layout.newTab()
+//        val textView = TextView(this)
+//        textView.text = "大家都在看"
+//        tab.customView = textView
+//        (tab.customView as TextView).isSelected = true
+//        tab.customView?.setOnClickListener {
+//            LogUtil.e("点击1")
+//        }
+//        tab_layout.addTab(tab)
+//
+//        val tabItem = tab_layout.newTab()
+//        val textViewItem = TextView(this)
+//        textViewItem.text = "24小时热销"
+//        tabItem.customView = textViewItem
+//        (tabItem.customView as TextView).isSelected = false
+//        tabItem.customView?.setOnClickListener {
+//            LogUtil.e("点击2")
+//        }
+//        tab_layout.addTab(tabItem)
     }
 
     val height = 640 // 滑动开始变色的高
@@ -107,13 +149,22 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
         mUserEvaluationAdapter = UserEvaluationAdapter(mViewModel.userList())
         evaluation_recycler_view.adapter = mUserEvaluationAdapter
 
-        pager_indicator.setData(mViewModel.userHot(), this)
-        indicator_view.bindWithViewPager(pager_indicator, mViewModel.userHot().size)
-        indicator_view.currentPosition = 0
+        selectedHotGoods(0)
 
         val imageUrl = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1056731044,2207586648&fm=26&gp=0.jpg"
         ImageLoaderManager.getInstance().displayImageNetUrl(this, imageUrl, R.mipmap.ic_launcher, long_picture)
 
+    }
+
+    fun selectedHotGoods(type: Int){
+        if (type == 0) { // 大家都在看
+            pager_indicator.setData(mViewModel.userHot(), this)
+            indicator_view.bindWithViewPager(pager_indicator, mViewModel.userHot().size)
+        } else if (type == 1) {  // 24小时热销
+            pager_indicator.setData(mViewModel.userSell(), this)
+            indicator_view.bindWithViewPager(pager_indicator, mViewModel.userSell().size)
+        }
+        indicator_view.currentPosition = 0
     }
 
     override fun isBindEventBusHere(): Boolean {
@@ -163,12 +214,6 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
                 shop_detail.textSize = 18f
                 shop_good.typeface = Typeface.defaultFromStyle(Typeface.NORMAL)
                 shop_good.textSize = 16f
-            }
-            R.id.tab_item_one ->{
-                LogUtil.e("点击了1")
-            }
-            R.id.tab_item_two ->{
-                LogUtil.e("点击了2")
             }
         }
     }

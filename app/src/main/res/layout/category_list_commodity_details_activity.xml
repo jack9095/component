@@ -432,6 +432,8 @@
                     app:tabIndicatorColor="#FF8300"
                     app:tabIndicatorHeight="2dp"
                     app:tabSelectedTextColor="#FF8300"
+                    app:tabMaxWidth="100dp"
+                    app:tabMinWidth="100dp"
                     app:tabTextColor="#333333"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -446,30 +448,31 @@
                         android:text="24小时热销"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
+
             </android.support.design.widget.TabLayout>
 
-                <com.kuanquan.universalcomponents.widget.ViewPagerIndicator
-                        android:id="@+id/pager_indicator"
-                        android:layout_width="match_parent"
-                        android:layout_height="220dp"/>
+            <com.kuanquan.universalcomponents.widget.ViewPagerIndicator
+                    android:id="@+id/pager_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"/>
 
-                <com.base.library.widget.BannerIndicatorView
-                        android:id="@+id/indicator_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="13dp"
-                        android:padding="10dp"
-                        android:background="#00000000"
-                        app:app_cell_count="3"
-                        app:app_current_position="1"
-                        app:app_cell_radius="2dp"
-                        app:app_cell_margin="6dp"
-                        app:app_normal_color="#cccccc"
-                        app:app_selected_color="#FF8300"
-                        app:app_indicator_style="RECT"
-                />
+            <com.base.library.widget.BannerIndicatorView
+                    android:id="@+id/indicator_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="13dp"
+                    android:padding="10dp"
+                    android:background="#00000000"
+                    app:app_cell_count="3"
+                    app:app_current_position="1"
+                    app:app_cell_radius="2dp"
+                    app:app_cell_margin="6dp"
+                    app:app_normal_color="#cccccc"
+                    app:app_selected_color="#FF8300"
+                    app:app_indicator_style="RECT"
+            />
 
             <View
                     android:layout_width="match_parent"
