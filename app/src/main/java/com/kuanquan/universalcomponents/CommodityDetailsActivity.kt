@@ -13,7 +13,6 @@ import com.base.library.utils.LogUtil
 import com.base.library.utils.glide.invocation.ImageLoaderManager
 import com.kuanquan.universalcomponents.adapter.UserEvaluationAdapter
 import com.kuanquan.universalcomponents.bean.AllWatchBean
-import com.kuanquan.universalcomponents.bean.BannerBean
 import com.kuanquan.universalcomponents.viewmodel.CommodityDetailsViewModel
 import com.kuanquan.universalcomponents.widget.ViewPagerIndicator
 import kotlinx.android.synthetic.main.category_list_commodity_details_activity.*

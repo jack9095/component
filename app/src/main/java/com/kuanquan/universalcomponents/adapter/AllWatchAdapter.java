@@ -1,7 +1,6 @@
 package com.kuanquan.universalcomponents.adapter;
 
 import android.support.annotation.Nullable;
-import android.view.View;
 import android.widget.ImageView;
 import com.base.library.utils.glide.invocation.ImageLoaderManager;
 import com.chad.library.adapter.base.BaseQuickAdapter;
