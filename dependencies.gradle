@@ -102,7 +102,7 @@ static def common(DependencyHandler dependencyHandler) {
         exclude group: 'com.android.support'
     }
 
-    // RecyclerView 适配器的通用库
+    // RecyclerView 适配器的通用库  https://www.jianshu.com/p/b343fcff51b0
     dependencyHandler.implementation ('com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46')
 
     // 图片加载库

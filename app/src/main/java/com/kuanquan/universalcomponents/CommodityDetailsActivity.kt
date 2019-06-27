@@ -2,18 +2,17 @@ package com.kuanquan.universalcomponents
 
 import android.content.Intent
 import android.graphics.Typeface
-import android.support.design.widget.TabItem
 import android.support.design.widget.TabLayout
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Html
 import android.view.View
-import android.widget.TextView
 import com.base.library.base.BaseViewModelActivity
 import com.base.library.utils.CollectionsUtil
 import com.base.library.utils.LogUtil
 import com.base.library.utils.glide.invocation.ImageLoaderManager
 import com.kuanquan.universalcomponents.adapter.UserEvaluationAdapter
+import com.kuanquan.universalcomponents.bean.AllWatchBean
 import com.kuanquan.universalcomponents.bean.BannerBean
 import com.kuanquan.universalcomponents.viewmodel.CommodityDetailsViewModel
 import com.kuanquan.universalcomponents.widget.ViewPagerIndicator
@@ -24,7 +23,8 @@ import kotlinx.android.synthetic.main.category_list_commodity_details_activity.*
  *  https://www.jianshu.com/p/88679fed9ecb   TabLayout 详解
  */
 class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel>(), ViewPagerIndicator.OnPageClickListener {
-    override fun onPageClick(info: BannerBean?) {
+    override fun onPageClick(info: AllWatchBean?) {
+        LogUtil.e("点击事件  88888")
         val intent = Intent(this,CommodityDetailsActivity::class.java)
         startActivity(intent)
     }

@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.base.library.utils.LogUtil;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.kuanquan.universalcomponents.R;
 import com.kuanquan.universalcomponents.adapter.AllWatchAdapter;
+import com.kuanquan.universalcomponents.bean.AllWatchBean;
 import com.kuanquan.universalcomponents.bean.BannerBean;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
@@ -104,7 +106,7 @@ public class ViewPagerIndicator extends ViewPager {
         super.setCurrentItem(item, true);
     }
 
-    public class MyAdapter extends PagerAdapter implements OnClickListener {
+    public class MyAdapter extends PagerAdapter {
         private Context mContext;
         private List<BannerBean> mList;
 
@@ -139,10 +141,9 @@ public class ViewPagerIndicator extends ViewPager {
         public Object instantiateItem(@NotNull ViewGroup container, int position) {
             int pos = position % mList.size();
             if (pos >= 0 && pos < mList.size()) {
-                BannerBean info = mList.get(pos);
+                final BannerBean info = mList.get(pos);
                 View view = LayoutInflater.from(mContext).inflate(R.layout.good_item_view_pager, container, false);
                 view.setTag(info);
-                view.setOnClickListener(this);
 
                 RecyclerView recyclerView = view.findViewById(R.id.view_pager_recycler);
                 recyclerView.setLayoutManager(new GridLayoutManager(mContext,3));
@@ -150,6 +151,16 @@ public class ViewPagerIndicator extends ViewPager {
                 // TODO 真实数据从外面传进来的
                 AllWatchAdapter mAllWatchAdapter = new AllWatchAdapter(R.layout.recycler_pager_item_adapter,info.getDatas());
                 recyclerView.setAdapter(mAllWatchAdapter);
+
+                mAllWatchAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                        LogUtil.e("点击事件  88888");
+                        if (onPageClickListener != null) {
+                            onPageClickListener.onPageClick(info.getDatas().get(position));
+                        }
+                    }
+                });
 
                 container.addView(view);
                 return view;
@@ -166,21 +177,11 @@ public class ViewPagerIndicator extends ViewPager {
         public List<BannerBean> getData() {
             return mList;
         }
-
-        @Override
-        public void onClick(View v) {
-            if (v.getTag() instanceof BannerBean) {
-                BannerBean info = (BannerBean) v.getTag();
-                if (onPageClickListener != null) {
-                    onPageClickListener.onPageClick(info);
-                }
-            }
-        }
     }
 
     public OnPageClickListener onPageClickListener;
     public interface OnPageClickListener {
-        void onPageClick(BannerBean info);
+        void onPageClick(AllWatchBean info);
 //        void onPageSelected(int position);
     }
 }

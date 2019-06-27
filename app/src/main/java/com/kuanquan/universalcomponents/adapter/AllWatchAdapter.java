@@ -26,11 +26,5 @@ public class AllWatchAdapter extends BaseQuickAdapter<AllWatchBean, BaseViewHold
         helper.setText(R.id.right_one_price, "￥" + item.getPrice());
         helper.setText(R.id.right_two_price, "￥" + item.getPrice_integral());
 
-        helper.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 }

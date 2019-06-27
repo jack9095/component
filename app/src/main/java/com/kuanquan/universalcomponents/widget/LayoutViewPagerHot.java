@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import com.base.library.utils.ToastUtils;
 import com.base.library.widget.BannerIndicatorView;
 import com.kuanquan.universalcomponents.R;
+import com.kuanquan.universalcomponents.bean.AllWatchBean;
 import com.kuanquan.universalcomponents.bean.BannerBean;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,7 @@ public class LayoutViewPagerHot extends FrameLayout implements ViewPagerIndicato
     }
 
     @Override
-    public void onPageClick(BannerBean info) {
+    public void onPageClick(AllWatchBean info) {
         ToastUtils.showMessage(getContext(), "点击事件");
 //        Intent intent = new Intent();
 //        intent.setClass(getContext(), HomeActivity.class);
