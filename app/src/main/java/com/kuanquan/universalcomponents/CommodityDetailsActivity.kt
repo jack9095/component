@@ -130,6 +130,12 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
                     shop_detail?.alpha = 1f
                 }
             }
+
+            if (scrollY >= 1650) {
+                detailGood()
+            } else {
+                shopGood()
+            }
         })
     }
 
@@ -181,41 +187,52 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
 
             }
             R.id.shop_good -> {  // 商品
-                val drawable = resources.getDrawable(R.drawable.shape_indicator)
-                //第一0是距左边距离，第二0是距上边距离，25分别是长宽
-                drawable.setBounds(0, 0, 60, 5)
-                //图片放在哪边（左边，上边，右边，下边）
-                shop_good.setCompoundDrawables(null, null, null, drawable)
-                shop_good.compoundDrawablePadding = 10
-
-                val drawableDetail = resources.getDrawable(R.drawable.shape_indicator_empty)
-                drawableDetail.setBounds(0, 0, 60, 5)
-                shop_detail.setCompoundDrawables(null, null, null, drawableDetail)
-                shop_detail.compoundDrawablePadding = 10
-
-                shop_good.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
-                shop_good.textSize = 18f
-                shop_detail.typeface = Typeface.defaultFromStyle(Typeface.NORMAL)
-                shop_detail.textSize = 16f
-
+                shopGood()
+                detail_scroll_view.fling(0)
+                detail_scroll_view.smoothScrollTo(0, 0)
             }
             R.id.shop_detail -> {  // 详情
-                val drawable = resources.getDrawable(R.drawable.shape_indicator_empty)
-                drawable.setBounds(0, 0, 60, 5)
-                shop_good.setCompoundDrawables(null, null, null, drawable)
-                shop_good.compoundDrawablePadding = 10
-
-                val drawableDetail = resources.getDrawable(R.drawable.shape_indicator)
-                drawableDetail.setBounds(0, 0, 60, 5)
-                shop_detail.setCompoundDrawables(null, null, null, drawableDetail)
-                shop_detail.compoundDrawablePadding = 10
-
-                shop_detail.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
-                shop_detail.textSize = 18f
-                shop_good.typeface = Typeface.defaultFromStyle(Typeface.NORMAL)
-                shop_good.textSize = 16f
+                detailGood()
+                detail_scroll_view.fling(1650)
+                detail_scroll_view.smoothScrollTo(0, 1650)
             }
         }
+    }
+
+    fun shopGood(){
+        val drawable = resources.getDrawable(R.drawable.shape_indicator)
+        //第一0是距左边距离，第二0是距上边距离，25分别是长宽
+        drawable.setBounds(0, 0, 60, 5)
+        //图片放在哪边（左边，上边，右边，下边）
+        shop_good.setCompoundDrawables(null, null, null, drawable)
+        shop_good.compoundDrawablePadding = 10
+
+        val drawableDetail = resources.getDrawable(R.drawable.shape_indicator_empty)
+        drawableDetail.setBounds(0, 0, 60, 5)
+        shop_detail.setCompoundDrawables(null, null, null, drawableDetail)
+        shop_detail.compoundDrawablePadding = 10
+
+        shop_good.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+        shop_good.textSize = 18f
+        shop_detail.typeface = Typeface.defaultFromStyle(Typeface.NORMAL)
+        shop_detail.textSize = 16f
+    }
+
+    fun detailGood(){
+        val drawable = resources.getDrawable(R.drawable.shape_indicator_empty)
+        drawable.setBounds(0, 0, 60, 5)
+        shop_good.setCompoundDrawables(null, null, null, drawable)
+        shop_good.compoundDrawablePadding = 10
+
+        val drawableDetail = resources.getDrawable(R.drawable.shape_indicator)
+        drawableDetail.setBounds(0, 0, 60, 5)
+        shop_detail.setCompoundDrawables(null, null, null, drawableDetail)
+        shop_detail.compoundDrawablePadding = 10
+
+        shop_detail.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+        shop_detail.textSize = 18f
+        shop_good.typeface = Typeface.defaultFromStyle(Typeface.NORMAL)
+        shop_good.textSize = 16f
     }
 
 }
