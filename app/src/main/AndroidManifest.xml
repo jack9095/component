@@ -19,7 +19,8 @@
                 android:screenOrientation="portrait"
                 android:theme="@style/AppThemeDialogIsTranslucent"
                 android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
-        <activity android:name=".HomeActivity"/>
+        <activity android:name=".HomeActivity"
+                  android:theme="@style/Theme.imgFullScreen"/>
         <activity android:name=".kotlinTest.adapter.AdapterActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -2,10 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#eeeeee">
+                android:background="#ffffff">
 
     <com.base.library.widget.TopNavigationLayout
             android:id="@+id/top_navigation_a_f"
+            android:background="#ffffff"
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -25,7 +27,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:background="#0000ff"
+                android:background="#efefef"
                 android:overScrollMode="never"/>
 
         <com.scwang.smartrefresh.layout.footer.ClassicsFooter

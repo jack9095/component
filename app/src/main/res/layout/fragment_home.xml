@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:animateLayoutChanges="true"
-                android:background="@color/f2">
+                android:background="#ffffff">
 
     <include
             layout="@layout/common_refresh_smart_layout"
@@ -13,6 +13,7 @@
     <FrameLayout
             android:id="@+id/title_bar"
             android:background="#ffffff"
+            android:layout_marginTop="30dp"
             android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="48dp">
