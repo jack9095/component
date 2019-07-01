@@ -37,6 +37,12 @@
                 android:windowSoftInputMode="stateAlwaysVisible|adjustPan"/>
         <activity android:name=".CommodityDetailsActivity"/>
         <activity android:name=".SearchActivity"/>
+
+        <activity android:name="com.kuanquan.universalcomponents.slide.StartFActivity" />
+        <activity android:name="com.kuanquan.universalcomponents.slide.SlideOtherTypeActivity" />
+        <activity android:name="com.kuanquan.universalcomponents.slide.GuideActivity">
+        </activity>
+        <activity android:name="com.kuanquan.universalcomponents.slide.SmartRefreshLayoutActivity"/>
     </application>
 
 </manifest>

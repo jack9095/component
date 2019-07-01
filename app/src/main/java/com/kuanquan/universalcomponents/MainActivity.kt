@@ -10,6 +10,7 @@ import com.kuanquan.universalcomponents.dialog.CouponActivity
 import com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity
 import com.kuanquan.universalcomponents.kotlinTest.TestActivity
 import com.kuanquan.universalcomponents.rx.RxActivity
+import com.kuanquan.universalcomponents.slide.GuideActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         jump_home.setOnClickListener(this)
         button.setOnClickListener(this)
         dialog.setOnClickListener(this)
+        slide.setOnClickListener(this)
     }
 
     // 这里的 Unit 可以省略不写
@@ -70,6 +72,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.dialog -> {
                 val intent = Intent(this, CouponActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.slide -> {
+                val intent = Intent(this, GuideActivity::class.java)
                 startActivity(intent)
             }
         }

@@ -1,6 +1,5 @@
 package com.k.neleme.fragments;
 
-
 import android.os.Bundle;
 
 import com.k.neleme.MainActivity;

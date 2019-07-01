@@ -45,6 +45,8 @@ import java.util.List;
 
 /**
  * 左右联动列表
+ *  BottomSheetBehavior 使用详解
+ *  https://www.jianshu.com/p/92627f72c707
  */
 public class MainActivity extends BaseActivity implements AddWidget.OnAddClick {
 
