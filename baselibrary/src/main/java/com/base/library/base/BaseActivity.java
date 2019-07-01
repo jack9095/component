@@ -33,7 +33,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         viewModelProvider = getViewModelProvider();
-        setStatusBar(Color.WHITE);
+//        setStatusBar(Color.WHITE);
         if (isBindEventBusHere()) {
             EventBus.getDefault().register(this);
         }

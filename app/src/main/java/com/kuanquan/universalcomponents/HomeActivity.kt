@@ -3,12 +3,16 @@ package com.kuanquan.universalcomponents
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import com.base.library.base.BaseViewModelActivity
 import com.base.library.utils.LogUtil
 import com.kuanquan.universalcomponents.fragment.*
 import com.kuanquan.universalcomponents.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_home.*
 
+/**
+ * https://www.jianshu.com/p/eec1cf2aa96d   状态栏文字的修改
+ */
 class HomeActivity : BaseViewModelActivity<MainViewModel>() {
 
     override fun getLayoutId(): Int {
@@ -17,6 +21,7 @@ class HomeActivity : BaseViewModelActivity<MainViewModel>() {
 
     override fun initView() {
         super.initView()
+//        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
 
     override fun initData() {

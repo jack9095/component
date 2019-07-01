@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+               android:paddingTop="20dp"
+                android:paddingBottom="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/card_ticket_iv"
+                android:contentDescription="@string/app_name"
+                android:src="@mipmap/ic_launcher"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+
+        <TextView
+                android:id="@+id/card_ticket_tv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/card_ticket_iv"
+                android:textSize="13dp"
+                android:textColor="#333333"
+                android:layout_marginLeft="6dp"
+                android:text="新人首单"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+</RelativeLayout>

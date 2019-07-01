@@ -101,18 +101,24 @@ public class BottomNavigationView extends FrameLayout implements View.OnClickLis
         activity.getSupportFragmentManager().beginTransaction().add(frameLayout,fragmentArray[0]).show(fragmentArray[0]).commit();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void onClick(View view) {
         int i = view.getId();
         if (i == R.id.tab_btn_message) {
             index = 0;
+            mFragmentActivity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);//白色
         } else if (i == R.id.tab_btn_mail) {
             index = 1;
+            mFragmentActivity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//黑色
         } else if (i == R.id.tab_btn_work || i == R.id.star_rl) {
             index = 2;
+            mFragmentActivity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//黑色
         } else if (i == R.id.tab_btn_shop) {
             index = 3;
+            mFragmentActivity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//黑色
         } else if (i == R.id.tab_btn_mine) {
             index = 4;
+            mFragmentActivity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);//白色
         }
         disPlay(index);
     }
@@ -135,5 +141,11 @@ public class BottomNavigationView extends FrameLayout implements View.OnClickLis
         }
         mTabs[index].setSelected(true);
         currentTabIndex = index;
+
+//        if (isDark) {
+//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//黑色
+//        } else {
+//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);//白色
+//        }
     }
 }
