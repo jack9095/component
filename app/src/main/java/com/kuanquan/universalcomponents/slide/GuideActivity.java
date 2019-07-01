@@ -1,5 +1,6 @@
 package com.kuanquan.universalcomponents.slide;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -31,6 +32,14 @@ public class GuideActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SmartRefreshLayoutActivity.start(GuideActivity.this);
+            }
+        });
+
+        findViewById(R.id.bt4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GuideActivity.this, SlideActivity.class);
+                startActivity(intent);
             }
         });
     }

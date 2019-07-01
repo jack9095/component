@@ -25,4 +25,11 @@
         android:text="跳转到有下拉刷新的界面"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
+
+    <Button
+        android:id="@+id/bt4"
+        android:gravity="center"
+        android:text="侧滑"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 </LinearLayout>
