@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="#fff"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <View
+            android:id="@+id/address_adapter_view"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#bfbfbf"
+    />
+
+    <TextView
+            android:id="@+id/address_adapter_recent"
+            android:layout_centerVertical="true"
+            android:textSize="13dp"
+            android:text="最近使用"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:textColor="#333333"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"/>
+
+    <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+                android:id="@+id/address_adapter_name"
+                android:textSize="18dp"
+                android:text="露西"
+                android:textColor="#333333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/address_adapter_phone"
+                android:layout_marginLeft="10dp"
+                android:textSize="12dp"
+                android:text="1826801xxxx"
+                android:textColor="#333333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/address_adapter_address"
+                android:textSize="12dp"
+                android:text="          北京 北京市 密云区和平东街11号新楼A座B1-D1号（地下一层），啦啦啦啦啦啦啦阿里"
+                android:textColor="#333333"
+                android:layout_marginRight="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/address_adapter_tag"
+                android:textSize="12dp"
+                android:text="自提"
+                android:textColor="#333333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <!--编辑按钮-->
+        <ImageView
+                android:id="@+id/address_adapter_iv_edit"
+                android:contentDescription="@string/app_name"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/more_right"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          android:layout_height="0.5dp"
+          android:background="#bfbfbf"/>
+</LinearLayout>

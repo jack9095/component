@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
+import com.kuanquan.mine.MyReceivingAddressActivity
 import com.kuanquan.universalcomponents.dialog.CouponActivity
 import com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity
 import com.kuanquan.universalcomponents.kotlinTest.TestActivity
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         button.setOnClickListener(this)
         dialog.setOnClickListener(this)
         slide.setOnClickListener(this)
+        mine.setOnClickListener(this)
     }
 
     // 这里的 Unit 可以省略不写
@@ -76,6 +78,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.slide -> {
                 val intent = Intent(this, GuideActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.mine -> {
+                val intent = Intent(this, MyReceivingAddressActivity::class.java)
                 startActivity(intent)
             }
         }

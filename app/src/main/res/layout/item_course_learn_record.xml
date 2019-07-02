@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.kuanquan.universalcomponents.widget.SwipeMenuView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
-    style="@style/layout_press"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
     android:paddingLeft="15dp"
     android:paddingRight="15dp">
+
+    <!--style="@style/layout_press"-->
 
     <LinearLayout
         android:id="@+id/swipe_content"
@@ -16,6 +18,7 @@
 
         <ImageView
             android:id="@+id/item_iv"
+            android:src="@mipmap/ic_launcher"
             android:layout_width="142dp"
             android:layout_height="92dp" />
 
@@ -31,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:text="bvjijencnenwkjvkev"
                 android:maxLines="2"
                 android:textColor="#595959"
                 android:textSize="14sp" />
