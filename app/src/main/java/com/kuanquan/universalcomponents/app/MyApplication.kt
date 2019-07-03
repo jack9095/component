@@ -11,6 +11,9 @@ import com.base.library.utils.SharedPreferencesUtils
 import com.kuanquan.universalcomponents.BuildConfig
 import com.tencent.bugly.Bugly
 
+/**
+ * 使用 kotlin 编译警告 http://www.aoaoyi.com/archives/1389.html
+ */
 class MyApplication : Application() {
 
     override fun attachBaseContext(base: Context?) {
