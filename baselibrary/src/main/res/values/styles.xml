@@ -52,8 +52,8 @@
     </style>
 
 
-    <!--<style name="AlertDialogStyle" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">-->
-    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
+    <!--<style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">-->
+    <style name="AlertDialogStyle" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowIsFloating">true</item>

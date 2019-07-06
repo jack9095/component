@@ -19,13 +19,10 @@ import com.kuanquan.universalcomponents.R;
 public class BottomDialog {
     private Context context;
     private Dialog dialog;
-    private CardView lLayout_bg;
-    private TextView txt_title;   // 谁发起的问卷
-    private ImageView icon_view_tag; // 图标
-    private TextView content_tx;   // 内容
-    private TextView cancel;   // 取消
-    private TextView submit;   // 确定
-    private EditText mEditText;
+    private TextView mine_dialog_dysfunction;
+    private TextView mine_dialog_proposal;
+    private TextView mine_dialog_other;
+
     private Display display;
 
     public BottomDialog(Context context) {
@@ -37,29 +34,25 @@ public class BottomDialog {
 
     public BottomDialog builder() {
         View contentView = LayoutInflater.from(context).inflate(
-                R.layout.center_dialog_layout, null);
+                R.layout.bottom_dialog_layout, null);
 
-        lLayout_bg = contentView.findViewById(R.id.lLayout_bg);
-        txt_title = (TextView) contentView.findViewById(R.id.name_quest);
-        icon_view_tag = (ImageView) contentView.findViewById(R.id.icon_view_tag);
-        content_tx = (TextView) contentView.findViewById(R.id.content_tx);
-        mEditText = (EditText) contentView.findViewById(R.id.edit_text);
-        cancel = (TextView) contentView.findViewById(R.id.cancel);
-        submit = (TextView) contentView.findViewById(R.id.submit);
+        mine_dialog_dysfunction = contentView.findViewById(R.id.mine_dialog_dysfunction);
+        mine_dialog_proposal = contentView.findViewById(R.id.mine_dialog_proposal);
+        mine_dialog_other = contentView.findViewById(R.id.mine_dialog_other);
 
         dialog = new Dialog(context, R.style.AlertDialogStyle);
         dialog.setContentView(contentView);
         ViewGroup.LayoutParams layoutParams = contentView.getLayoutParams();
         layoutParams.width = context.getResources().getDisplayMetrics().widthPixels;
-        layoutParams.height = context.getResources().getDisplayMetrics().heightPixels / 3;
+//        layoutParams.height = context.getResources().getDisplayMetrics().heightPixels / 3;
         contentView.setLayoutParams(layoutParams);
         dialog.getWindow().setGravity(Gravity.BOTTOM);
         dialog.getWindow().setWindowAnimations(R.style.BottomDialog_Animation);
-        dialog.setCanceledOnTouchOutside(false);
+        dialog.setCanceledOnTouchOutside(true);
 
         // 调整透明度的
         WindowManager.LayoutParams lp1 = dialog.getWindow().getAttributes();
-        lp1.dimAmount = 0.8f;  // 调整透明度的
+        lp1.dimAmount = 0.5f;  // 调整透明度的
         dialog.getWindow().setAttributes(lp1);
         dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 
@@ -76,27 +69,11 @@ public class BottomDialog {
 
     private void setLayout() {
 
-        submit.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        cancel.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
     }
 
     public BottomDialog setData(String title, String imageUrl, String content, String shareObj) {
-        CollectionsUtil.setTextView(txt_title, title);
-        CollectionsUtil.setTextView(content_tx, content);
-        CollectionsUtil.setTextView(mEditText, shareObj);
-        ImageLoaderManager.getInstance().displayImage(context, imageUrl, icon_view_tag, false);
+
+//        ImageLoaderManager.getInstance().displayImage(context, imageUrl, icon_view_tag, false);
         return this;
     }
 
