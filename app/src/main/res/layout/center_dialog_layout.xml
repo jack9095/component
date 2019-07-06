@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lLayout_bg"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    android:background="#00000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--android:foreground="?attr/selectableItemBackground"-->
+
+        <LinearLayout
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/name_quest"
+                android:textSize="25dp"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="发起的问卷"
+                android:textColor="#333333"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <RelativeLayout
+                android:layout_below="@+id/name_quest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/icon_view_tag"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="60dp"
+                    android:layout_height="80dp" />
+
+                <TextView
+                    android:id="@+id/content_tx"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/icon_view_tag"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="15dp"
+                    android:textColor="#898989"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:text="测试"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edit_text"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/shape_search_bar_edit_normal"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bge"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_dialog_left_white"
+                    android:layout_weight="1.0"
+                    android:text="取消"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="@color/txt3"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/bge"/>
+
+                <TextView
+                    android:id="@+id/submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_dialog_right_white"
+                    android:gravity="center"
+                    android:text="发送"
+                    android:layout_weight="1.0"
+                    android:textSize="12sp"
+                    android:textColor="#ff0000"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.v7.widget.CardView>

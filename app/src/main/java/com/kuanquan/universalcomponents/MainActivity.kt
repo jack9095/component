@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
 import com.kuanquan.mine.MyReceivingAddressActivity
+import com.kuanquan.universalcomponents.dialog.BottomDialog
 import com.kuanquan.universalcomponents.dialog.CouponActivity
 import com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity
 import com.kuanquan.universalcomponents.kotlinTest.TestActivity
@@ -73,8 +74,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
             R.id.dialog -> {
-                val intent = Intent(this, CouponActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(this, CouponActivity::class.java)
+//                startActivity(intent)
+                BottomDialog(this).builder().show()
             }
             R.id.slide -> {
                 val intent = Intent(this, GuideActivity::class.java)
