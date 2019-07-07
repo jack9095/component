@@ -26,6 +26,10 @@ android {
         }
     }
 
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
 }
 
 dependencies {
@@ -38,4 +42,5 @@ dependencies {
     rootProject.jetPack(dependencies)
     rootProject.netWork(dependencies)
     implementation project(path: ':baselibrary')
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
 }
