@@ -9,6 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".AboutUsActivity">
+        </activity>
         <activity android:name=".MyReceivingAddressActivity">
         </activity>
         <activity android:name=".MineActivity">
