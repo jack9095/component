@@ -9,6 +9,7 @@ import com.base.library.utils.LogUtil
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
+import com.kuanquan.universalcomponents.kotlinTest.HigherOrderFunActivity
 import com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity
 import com.kuanquan.universalcomponents.kotlinTest.TestActivity
 import com.kuanquan.universalcomponents.main.HomeActivity
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         slide.setOnClickListener(this)
         address.setOnClickListener(this)
         mine.setOnClickListener(this)
+        height_fun.setOnClickListener(this)
     }
 
     // 这里的 Unit 可以省略不写
@@ -91,6 +93,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.mine -> {
                 val intent = Intent(this, MineActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.height_fun -> {
+                val intent = Intent(this, HigherOrderFunActivity::class.java)
                 startActivity(intent)
             }
         }
