@@ -1,4 +1,4 @@
-package com.kuanquan.universalcomponents
+package com.kuanquan.universalcomponents.main
 
 import android.support.v7.widget.LinearLayoutManager
 import android.text.TextUtils
@@ -9,6 +9,7 @@ import android.widget.TextView
 import com.base.library.base.BaseViewModelActivity
 import com.base.library.utils.KeyBoard
 import com.base.library.utils.LogUtil
+import com.kuanquan.universalcomponents.R
 import com.kuanquan.universalcomponents.adapter.SearchAdapter
 import com.kuanquan.universalcomponents.viewmodel.SearchViewModel
 import kotlinx.android.synthetic.main.activity_search.*

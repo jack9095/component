@@ -12,6 +12,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".kotlinTest.HigherOrderFunActivity">
+        </activity>
         <activity android:name=".dialog.GetCouponActivity">
         </activity>
         <activity
@@ -19,8 +21,9 @@
                 android:screenOrientation="portrait"
                 android:theme="@style/AppThemeDialogIsTranslucent"
                 android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
-        <activity android:name=".HomeActivity"
-                  android:theme="@style/Theme.imgFullScreen"/>
+        <activity
+                android:name=".main.HomeActivity"
+                android:theme="@style/Theme.imgFullScreen"/>
         <activity android:name=".kotlinTest.adapter.AdapterActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -33,17 +36,16 @@
         <activity android:name=".kotlinTest.TestActivity"/>
         <activity android:name=".kotlinTest.DemoKotlin"/>
         <activity
-                android:name=".SearchDemoActivity"
+                android:name=".main.SearchDemoActivity"
                 android:screenOrientation="nosensor"
                 android:windowSoftInputMode="stateAlwaysVisible|adjustPan"/>
-        <activity android:name=".CommodityDetailsActivity"/>
-        <activity android:name=".SearchActivity"/>
-
-        <activity android:name="com.kuanquan.universalcomponents.slide.StartFActivity" />
-        <activity android:name="com.kuanquan.universalcomponents.slide.SlideOtherTypeActivity" />
-        <activity android:name="com.kuanquan.universalcomponents.slide.GuideActivity">
+        <activity android:name=".main.CommodityDetailsActivity"/>
+        <activity android:name=".main.SearchActivity"/>
+        <activity android:name=".slide.StartFActivity"/>
+        <activity android:name=".slide.SlideOtherTypeActivity"/>
+        <activity android:name=".slide.GuideActivity">
         </activity>
-        <activity android:name="com.kuanquan.universalcomponents.slide.SmartRefreshLayoutActivity"/>
+        <activity android:name=".slide.SmartRefreshLayoutActivity"/>
         <activity android:name=".slide.SlideActivity"/>
     </application>
 

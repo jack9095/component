@@ -8,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.base.library.utils.CollectionsUtil
 import com.base.library.utils.glide.invocation.ImageLoaderManager
-import com.kuanquan.universalcomponents.CommodityDetailsActivity
+import com.kuanquan.universalcomponents.main.CommodityDetailsActivity
 import com.kuanquan.universalcomponents.R
 import com.kuanquan.universalcomponents.kotlinTest.UserBean
 

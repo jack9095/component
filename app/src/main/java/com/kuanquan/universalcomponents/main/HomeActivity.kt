@@ -1,11 +1,11 @@
-package com.kuanquan.universalcomponents
+package com.kuanquan.universalcomponents.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
 import com.base.library.base.BaseViewModelActivity
 import com.base.library.utils.LogUtil
+import com.kuanquan.universalcomponents.R
 import com.kuanquan.universalcomponents.fragment.*
 import com.kuanquan.universalcomponents.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_home.*

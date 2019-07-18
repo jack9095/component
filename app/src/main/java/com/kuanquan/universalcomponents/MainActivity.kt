@@ -9,9 +9,10 @@ import com.base.library.utils.LogUtil
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
-import com.kuanquan.universalcomponents.dialog.CouponActivity
 import com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity
 import com.kuanquan.universalcomponents.kotlinTest.TestActivity
+import com.kuanquan.universalcomponents.main.HomeActivity
+import com.kuanquan.universalcomponents.main.SearchActivity
 import com.kuanquan.universalcomponents.rx.RxActivity
 import com.kuanquan.universalcomponents.slide.GuideActivity
 import kotlinx.android.synthetic.main.activity_main.*

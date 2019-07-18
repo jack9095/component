@@ -1,4 +1,4 @@
-package com.kuanquan.universalcomponents
+package com.kuanquan.universalcomponents.main
 
 import android.content.Intent
 import android.graphics.Typeface
@@ -11,6 +11,7 @@ import com.base.library.base.BaseViewModelActivity
 import com.base.library.utils.CollectionsUtil
 import com.base.library.utils.LogUtil
 import com.base.library.utils.glide.invocation.ImageLoaderManager
+import com.kuanquan.universalcomponents.R
 import com.kuanquan.universalcomponents.adapter.UserEvaluationAdapter
 import com.kuanquan.universalcomponents.bean.AllWatchBean
 import com.kuanquan.universalcomponents.viewmodel.CommodityDetailsViewModel
@@ -24,7 +25,7 @@ import kotlinx.android.synthetic.main.category_list_commodity_details_activity.*
 class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel>(), ViewPagerIndicator.OnPageClickListener {
     override fun onPageClick(info: AllWatchBean?) {
         LogUtil.e("点击事件  88888")
-        val intent = Intent(this,CommodityDetailsActivity::class.java)
+        val intent = Intent(this, CommodityDetailsActivity::class.java)
         startActivity(intent)
     }
 
@@ -40,7 +41,12 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
 
     override fun initView() {
         super.initView()
-        addOnClickListeners(this, R.id.back_iv, R.id.shop_good, R.id.shop_detail, R.id.share_iv)
+        addOnClickListeners(this,
+            R.id.back_iv,
+            R.id.shop_good,
+            R.id.shop_detail,
+            R.id.share_iv
+        )
         // 头部渐变
         headGradient()
 
@@ -157,7 +163,8 @@ class CommodityDetailsActivity : BaseViewModelActivity<CommodityDetailsViewModel
         selectedHotGoods(0)
 
         val imageUrl = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1056731044,2207586648&fm=26&gp=0.jpg"
-        ImageLoaderManager.getInstance().displayImageNetUrl(this, imageUrl, R.mipmap.ic_launcher, long_picture)
+        ImageLoaderManager.getInstance().displayImageNetUrl(this, imageUrl,
+            R.mipmap.ic_launcher, long_picture)
 
     }
 

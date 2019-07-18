@@ -1,4 +1,4 @@
-package com.kuanquan.universalcomponents;
+package com.kuanquan.universalcomponents.main;
 
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -11,6 +11,7 @@ import com.base.library.utils.KeyBoard;
 import com.base.library.utils.LogUtil;
 import com.base.library.widget.ClearEditText;
 import com.base.library.widget.SearchEditText;
+import com.kuanquan.universalcomponents.R;
 import com.kuanquan.universalcomponents.viewmodel.SearchViewModel;
 
 /**
