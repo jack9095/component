@@ -98,7 +98,7 @@ public class LayoutWorkBannerHot extends FrameLayout implements AppBanner.OnPage
     public void onPageClick(BannerBean info) {
         ToastUtils.showMessage(getContext(), "点击事件");
 //        Intent intent = new Intent();
-//        intent.setClass(getContext(), HomeActivity.class);
+//        intent.setClass(getContext(), HomeModelActivity.class);
 //        getContext().startActivity(intent);
     }
 

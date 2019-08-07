@@ -4,12 +4,14 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
 /**
- * 首页模块的入口
+ * kotlin 协程 使用
  */
-class HomeActivity : AppCompatActivity() {
+class HomeModelActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+//        GlobalScope.
     }
 }

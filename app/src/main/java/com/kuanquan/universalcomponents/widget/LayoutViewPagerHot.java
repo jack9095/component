@@ -69,7 +69,7 @@ public class LayoutViewPagerHot extends FrameLayout implements ViewPagerIndicato
     public void onPageClick(AllWatchBean info) {
         ToastUtils.showMessage(getContext(), "点击事件");
 //        Intent intent = new Intent();
-//        intent.setClass(getContext(), HomeActivity.class);
+//        intent.setClass(getContext(), HomeModelActivity.class);
 //        getContext().startActivity(intent);
     }
 

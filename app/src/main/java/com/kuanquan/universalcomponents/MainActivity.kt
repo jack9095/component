@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
+import com.kuanquan.home.HomeModelActivity
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         address.setOnClickListener(this)
         mine.setOnClickListener(this)
         height_fun.setOnClickListener(this)
+        association.setOnClickListener(this)
     }
 
     // 这里的 Unit 可以省略不写
@@ -97,6 +99,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.height_fun -> {
                 val intent = Intent(this, HigherOrderFunActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.association -> {  // 协程案例
+                val intent = Intent(this, HomeModelActivity::class.java)
                 startActivity(intent)
             }
         }
