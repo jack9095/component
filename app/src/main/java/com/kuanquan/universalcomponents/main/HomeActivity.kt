@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 class HomeActivity : BaseViewModelActivity<MainViewModel>() {
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_home
+        return R.layout.activity_home_model
     }
 
     override fun initView() {

@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //        })
 
         // 省略 findViewById 的写法，可以直接那 TextView 的 id 直接使用
-        // import kotlinx.android.synthetic.main.activity_home.*  整体导入布局即可
+        // import kotlinx.android.synthetic.main.activity_home_model.*  整体导入布局即可
         text_view.text = "哈哈"
 
         jump_test.setOnClickListener(this)

@@ -35,4 +35,5 @@ dependencies {
     rootProject.common(dependencies)
     rootProject.jetPack(dependencies)
     rootProject.netWork(dependencies)
+    implementation project(path: ':baselibrary')
 }

@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/e_l_m" />
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/mine" />
+            <option value="$PROJECT_DIR$/mycustomkeyboard" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

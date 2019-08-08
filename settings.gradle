@@ -1,4 +1,4 @@
-include ':app', ':e_l_m'
+include ':app', ':e_l_m', ':mycustomkeyboard'
 include ':baselibrary'
 include ':home'
 include ':mine'

@@ -11,7 +11,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +22,9 @@ public class NumberKeyBoxView extends View implements View.OnTouchListener {
     private int mRectWidth=200;//宫格按钮宽度
     private int mRectHeight=250;//宫格按钮高度
     private int mBaseInterval=1;//边框（间距）大小
-    private int mButtonColor=Color.parseColor("#4032C09D");//按钮颜色
-    private int mFontColor=Color.parseColor("#FFFFFF");//字体颜色
+//    private int mButtonColor=Color.parseColor("#4032C09D");//按钮颜色
+    private int mButtonColor=Color.parseColor("#ffffff");//按钮颜色
+    private int mFontColor=Color.parseColor("#333333");//字体颜色
     private int mBorderColor=Color.parseColor("#32c09d");//边框颜色
     private List<Coordinate> coordinates;//宫格坐标集合，用于点击事件绑定
     private NumberKeyBoxViewClick numberKeyBoxViewClick;//对外提供点击接口
@@ -220,7 +220,7 @@ public class NumberKeyBoxView extends View implements View.OnTouchListener {
     }
 
     /**
-     * 点击时间对外开始接口回调
+     * 点击事件对外开始接口回调
      */
     public interface NumberKeyBoxViewClick{
         void click(String value);
