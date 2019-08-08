@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.base.library.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -245,7 +246,10 @@ public class MyKeyBoardView extends KeyboardView implements KeyboardView.OnKeybo
 
     /**隐藏键盘*/
     private void hideKeyBoard() {
-
+        LogUtil.e("点击隐藏");
+        if (mKeyBoardListener != null) {
+            mKeyBoardListener.onKeyBoardHide();
+        }
         if (getVisibility() == VISIBLE) {
             keyBoardRoot.setVisibility(GONE);
             setVisibility(GONE);
@@ -276,5 +280,13 @@ public class MyKeyBoardView extends KeyboardView implements KeyboardView.OnKeybo
     @Override
     public void swipeUp() {
 
+    }
+
+    public void setKeyBoardListener(KeyBoardListener mKeyBoardListener){
+        this.mKeyBoardListener = mKeyBoardListener;
+    }
+    private KeyBoardListener mKeyBoardListener;
+    public interface KeyBoardListener{
+        void onKeyBoardHide();
     }
 }

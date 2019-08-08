@@ -16,7 +16,11 @@ import kotlinx.android.synthetic.main.my_keyborad_view.*
 /**
  * kotlin 协程 使用
  */
-class HomeModelActivity : AppCompatActivity(), NumberKeyBoxView.NumberKeyBoxViewClick {
+class HomeModelActivity : AppCompatActivity(), NumberKeyBoxView.NumberKeyBoxViewClick, MyKeyBoardView.KeyBoardListener {
+    override fun onKeyBoardHide() {
+        Log.e("HomeModelActivity","隐藏键盘")
+    }
+
     override fun click(value: String?) {
         Log.e("HomeModelActivity","点击回调的数字 -> $value")
     }
@@ -33,13 +37,15 @@ class HomeModelActivity : AppCompatActivity(), NumberKeyBoxView.NumberKeyBoxView
             key_box.visibility = View.VISIBLE
             rotateAnimation()
         }
-
+        et.setText("2")
         initView()
     }
 
     private fun initView() {
+        mykeyboard.setKeyBoardListener(this)
         et.setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_UP) {
+                et.setSelection(et.text.toString().trim().length)
                 mykeyboard.setAttachToEditText(v as EditText, et_root, mykeyboard_root)
             }
             true
