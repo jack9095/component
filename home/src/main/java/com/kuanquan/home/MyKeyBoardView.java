@@ -77,7 +77,7 @@ public class MyKeyBoardView extends KeyboardView implements KeyboardView.OnKeybo
     /**显示自定随机数键盘*/
     private void showMyKeyBoard() {
 
-        randomKeyboardNumber();
+//        randomKeyboardNumber();  // 注释就不会自动变换键盘数字
         setKeyboard(keyboard);
         setEnabled(true);
         setPreviewEnabled(false);
