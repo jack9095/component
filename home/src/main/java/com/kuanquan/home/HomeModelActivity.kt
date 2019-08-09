@@ -3,6 +3,7 @@ package com.kuanquan.home
 import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -36,6 +37,7 @@ class HomeModelActivity : AppCompatActivity(), NumberKeyBoxView.NumberKeyBoxView
         btn_show.setOnClickListener {
             key_box.visibility = View.VISIBLE
             rotateAnimation()
+            startActivity(Intent(this,AssociationActivity::class.java))
         }
         et.setText("2")
         initView()

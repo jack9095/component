@@ -31,9 +31,23 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     rootProject.allModuleDependencies(dependencies)
     rootProject.common(dependencies)
     rootProject.jetPack(dependencies)
     rootProject.netWork(dependencies)
     implementation project(path: ':baselibrary')
+
+    // 协程核心库 start
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
+    //或使用android
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0"
+    // 协程核心库 end
+}
+
+//在module的build.gradle中声明
+kotlin {
+    experimental {
+        coroutines 'enable'
+    }
 }

@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="com.kuanquan.home">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.kuanquan.home">
 
     <application
             android:icon="@mipmap/ic_launcher"
@@ -7,12 +9,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".AssociationActivity">
+        </activity>
         <activity android:name=".HomeModelActivity">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
 
             <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
     </application>
+
 </manifest>
