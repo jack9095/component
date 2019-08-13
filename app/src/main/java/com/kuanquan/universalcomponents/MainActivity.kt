@@ -1,16 +1,20 @@
 package com.kuanquan.universalcomponents
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
+import com.jakewharton.scalpel.ScalpelFrameLayout
 import com.kuanquan.home.HomeModelActivity
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
 import com.kuanquan.universalcomponents.kotlinTest.HigherOrderFunActivity
+import com.kuanquan.universalcomponents.kotlinTest.SpreadFunction
+import com.kuanquan.universalcomponents.kotlinTest.SpreadFunctionTest
 import com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity
 import com.kuanquan.universalcomponents.kotlinTest.TestActivity
 import com.kuanquan.universalcomponents.main.HomeActivity
@@ -27,6 +31,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        val mainView = layoutInflater.inflate(R.layout.activity_main, null)
+//        val mScalpelFrameLayout = ScalpelFrameLayout(this)
+//        mScalpelFrameLayout.addView(mainView)
+//        mScalpelFrameLayout.isLayerInteractionEnabled = true //开启 3D 效果
+//mScalpelFrameLayout.setDrawIds(true); //是否显示控件 id
+//mScalpelFrameLayout.setDrawViews(false); //是否展示控件内容，默认为 true
+//mScalpelFrameLayout.setChromeColor(Color.RED); //修改边框颜色
+//mScalpelFrameLayout.setChromeShadowColor(Color.YELLOW); //修改阴影颜色
+//        setContentView(mScalpelFrameLayout)
+
+
+
         // 获取控件的写法
         val btn: Button = findViewById(R.id.jump_rx)
         val adapter = findViewById<Button>(R.id.jump_adapter)
@@ -52,6 +68,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mine.setOnClickListener(this)
         height_fun.setOnClickListener(this)
         association.setOnClickListener(this)
+        kz_fun.setOnClickListener(this)
+
+//        val spreadFunction = SpreadFunction(1)
     }
 
     // 这里的 Unit 可以省略不写
@@ -104,6 +123,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.association -> {  // 协程案例
                 val intent = Intent(this, HomeModelActivity::class.java)
                 startActivity(intent)
+            }
+            R.id.kz_fun -> { // 扩展函数
+                startActivity(Intent(this, SpreadFunctionTest::class.java))
             }
         }
     }

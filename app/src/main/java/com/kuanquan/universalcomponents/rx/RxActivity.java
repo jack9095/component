@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.base.library.base.network.schedulers.SchedulerProvider;
 import com.base.library.utils.LogUtil;
 import com.kuanquan.universalcomponents.R;
+import com.kuanquan.universalcomponents.javaTest.GenericParadigmparent;
 import io.reactivex.*;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -17,7 +18,7 @@ import org.reactivestreams.Subscription;
 /**
  * 基础操作 和 被压操作
  */
-public class RxActivity extends AppCompatActivity {
+public class RxActivity extends BaseRxActivity {
 
     private static final String TAG = RxActivity.class.getSimpleName();
 
@@ -25,7 +26,7 @@ public class RxActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rx_activity);
-
+        GenericParadigmparent bean = new GenericParadigmparent();
 //        RxClass.justOne();
 //        RxClass.fromOne();
 //        RxClass.deferOne();  // 预创建 懒加载

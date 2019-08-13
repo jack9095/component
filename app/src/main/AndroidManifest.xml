@@ -47,6 +47,7 @@
         </activity>
         <activity android:name=".slide.SmartRefreshLayoutActivity"/>
         <activity android:name=".slide.SlideActivity"/>
+        <activity android:name=".kotlinTest.SpreadFunctionTest"/>
     </application>
 
 </manifest>
