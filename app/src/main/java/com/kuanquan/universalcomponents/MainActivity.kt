@@ -59,6 +59,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // import kotlinx.android.synthetic.main.activity_home_model.*  整体导入布局即可
         text_view.text = "哈哈"
 
+        // 获取版本号
+        val manager = this.packageManager
+        val packageInfo = manager.getPackageInfo(this.packageName, 0)
+        LogUtil.e("版本名称 = ",packageInfo.versionName + "  版本号 = " + packageInfo.versionCode)
+
         jump_test.setOnClickListener(this)
         jump_home.setOnClickListener(this)
         button.setOnClickListener(this)

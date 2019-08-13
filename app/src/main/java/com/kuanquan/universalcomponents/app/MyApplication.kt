@@ -9,6 +9,7 @@ import com.base.library.base.network.http.HttpHelper
 import com.base.library.utils.LogUtil
 import com.base.library.utils.SharedPreferencesUtils
 import com.kuanquan.universalcomponents.BuildConfig
+import com.kuanquan.universalcomponents.javaTest.hook.packageHook.PackageManagerHook
 import com.tencent.bugly.Bugly
 
 /**
@@ -19,6 +20,7 @@ class MyApplication : Application() {
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
         MultiDex.install(base)
+        PackageManagerHook.hook(base)
     }
 
     override fun onCreate() {
