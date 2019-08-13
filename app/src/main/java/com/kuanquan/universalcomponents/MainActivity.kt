@@ -1,19 +1,18 @@
 package com.kuanquan.universalcomponents
 
-import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
-import com.jakewharton.scalpel.ScalpelFrameLayout
 import com.kuanquan.home.HomeModelActivity
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
+import com.kuanquan.universalcomponents.javaTest.hook.openpage.NavigationHandler
+import com.kuanquan.universalcomponents.javaTest.hook.viewclick.ViewHookActivity
 import com.kuanquan.universalcomponents.kotlinTest.HigherOrderFunActivity
-import com.kuanquan.universalcomponents.kotlinTest.SpreadFunction
 import com.kuanquan.universalcomponents.kotlinTest.SpreadFunctionTest
 import com.kuanquan.universalcomponents.kotlinTest.adapter.AdapterActivity
 import com.kuanquan.universalcomponents.kotlinTest.TestActivity
@@ -22,6 +21,7 @@ import com.kuanquan.universalcomponents.main.SearchActivity
 import com.kuanquan.universalcomponents.rx.RxActivity
 import com.kuanquan.universalcomponents.slide.GuideActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.reflect.InvocationHandler
 
 /**
  * https://blog.csdn.net/qq_26287435/article/details/82015218   kotlin 点击事件写法
@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         height_fun.setOnClickListener(this)
         association.setOnClickListener(this)
         kz_fun.setOnClickListener(this)
+        hook_view.setOnClickListener(this)
 
 //        val spreadFunction = SpreadFunction(1)
     }
@@ -126,6 +127,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.kz_fun -> { // 扩展函数
                 startActivity(Intent(this, SpreadFunctionTest::class.java))
+            }
+            R.id.hook_view -> {
+                startActivity(Intent(this, ViewHookActivity::class.java))
             }
         }
     }

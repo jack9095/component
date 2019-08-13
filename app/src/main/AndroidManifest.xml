@@ -12,6 +12,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".javaTest.hook.openpage.OpenPagerActivity">
+        </activity>
+        <activity android:name=".javaTest.hook.viewclick.ViewHookActivity">
+        </activity>
         <activity android:name=".kotlinTest.HigherOrderFunActivity">
         </activity>
         <activity android:name=".dialog.GetCouponActivity">
