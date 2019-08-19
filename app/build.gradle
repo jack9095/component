@@ -78,6 +78,21 @@ android {
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
     }
+
+    // 打包出来的名称
+    android.applicationVariants.all { variant ->
+        variant.outputs.all{ output ->
+//            def outputFile = output.outputFile
+//            if(outputFile != null && outputFile.name.endsWith('.apk')){
+//                def fileName = outputFile.name.replace("app","${defaultConfig.applicationId}_${defaultConfig.versionName}_${releaseTime()}")
+//                outputFileName = fileName
+//            }
+        }
+    }
+}
+
+static def releaseTime(){
+    return new Date().format("yyyy-MM-dd",TimeZone.getTimeZone("UTC"))
 }
 
 dependencies {

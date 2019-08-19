@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
+import com.kuanquan.home.AssociationActivity
 import com.kuanquan.home.HomeModelActivity
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
@@ -127,7 +128,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
             R.id.association -> {  // 协程案例
-                val intent = Intent(this, HomeModelActivity::class.java)
+//                val intent = Intent(this, HomeModelActivity::class.java)
+                val intent = Intent(this, AssociationActivity::class.java)
                 startActivity(intent)
             }
             R.id.kz_fun -> { // 扩展函数

@@ -72,7 +72,8 @@ class HigherOrderFunActivity : AppCompatActivity(), View.OnClickListener {
         val datas = ArrayList<String>()
        val intSize = datas?.let {
             // 假如data不为null，代码会执行到此处
-            datas.size
+           it.size
+//            datas.size
         }
         LogUtil.e("let函数返回值 = ",intSize)
     }
@@ -81,7 +82,7 @@ class HigherOrderFunActivity : AppCompatActivity(), View.OnClickListener {
     // 调用 run 函数返回值为函数体最后一行，或return表达式
     // run 函数可以说是 let 和 with 的结合体
     // 适用于let ,with 函数任何场景，因为：
-    // -> 弥补了let函数在函数体内必须使用it参数替代对象，在run函数中可以和with函数一样省略，直接访问实体的共有属性和方法
+    // -> 弥补了let函数在函数体内必须使用it参数替代对象，在run函数中可以和with函数一样省略，直接访问实体的公有属性和方法
     // -> 弥补了with函数的传入的对象判空问题，在run函数中可以向let函数一样判空处理
     fun runDemo() {
         val str: String? = null
@@ -129,7 +130,7 @@ class HigherOrderFunActivity : AppCompatActivity(), View.OnClickListener {
             add("apply3")
         }
 
-        var paint = Paint().apply {
+        var paint = Paint()?.apply {
             textSize = 14.0f
             color = Color.WHITE
             isAntiAlias = false

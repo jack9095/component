@@ -18,6 +18,13 @@ class TestActivity : AppCompatActivity() {
 
     val TAG: String = TestActivity::class.java.simpleName
 
+    // 延迟加载  只有用到时才会对控件初始化
+    val str: String by lazy{
+        println("computed!")
+        LogUtil.e("延迟加载的数据 = ","computed")
+        "890"
+    }
+
     // 只读 list  只能读取，不能添加,删除
     val listsf = listOf<String>("a","b","c")
 
@@ -27,6 +34,8 @@ class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
+
+        LogUtil.e("延迟加载的数据 = ",str)
 
         val stringExtra = intent.getStringExtra("aa")
         Log.e("TestActivity", "onCreate$stringExtra")

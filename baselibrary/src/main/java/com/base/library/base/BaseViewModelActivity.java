@@ -28,7 +28,7 @@ public abstract class BaseViewModelActivity<T extends BaseViewModel> extends Bas
     /**
      * 创建 自定义的 ViewModel
      */
-    protected <T extends ViewModel> T createViewModel(FragmentActivity activity, @NonNull Class<T> modelClass) {
+    protected <W extends ViewModel> W createViewModel(FragmentActivity activity, @NonNull Class<W> modelClass) {
         return ViewModelProviders.of(activity).get(modelClass);
     }
 

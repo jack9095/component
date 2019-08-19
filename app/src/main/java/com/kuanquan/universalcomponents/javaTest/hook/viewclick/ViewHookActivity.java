@@ -41,6 +41,7 @@ public class ViewHookActivity extends AppCompatActivity {
         ActivityNavigation activityNavigation = new ActivityNavigation();
         Class<? extends ActivityNavigation> aClass = activityNavigation.getClass();
         INavigation iNavigation = (INavigation) Proxy.newProxyInstance(aClass.getClassLoader(), aClass.getInterfaces(), handler);
-        iNavigation.openPage(activityName,context); // 得到接口对象，然后调用相应的方法
+        iNavigation.openPage(activityName,context);  // 得到接口对象，然后调用相应的方法
     }
+
 }
