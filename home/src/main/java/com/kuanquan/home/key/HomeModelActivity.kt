@@ -1,4 +1,4 @@
-package com.kuanquan.home
+package com.kuanquan.home.key
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -9,8 +9,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import android.view.animation.Animation
 import android.widget.EditText
+import com.kuanquan.home.AssociationActivity
+import com.kuanquan.home.R
 import kotlinx.android.synthetic.main.activity_home_model.*
 import kotlinx.android.synthetic.main.my_keyborad_view.*
 
@@ -37,7 +38,7 @@ class HomeModelActivity : AppCompatActivity(), NumberKeyBoxView.NumberKeyBoxView
         btn_show.setOnClickListener {
             key_box.visibility = View.VISIBLE
             rotateAnimation()
-            startActivity(Intent(this,AssociationActivity::class.java))
+            startActivity(Intent(this, AssociationActivity::class.java))
         }
         et.setText("2")
         initView()

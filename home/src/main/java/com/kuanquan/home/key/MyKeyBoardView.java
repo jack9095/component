@@ -1,4 +1,4 @@
-package com.kuanquan.home;
+package com.kuanquan.home.key;
 
 import android.content.Context;
 import android.inputmethodservice.Keyboard;
@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.base.library.utils.LogUtil;
+import com.kuanquan.home.R;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

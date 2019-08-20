@@ -43,6 +43,9 @@ dependencies {
     //或使用android
 //    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0"
     // 协程核心库 end
+
+    // 协程和 Retrofit 结合使用的官方库
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
 }
 
 //在module的build.gradle中声明

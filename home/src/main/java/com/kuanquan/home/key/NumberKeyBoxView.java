@@ -1,4 +1,4 @@
-package com.kuanquan.home;
+package com.kuanquan.home.key;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import com.kuanquan.home.R;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -28,7 +28,7 @@
         android:layout_marginTop="10dp"
         android:textColor="@color/colorPrimary"/>
 
-    <com.kuanquan.home.MyKeyBoardView
+    <com.kuanquan.home.key.MyKeyBoardView
         android:id="@+id/mykeyboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

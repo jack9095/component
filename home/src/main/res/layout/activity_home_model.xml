@@ -41,7 +41,7 @@
 
     <include layout="@layout/my_keyborad_view"/>
 
-    <com.kuanquan.home.NumberKeyBoxView
+    <com.kuanquan.home.key.NumberKeyBoxView
             android:id="@+id/key_box"
             android:visibility="gone"
             android:layout_alignParentBottom="true"
