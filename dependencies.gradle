@@ -43,13 +43,13 @@ static def netWork(DependencyHandler dependencyHandler) {
         exclude group: 'com.android.support'
     }
     // retrofit 系列
-    dependencyHandler.implementation ('com.squareup.retrofit2:retrofit:2.5.0'){
+    dependencyHandler.implementation ('com.squareup.retrofit2:retrofit:2.6.0'){
         exclude group: 'com.android.support'
     }
-    dependencyHandler.implementation ('com.squareup.retrofit2:converter-gson:2.5.0'){
+    dependencyHandler.implementation ('com.squareup.retrofit2:converter-gson:2.6.0'){
         exclude group: 'com.android.support'
     }
-    dependencyHandler.implementation ('com.squareup.retrofit2:adapter-rxjava2:2.5.0'){
+    dependencyHandler.implementation ('com.squareup.retrofit2:adapter-rxjava2:2.6.0'){
         exclude group: 'com.android.support'
     }
 }

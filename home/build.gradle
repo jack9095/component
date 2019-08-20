@@ -41,7 +41,7 @@ dependencies {
     // 协程核心库 start
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
     //或使用android
-//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
     // 协程核心库 end
 
     // 协程和 Retrofit 结合使用的官方库

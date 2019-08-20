@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
 import com.kuanquan.home.AssociationActivity
+import com.kuanquan.home.coroutine.HomeCoroutineActivity
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
@@ -126,7 +127,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.association -> {  // 协程案例
 //                val intent = Intent(this, HomeModelActivity::class.java)
-                val intent = Intent(this, AssociationActivity::class.java)
+//                val intent = Intent(this, AssociationActivity::class.java)
+                val intent = Intent(this, HomeCoroutineActivity::class.java)
                 startActivity(intent)
             }
             R.id.kz_fun -> { // 扩展函数
