@@ -19,7 +19,7 @@ class UserViewModel: MainBaseViewModel() {
         }
     }
 
-    private fun loadData(){
+    fun loadData(){
         presenterScope.launch {
             val time = System.currentTimeMillis()
 
