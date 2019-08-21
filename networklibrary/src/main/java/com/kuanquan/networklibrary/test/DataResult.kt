@@ -1,6 +1,6 @@
-package com.kuanquan.home.coroutine.bean
+package com.kuanquan.networklibrary.test
 
-data class Gank(
+data class DataModel(
     val _id: String,
     val createdAt: String,
     val desc: String,
@@ -12,7 +12,8 @@ data class Gank(
     val who: String
 )
 
-data class GankResult(
+data class DataResult(
     val error: Boolean,
-    val results: List<Gank>
+    val results: List<DataModel>
+//    val results: DataModel
 )

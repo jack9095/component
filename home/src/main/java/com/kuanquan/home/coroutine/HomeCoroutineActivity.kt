@@ -5,8 +5,9 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.base.library.utils.LogUtil
 import com.kuanquan.home.R
-import com.kuanquan.home.coroutine.bean.Gank
+import com.kuanquan.home.coroutine.bean.DataModel
 import com.kuanquan.home.coroutine.repository.Repository
 import com.kuanquan.home.coroutine.repository.TAGF
 import kotlinx.android.synthetic.main.activity_main_home.*
@@ -34,7 +35,7 @@ class HomeCoroutineActivity : AppCompatActivity() {
                     e.printStackTrace()
                     showLoadingErrorView()
                 } finally {
-                    Log.d(TAGF, "耗时：${System.currentTimeMillis() - time}")
+                    LogUtil.e(TAGF, "耗时：${System.currentTimeMillis() - time}")
                 }
             }
         }
@@ -50,7 +51,7 @@ class HomeCoroutineActivity : AppCompatActivity() {
                     e.printStackTrace()
                     showLoadingErrorView()
                 } finally {
-                    Log.d(TAGF, "耗时：${System.currentTimeMillis() - time}")
+                    LogUtil.e(TAGF, "耗时：${System.currentTimeMillis() - time}")
                 }
             }
         }
@@ -67,7 +68,7 @@ class HomeCoroutineActivity : AppCompatActivity() {
                     Log.d(TAGF, "error: ${e.message}")
                     showLoadingErrorView()
                 } finally {
-                    Log.d(TAGF, "耗时：${System.currentTimeMillis() - time}")
+                    LogUtil.e(TAGF, "耗时：${System.currentTimeMillis() - time}")
                 }
             }
         }
@@ -83,7 +84,7 @@ class HomeCoroutineActivity : AppCompatActivity() {
                     e.printStackTrace()
                     showLoadingErrorView()
                 } finally {
-                    Log.d(TAGF, "耗时：${System.currentTimeMillis() - time}")
+                    LogUtil.e(TAGF, "耗时：${System.currentTimeMillis() - time}")
                 }
             }
         }
@@ -99,7 +100,7 @@ class HomeCoroutineActivity : AppCompatActivity() {
                     e.printStackTrace()
                     showLoadingErrorView()
                 } finally {
-                    Log.d(TAGF, "耗时：${System.currentTimeMillis() - time}")
+                    LogUtil.e(TAGF, "耗时：${System.currentTimeMillis() - time}")
                 }
             }
         }
@@ -108,6 +109,7 @@ class HomeCoroutineActivity : AppCompatActivity() {
             presenterScope.launch {
                 val time = System.currentTimeMillis()
                 showLoadingView()
+//                delay(6000)
                 try {
                     val ganks = Repository.retrofitSuspendQuery()
                     showLoadingSuccessView(ganks)
@@ -115,7 +117,7 @@ class HomeCoroutineActivity : AppCompatActivity() {
                     e.printStackTrace()
                     showLoadingErrorView()
                 } finally {
-                    Log.d(TAGF, "耗时：${System.currentTimeMillis() - time}")
+                    LogUtil.e(TAGF, "耗时：${System.currentTimeMillis() - time}")
                 }
             }
         }
@@ -129,7 +131,7 @@ class HomeCoroutineActivity : AppCompatActivity() {
         loadingBar.showSelf()
     }
 
-    fun showLoadingSuccessView(granks: List<Gank>) {
+    fun showLoadingSuccessView(granks: List<DataModel>) {
         textView.text = "请求结束，数据条数：${granks.size}"
         Toast.makeText(this, "加载成功", Toast.LENGTH_SHORT).show()
         loadingBar.hideSelf()

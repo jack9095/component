@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':networklibrary'
 //include ':retrofit_coroutine'
 //include ':e_l_m'
 //include ':mycustomkeyboard'

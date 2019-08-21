@@ -10,7 +10,7 @@ import java.lang.Exception
 /**
  * create By 2019/6/3 actor 晴天
  */
-open class BaseViewModel : ViewModel() {
+open class BaseViewModel : ViewModel(),LifecycleObserver {
 
     private val error by lazy { MutableLiveData<Exception>() }
 
@@ -19,7 +19,7 @@ open class BaseViewModel : ViewModel() {
     private val viewModelJob = SupervisorJob()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    //运行在UI线程的协程
+    // 运行在 UI 线程的协程
     fun launchUI(block: suspend CoroutineScope.() -> Unit) {
         try {
             uiScope.launch(Dispatchers.Main) {

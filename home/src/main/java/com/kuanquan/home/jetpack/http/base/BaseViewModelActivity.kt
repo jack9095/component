@@ -19,7 +19,7 @@ abstract class BaseViewModelActivity<VM : BaseViewModel> : BaseActivity() {
     private fun initVM() {
         providerVMClass()?.let {
             viewModel = ViewModelProviders.of(this).get(it)
-//            lifecycle.addObserver(viewModel)
+            lifecycle.addObserver(viewModel)
         }
     }
 
@@ -57,6 +57,6 @@ abstract class BaseViewModelActivity<VM : BaseViewModel> : BaseActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-//        lifecycle.removeObserver(viewModel)
+        lifecycle.removeObserver(viewModel)
     }
 }

@@ -131,3 +131,78 @@ static def bugly(DependencyHandler dependencyHandler) {
 }
 ext.bugly = this.&bugly
 
+
+// TODO kotlin 相关特有的库
+// TODO 网络 的相关库
+static def netWorkKotlin(DependencyHandler dependencyHandler) {
+
+    // okHttp 系列
+    dependencyHandler.implementation ('com.squareup.okhttp3:okhttp:3.12.1'){
+        exclude group: 'com.android.support'
+    }
+    dependencyHandler.implementation ('com.squareup.okhttp3:logging-interceptor:3.12.1'){
+        exclude group: 'com.android.support'
+    }
+    // retrofit 系列
+    dependencyHandler.implementation ('com.squareup.retrofit2:retrofit:2.6.0'){
+        exclude group: 'com.android.support'
+    }
+    dependencyHandler.implementation ('com.squareup.retrofit2:converter-gson:2.6.0'){
+        exclude group: 'com.android.support'
+    }
+
+}
+ext.netWorkKotlin = this.&netWorkKotlin
+
+// TODO 通用 的 库
+static def commonKotlin(DependencyHandler dependencyHandler) {
+
+    // 阿里路由
+    dependencyHandler.implementation ('com.alibaba:arouter-api:1.4.1'){
+        exclude group: 'com.android.support'
+    }
+    dependencyHandler.annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+    // 滚轮选择器  没加混淆
+    dependencyHandler.implementation ('com.contrarywind:Android-PickerView:4.1.8'){
+        exclude group: 'com.android.support'
+    }
+
+    // 动态请求权限框架
+    dependencyHandler.implementation('com.github.tbruyelle:rxpermissions:0.10.2') {
+        exclude group: 'com.android.support'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+
+    // 刷新加载框架  官方解释不需要混淆
+    dependencyHandler.implementation('com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-25') {
+        exclude group: 'com.android.support'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+
+    // 通用事件总线
+    dependencyHandler.implementation ('org.greenrobot:eventbus:3.1.1'){
+        exclude group: 'com.android.support'
+    }
+
+    // json 解析工具
+    dependencyHandler.implementation ('com.google.code.gson:gson:2.8.5'){
+        exclude group: 'com.android.support'
+    }
+
+    // RecyclerView 适配器的通用库  https://www.jianshu.com/p/b343fcff51b0
+    dependencyHandler.implementation ('com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46')
+
+    // 图片加载库
+    dependencyHandler.implementation ('com.github.bumptech.glide:glide:4.8.0'){
+        exclude group: 'com.android.support'
+    }
+    dependencyHandler.annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    dependencyHandler.implementation ("com.github.bumptech.glide:okhttp3-integration:4.8.0"){
+        exclude group: 'com.android.support'
+    }
+}
+ext.commonKotlin = this.&commonKotlin
+

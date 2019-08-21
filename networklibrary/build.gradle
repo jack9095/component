@@ -1,8 +1,4 @@
-if (isNeedHomeModule.toBoolean()) {
-    apply plugin: 'com.android.library'
-} else {
-    apply plugin: 'com.android.application'
-}
+apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -12,32 +8,32 @@ android {
 
 
     defaultConfig {
-        if (!isNeedHomeModule.toBoolean()) {
-            applicationId "com.kuanquan.home"
-        }
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
-        // TODO 每个模块都要添加下面的代码支持 ARouter 跨模块跳转
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
     rootProject.allModuleDependencies(dependencies)
-    rootProject.common(dependencies)
+    rootProject.commonKotlin(dependencies)
     rootProject.jetPack(dependencies)
-    rootProject.netWork(dependencies)
-    implementation project(path: ':baselibrary')
+    rootProject.netWorkKotlin(dependencies)
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     // 协程核心库 start
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
     //或使用android

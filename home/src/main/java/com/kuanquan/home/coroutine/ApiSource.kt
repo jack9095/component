@@ -1,8 +1,9 @@
 package com.kuanquan.home.coroutine
 
 import android.util.Log
+import com.base.library.utils.LogUtil
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.kuanquan.home.coroutine.bean.GankResult
+import com.kuanquan.home.coroutine.bean.DataResult
 import com.kuanquan.home.coroutine.repository.TAGF
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.suspendCancellableCoroutine
@@ -17,24 +18,24 @@ import kotlin.coroutines.resumeWithException
 
 interface CallAdapterApiService {
     @GET("data/iOS/2/1")
-    fun getIOSGank(): Deferred<GankResult>
+    fun getIOSGank(): Deferred<DataResult>
 
     @GET("data/Android/2/1")
-    fun getAndroidGank(): Deferred<GankResult>
+    fun getAndroidGank(): Deferred<DataResult>
 }
 
 interface ApiService {
     @GET("data/iOS/2/1")
-    fun getIOSGank(): Call<GankResult>
+    fun getIOSGank(): Call<DataResult>
 
     @GET("data/Android/2/1")
-    fun getAndroidGank(): Call<GankResult>
+    fun getAndroidGank(): Call<DataResult>
 
     @GET("data/Android/2/1")
-    suspend fun getSuspendAndroidGank(): GankResult
+    suspend fun getSuspendAndroidGank(): DataResult
 
     @GET("data/iOS/2/1")
-    suspend fun getSuspendIOSGank(): GankResult
+    suspend fun getSuspendIOSGank(): DataResult
 }
 
 class ApiSource {
@@ -57,7 +58,7 @@ class ApiSource {
 suspend fun <T> Call<T>.await(): T {
     return suspendCancellableCoroutine {
         it.invokeOnCancellation {
-            Log.d(TAGF, "request cancel")
+            LogUtil.e(TAGF, "请求取消")
             it?.printStackTrace()
             cancel()
         }

@@ -1,22 +1,11 @@
-package com.base.library.utils;
+package com.kuanquan.networklibrary.util;
 
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Formatter;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
@@ -24,11 +13,14 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Formatter;
 
 
 /**
  * blog http://www.jianshu.com/u/ec42ce134e8d
- * time 2017/3/29
  * fuction 一个优化Log显示的工具类
  * use Application中构造器初始化，其他方式和log一样
  * 轻量级，支持本地
