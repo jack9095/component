@@ -41,8 +41,8 @@ class UserViewModel: MainBaseViewModel() {
     suspend fun retrofitSuspendQuery(): List<DataModel> {
         return withContext(Dispatchers.Main) {
             try {
-                val androidResult = serviceApi?.getSuspendAndroidGank()
-                val iosResult = serviceApi?.getSuspendIOSGank()
+                val androidResult = serviceApi?.getSuspendAndroid()
+                val iosResult = serviceApi?.getSuspendIOS()
                 mutableListOf<DataModel>().apply {
                     iosResult?.data?.results?.let { addAll(it) }
                     androidResult?.data?.results?.let { addAll(it) }

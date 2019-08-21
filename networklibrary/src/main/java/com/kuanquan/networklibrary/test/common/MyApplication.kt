@@ -24,7 +24,6 @@ class MyApplication : Application() {
         initLog()
         HttpHelper.getInstance()?.init(UrlConfig.BASE_URL) // 初始化网络请求
         SharedPreferencesUtils.getInstance("demo_fl", this.applicationContext)
-        LogUtil.e("MyApplication 初始化次数")
     }
 
     fun initARouter() {
