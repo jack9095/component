@@ -15,5 +15,4 @@ data class DataModel(
 data class DataResult(
     val error: Boolean,
     val results: List<DataModel>
-//    val results: DataModel
 )

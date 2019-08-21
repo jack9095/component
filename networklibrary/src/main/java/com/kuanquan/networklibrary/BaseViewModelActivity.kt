@@ -3,7 +3,7 @@ package com.kuanquan.networklibrary
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 
-abstract class BaseViewHolderActivity<VM : BaseViewModel>: BaseActivity() {
+abstract class BaseViewModelActivity<VM : BaseViewModel>: BaseActivity() {
     protected lateinit var viewModel: VM
 
     override fun initView() {
