@@ -1,5 +1,6 @@
 package com.kuanquan.networklibrary.http
 
+import com.kuanquan.networklibrary.util.LogUtil
 import okhttp3.logging.HttpLoggingInterceptor
 
 class HttpLogger: HttpLoggingInterceptor.Logger {
@@ -13,11 +14,11 @@ class HttpLogger: HttpLoggingInterceptor.Logger {
             mMessage.setLength(0)
         }
         if (message.startsWith("{") && message.endsWith("}") || message.startsWith("[") && message.endsWith("]")) {
-            //            LogUtil.json(message);
+                        LogUtil.json(message)
         }
         mMessage.append(message + "\n")
         if (message.startsWith("<-- END HTTP")) {
-            //            LogUtil.e(TAG, mMessage.toString());
+                        LogUtil.e(TAG, mMessage.toString())
         }
     }
 }

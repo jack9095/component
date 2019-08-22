@@ -4,10 +4,12 @@ import android.app.Application
 import android.content.Context
 import android.support.multidex.MultiDex
 import com.alibaba.android.arouter.launcher.ARouter
-import com.base.library.base.network.api.URLConfig
-import com.base.library.base.network.http.HttpHelper
+//import com.base.library.base.network.api.URLConfig
+//import com.base.library.base.network.http.HttpHelper
 import com.base.library.utils.LogUtil
 import com.base.library.utils.SharedPreferencesUtils
+import com.kuanquan.networklibrary.http.HttpHelper
+import com.kuanquan.networklibrary.http.UrlConfig
 import com.kuanquan.universalcomponents.BuildConfig
 import com.kuanquan.universalcomponents.javaTest.hook.packageHook.PackageManagerHook
 import com.tencent.bugly.Bugly
@@ -27,9 +29,10 @@ class MyApplication : Application() {
         super.onCreate()
         initARouter()
         initLog()
-        HttpHelper.getInstance().init(URLConfig.BASE_URL)
+//        HttpHelper.getInstance().init(URLConfig.BASE_URL)
+        HttpHelper.getInstance()?.init(UrlConfig.BASE_URL) // 初始化网络请求
         SharedPreferencesUtils.getInstance("demo_fl", this.applicationContext)
-        LogUtil.e("MyApplication 初始化次数")
+        LogUtil.e("TestApplication 初始化次数")
         Bugly.init(applicationContext, "897534689", false)
     }
 

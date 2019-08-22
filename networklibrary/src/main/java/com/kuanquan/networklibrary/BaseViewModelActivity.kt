@@ -11,13 +11,16 @@ abstract class BaseViewModelActivity<VM : BaseViewModel>: BaseActivity() {
             viewModel = ViewModelProviders.of(this).get(viewModelClass)
             viewModel.loadState.observe(this, Observer { state ->
                 state?.let {
+                    dismissProgressDialog()
                     showToast(it)
                 }
+            })
+            viewModel.requestLiveData.observe(this, Observer {
+                showProgressDialog()
             })
             dataObserver()
             lifecycle.addObserver(viewModel)
         }
-
     }
 
     open fun providerVMClass(): Class<VM>? = null

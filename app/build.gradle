@@ -121,4 +121,5 @@ dependencies {
 
     // 手机上 3D 展示布局
     implementation 'com.jakewharton.scalpel:scalpel:1.1.2'
+    implementation project(path: ':networklibrary')
 }

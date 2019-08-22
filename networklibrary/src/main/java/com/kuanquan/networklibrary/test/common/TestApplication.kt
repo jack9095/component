@@ -12,7 +12,7 @@ import com.kuanquan.networklibrary.util.SharedPreferencesUtils
 /**
  * 使用 kotlin 编译警告 http://www.aoaoyi.com/archives/1389.html
  */
-class MyApplication : Application() {
+class TestApplication : Application() {
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)

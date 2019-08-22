@@ -3,7 +3,7 @@
           package="com.kuanquan.networklibrary">
 
     <application>
-        <activity android:name=".test.TestActivity">
+        <activity android:name=".test.CoroutineTestActivity">
         </activity>
     </application>
 

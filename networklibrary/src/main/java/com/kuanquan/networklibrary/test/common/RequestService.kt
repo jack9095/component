@@ -7,8 +7,8 @@ import retrofit2.http.GET
 interface RequestService {
 
     @GET("data/Android/2/1")
-    suspend fun getSuspendAndroid(): BaseResponse<DataResult>
+    suspend fun getSuspendAndroid(): BaseResponse<List<DataResult.DataModel>>
 
     @GET("data/iOS/2/1")
-    suspend fun getSuspendIOS(): BaseResponse<DataResult>
+    suspend fun getSuspendIOS(): BaseResponse<List<DataResult.DataModel>>
 }

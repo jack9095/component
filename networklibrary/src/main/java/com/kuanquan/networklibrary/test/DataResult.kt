@@ -1,10 +1,19 @@
 package com.kuanquan.networklibrary.test
 
-data class DataModel(
-    val type: String,
-    val url: String
-)
+import java.io.Serializable
 
-data class DataResult(
-    val results: List<DataModel>
-)
+class DataResult{
+//    var results: List<DataModel>? = null
+
+    inner class DataModel : Serializable {
+        var createdAt: String? = null
+        var publishedAt: String? = null
+        var _id: String? = null
+        var source: String? = null
+        var used: Boolean = false
+        var type: String? = null
+        var url: String? = null
+        var desc: String? = null
+        var who: String? = null
+    }
+}

@@ -176,6 +176,18 @@
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="MissingConstraints"/>
+
+                <Button
+                        android:id="@+id/coroutine_view_request"
+                        android:gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="协程用于网络请求"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints"/>
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
 

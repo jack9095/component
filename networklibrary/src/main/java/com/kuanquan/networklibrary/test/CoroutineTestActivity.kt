@@ -1,10 +1,15 @@
 package com.kuanquan.networklibrary.test
 
+import android.arch.lifecycle.Observer
 import com.kuanquan.networklibrary.BaseViewModelActivity
 import com.kuanquan.networklibrary.R
 import com.kuanquan.networklibrary.test.viewmodel.UserViewModel
+import com.kuanquan.networklibrary.util.GsonUtils
+import com.kuanquan.networklibrary.util.LogUtil
 
-class TestActivity : BaseViewModelActivity<UserViewModel>() {
+class CoroutineTestActivity : BaseViewModelActivity<UserViewModel>() {
+
+    private val TAG = this.javaClass.simpleName
 
     override fun providerVMClass(): Class<UserViewModel>?  = UserViewModel::class.java
 
@@ -25,7 +30,9 @@ class TestActivity : BaseViewModelActivity<UserViewModel>() {
     }
 
     override fun dataObserver() {
-
+        viewModel.dataLiveData.observe(this, Observer {
+            LogUtil.e(TAG, "数据：" + GsonUtils.toJson(it))
+        })
     }
 
 }

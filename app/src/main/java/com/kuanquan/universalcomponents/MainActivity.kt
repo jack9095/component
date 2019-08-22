@@ -10,6 +10,7 @@ import com.kuanquan.home.AssociationActivity
 import com.kuanquan.home.coroutine.HomeCoroutineActivity
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
+import com.kuanquan.networklibrary.test.CoroutineTestActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
 import com.kuanquan.universalcomponents.javaTest.hook.viewclick.ViewHookActivity
 import com.kuanquan.universalcomponents.kotlinTest.HigherOrderFunActivity
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         association.setOnClickListener(this)
         kz_fun.setOnClickListener(this)
         hook_view.setOnClickListener(this)
+        coroutine_view_request.setOnClickListener(this)
 
 //        val spreadFunction = SpreadFunction(1)
     }
@@ -136,6 +138,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.hook_view -> {
                 startActivity(Intent(this, ViewHookActivity::class.java))
+            }
+            R.id.coroutine_view_request -> {
+                startActivity(Intent(this, CoroutineTestActivity::class.java))
             }
         }
     }

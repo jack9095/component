@@ -20,11 +20,11 @@ class CommonInterceptor: Interceptor {
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
 
-        val token = SharedPreferencesUtils.getSharePrefString("token")
-        LogUtil.e("Authorization = ", token)
+//        val token = SharedPreferencesUtils.getSharePrefString("token")
+//        LogUtil.e("Authorization = ", token)
 
         val request = chain.request().newBuilder()
-            .addHeader("Authorization", token)
+//            .addHeader("Authorization", token)
             .build()
 
         LogUtil.e("$TAG   request  URL Method", "request:$request")
@@ -49,9 +49,9 @@ class CommonInterceptor: Interceptor {
         if (!TextUtils.isEmpty(content)) {
             try {
                 val baseBean = GsonUtils().instance.fromJson<Any>(content, BaseResponse::class.java) as BaseResponse<*>
-                if (baseBean.code == 999) { // 会话已失效
-                    ARouter.getInstance().build("/main/login").navigation()
-                }
+//                if (baseBean.code == 999) { // 会话已失效
+//                    ARouter.getInstance().build("/main/login").navigation()
+//                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }

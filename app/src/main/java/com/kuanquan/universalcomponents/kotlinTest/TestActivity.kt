@@ -38,7 +38,7 @@ class TestActivity : AppCompatActivity() {
         LogUtil.e("延迟加载的数据 = ",str)
 
         val stringExtra = intent.getStringExtra("aa")
-        Log.e("TestActivity", "onCreate$stringExtra")
+        Log.e("CoroutineTestActivity", "onCreate$stringExtra")
 
         // 创建一个map
         val hashMap = HashMap<String,String>()
@@ -58,7 +58,7 @@ class TestActivity : AppCompatActivity() {
 
         // 循环
         for (str in lists){
-            Log.e("TestActivity","str 的值是 $str")
+            Log.e("CoroutineTestActivity","str 的值是 $str")
 
             // 过滤 lists 集合
             val filter = lists.filter { str == "3" }
@@ -71,19 +71,19 @@ class TestActivity : AppCompatActivity() {
 
         // 循环出下标
         for (index in lists.indices){
-            Log.e("TestActivity","index 的值是 $index  and  ${lists[index]}")
+            Log.e("CoroutineTestActivity","index 的值是 $index  and  ${lists[index]}")
         }
 
         // if 判断语句
         var max = if(3 > 4) 3 else 4
-        Log.e("TestActivity","max 的值是 $max")
+        Log.e("CoroutineTestActivity","max 的值是 $max")
 
         // swich 语句
         when (7){
             3 -> {print(3)}
             2 -> print(32)
             else -> {
-                Log.e("TestActivity","x 不是 1 ，也不是 2")
+                Log.e("CoroutineTestActivity","x 不是 1 ，也不是 2")
             }
         }
 
@@ -91,7 +91,7 @@ class TestActivity : AppCompatActivity() {
         var x = 5
         var y = 10
         if (x in 1..8) {
-            Log.e("TestActivity","x在这个区间内")
+            Log.e("CoroutineTestActivity","x在这个区间内")
         }
 
         Log.e("MainActivity", "首页" + sun(3,6))
@@ -127,7 +127,7 @@ class TestActivity : AppCompatActivity() {
 
         if (one != null && two != null) {
             print(one * two)
-            Log.e("TestActivity",(one * two).toString())
+            Log.e("CoroutineTestActivity",(one * two).toString())
         }
     }
 
@@ -219,7 +219,7 @@ class TestActivity : AppCompatActivity() {
 //    }
     override fun onDestroy() {
         super.onDestroy()
-        Log.e("TestActivity", "onDestroy")
+        Log.e("CoroutineTestActivity", "onDestroy")
     }
 
     override fun onBackPressed() {
