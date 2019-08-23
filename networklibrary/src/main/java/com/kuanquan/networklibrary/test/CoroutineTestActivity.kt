@@ -27,6 +27,10 @@ class CoroutineTestActivity : BaseViewModelActivity<UserViewModel>() {
 
     override fun initData() {
         viewModel.loadData()
+        viewModel.loadData()
+        viewModel.loadData()
+        viewModel.loadData()
+        viewModel.loadData()
     }
 
     override fun dataObserver() {

@@ -38,10 +38,10 @@ abstract class BaseActivity : AppCompatActivity() {
         }
         progressDialog?.run {
             try {
-                if (isShowing) {
+                if (isShowing)
                     dismiss()
-                }
-                show()
+                else
+                    show()
             } catch (e: Exception) {
                 LogUtil.e("异常 = ", e)
             }
