@@ -1,9 +1,8 @@
 package com.kuanquan.networklibrary
 
-import android.arch.lifecycle.LifecycleObserver
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import android.arch.lifecycle.*
 import kotlinx.coroutines.*
+
 
 open class BaseViewModel: ViewModel(),LifecycleObserver {
 
@@ -20,4 +19,34 @@ open class BaseViewModel: ViewModel(),LifecycleObserver {
         presenterScope.cancel()
     }
 
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    fun ON_CREATE() {
+        println("@@@@@@@@MyObserver:ON_CREATE")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    fun ON_START() {
+        println("@@@@@@@@MyObserver:ON_START")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    fun ON_RESUME() {
+        println("@@@@@@@@MyObserver:ON_RESUME")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    fun ON_PAUSE() {
+        println("@@@@@@@@MyObserver:ON_PAUSE")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    fun ON_STOP() {
+        println("@@@@@@@@MyObserver:ON_STOP")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    fun ON_DESTROY() {
+        println("@@@@@@@@MyObserver:ON_DESTROY")
+    }
 }

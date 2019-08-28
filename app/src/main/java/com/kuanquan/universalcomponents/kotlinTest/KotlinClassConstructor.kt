@@ -30,7 +30,7 @@ class KotlinClassConstructor{
          LogUtil.e(TAG,"name -> $int")
     }
 
-    //  有主构造函数时 次构造函数的写法
+    // 有主构造函数时 次构造函数的写法
     // 如果类有一个主构造函数，每个次构造函数需要委托给主构造函数，
     // 可以直接委托或者通过别的次构造函数间接委托。委托到同一个类的另一个构造函数用 this 关键字即可
 //    constructor(name: String, parent: KotlinClassConstructor) : this(name) {
