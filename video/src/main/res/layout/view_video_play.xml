@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextureView
+        android:id="@+id/texture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="#50000000"
+        app:layout_constraintBottom_toBottomOf="@+id/texture"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iv_play"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_video_view_play" />
+
+
+        <TextView
+            android:id="@+id/tv_play_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="00:00"
+            android:text="00:00"
+            android:textSize="12sp"
+            android:textColor="@color/white" />
+
+
+        <SeekBar
+            android:id="@+id/video_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_weight="1" />
+        <!--android:progressDrawable="@drawable/layer_video_seek_bar"-->
+        <TextView
+            android:id="@+id/tv_max_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="00:00"
+            android:text="00:00"
+            android:textSize="12sp"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/iv_change_orientation"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_video_change_big"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

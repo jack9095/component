@@ -11,7 +11,11 @@ class ScrollingViewModel : BaseViewModel() {
     private val TAG = ScrollingViewModel::class.java.simpleName
 
     private val datas: MutableLiveData<List<Data>> by lazy { MutableLiveData<List<Data>>().also {
-        loadDatas()
+//        loadDatas()
+    } }
+
+    private val strings: MutableLiveData<String> by lazy { MutableLiveData<String>().also {
+            it.value = "1"
     } }
 
     private val repository = ArticleRepository()

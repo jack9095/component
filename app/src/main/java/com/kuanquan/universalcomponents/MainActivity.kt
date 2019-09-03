@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.base.library.utils.LogUtil
-import com.kuanquan.home.AssociationActivity
 import com.kuanquan.home.coroutine.HomeCoroutineActivity
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
@@ -21,6 +20,9 @@ import com.kuanquan.universalcomponents.main.HomeActivity
 import com.kuanquan.universalcomponents.main.SearchActivity
 import com.kuanquan.universalcomponents.rx.RxActivity
 import com.kuanquan.universalcomponents.slide.GuideActivity
+import com.maxxipoint.video.demo.MediaPlayActivity
+import com.maxxipoint.video.test.VideoActivity
+import com.maxxipoint.video.video.MediaVideoActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -76,6 +78,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         kz_fun.setOnClickListener(this)
         hook_view.setOnClickListener(this)
         coroutine_view_request.setOnClickListener(this)
+        video_view.setOnClickListener(this)
+        video_view1.setOnClickListener(this)
 
 //        val spreadFunction = SpreadFunction(1)
     }
@@ -141,6 +145,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.coroutine_view_request -> {
                 startActivity(Intent(this, CoroutineTestActivity::class.java))
+            }
+            R.id.video_view -> {
+//                startActivity(Intent(this, VideoActivity::class.java))
+                startActivity(Intent(this, MediaPlayActivity::class.java))
+            }
+            R.id.video_view1 -> {
+                startActivity(Intent(this, MediaVideoActivity::class.java))
             }
         }
     }

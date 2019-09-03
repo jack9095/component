@@ -98,11 +98,6 @@ static def releaseTime(){
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     rootProject.allModuleDependencies(dependencies)
     rootProject.common(dependencies)
@@ -122,4 +117,5 @@ dependencies {
     // 手机上 3D 展示布局
     implementation 'com.jakewharton.scalpel:scalpel:1.1.2'
     implementation project(path: ':networklibrary')
+    implementation project(path: ':video')
 }

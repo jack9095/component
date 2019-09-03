@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.maxxipoint.video">
+
+    <application>
+        <activity android:name=".video.MediaVideoActivity">
+        </activity>
+        <activity android:name=".demo.MediaPlayActivity">
+        </activity>
+        <activity android:name=".test.VideoActivity">
+        </activity>
+    </application>
+
+</manifest>
