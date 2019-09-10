@@ -6,13 +6,13 @@
     android:clipChildren="false"
     android:clipToPadding="false">
 
-    <TextView
+    <com.flyco.tablayout.widget.MyTextView
         android:id="@+id/tv_tab_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center"
-        android:singleLine="true"/>
+        android:singleLine="false"/>
 
     <com.flyco.tablayout.widget.MsgView
         android:id="@+id/rtv_msg_tip"

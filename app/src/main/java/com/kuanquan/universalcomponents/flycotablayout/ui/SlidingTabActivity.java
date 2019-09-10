@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -23,8 +24,9 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private final String[] mTitles = {
             "热门", "iOS", "Android"
-            , "前端", "后端", "设计", "工具资源"
+            , "前端", "后端", "设计", "工具#资源"
     };
+//    private final String[] mTitles = new String[2];
     private MyPagerAdapter mAdapter;
 
     @Override
@@ -32,10 +34,15 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sliding_tab);
 
-        for (String title : mTitles) {
-            mFragments.add(SimpleCardFragment.getInstance(title));
-        }
+//        String str2 = "<font><big><big>拼团</big></big></font>"  + "\n抢购中";
+//        mTitles[0] = str2;
+//
+//        String str = "<font><big><big>砍价</big></big></font>"  + "\n准备抢购";
+//        mTitles[1] = str;
 
+        for (int i=0; i < mTitles.length; i++) {
+            mFragments.add(SimpleCardFragment.getInstance(mTitles[i]));
+        }
 
         View decorView = getWindow().getDecorView();
         ViewPager vp = ViewFindUtils.find(decorView, R.id.vp);
@@ -43,53 +50,56 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
         vp.setAdapter(mAdapter);
 
         /** 默认 */
-        SlidingTabLayout tabLayout_1 = ViewFindUtils.find(decorView, R.id.tl_1);
-        /**自定义部分属性*/
-        SlidingTabLayout tabLayout_2 = ViewFindUtils.find(decorView, R.id.tl_2);
-        /** 字体加粗,大写 */
-        SlidingTabLayout tabLayout_3 = ViewFindUtils.find(decorView, R.id.tl_3);
-        /** tab固定宽度 */
-        SlidingTabLayout tabLayout_4 = ViewFindUtils.find(decorView, R.id.tl_4);
-        /** indicator固定宽度 */
-        SlidingTabLayout tabLayout_5 = ViewFindUtils.find(decorView, R.id.tl_5);
-        /** indicator圆 */
-        SlidingTabLayout tabLayout_6 = ViewFindUtils.find(decorView, R.id.tl_6);
-        /** indicator矩形圆角 */
-        final SlidingTabLayout tabLayout_7 = ViewFindUtils.find(decorView, R.id.tl_7);
-        /** indicator三角形 */
+//        SlidingTabLayout tabLayout_1 = ViewFindUtils.find(decorView, R.id.tl_1);
+//        /**自定义部分属性*/
+//        SlidingTabLayout tabLayout_2 = ViewFindUtils.find(decorView, R.id.tl_2);
+//        /** 字体加粗,大写 */
+//        SlidingTabLayout tabLayout_3 = ViewFindUtils.find(decorView, R.id.tl_3);
+//        /** tab固定宽度 */
+//        SlidingTabLayout tabLayout_4 = ViewFindUtils.find(decorView, R.id.tl_4);
+//        /** indicator固定宽度 */
+//        SlidingTabLayout tabLayout_5 = ViewFindUtils.find(decorView, R.id.tl_5);
+//        /** indicator圆 */
+//        SlidingTabLayout tabLayout_6 = ViewFindUtils.find(decorView, R.id.tl_6);
+//        /** indicator矩形圆角 */
+//        final SlidingTabLayout tabLayout_7 = ViewFindUtils.find(decorView, R.id.tl_7);
+//        /** indicator三角形 */
         SlidingTabLayout tabLayout_8 = ViewFindUtils.find(decorView, R.id.tl_8);
-        /** indicator圆角色块 */
-        SlidingTabLayout tabLayout_9 = ViewFindUtils.find(decorView, R.id.tl_9);
-        /** indicator圆角色块 */
-        SlidingTabLayout tabLayout_10 = ViewFindUtils.find(decorView, R.id.tl_10);
+//        /** indicator圆角色块 */
+//        SlidingTabLayout tabLayout_9 = ViewFindUtils.find(decorView, R.id.tl_9);
+//        /** indicator圆角色块 */
+//        SlidingTabLayout tabLayout_10 = ViewFindUtils.find(decorView, R.id.tl_10);
 
-        tabLayout_1.setViewPager(vp);
-        tabLayout_2.setViewPager(vp);
-        tabLayout_2.setOnTabSelectListener(this);
-        tabLayout_3.setViewPager(vp);
-        tabLayout_4.setViewPager(vp);
-        tabLayout_5.setViewPager(vp);
-        tabLayout_6.setViewPager(vp);
-        tabLayout_7.setViewPager(vp, mTitles);
+//        tabLayout_1.setViewPager(vp);
+//        tabLayout_2.setViewPager(vp);
+//        tabLayout_2.setOnTabSelectListener(this);
+//        tabLayout_3.setViewPager(vp);
+//        tabLayout_4.setViewPager(vp);
+//        tabLayout_5.setViewPager(vp);
+//        tabLayout_6.setViewPager(vp);
+//        tabLayout_7.setViewPager(vp, mTitles);
         tabLayout_8.setViewPager(vp, mTitles, this, mFragments);
-        tabLayout_9.setViewPager(vp);
-        tabLayout_10.setViewPager(vp);
+//        tabLayout_9.setViewPager(vp);
+//        tabLayout_10.setViewPager(vp);
 
         vp.setCurrentItem(4);
 
-        tabLayout_1.showDot(4);
-        tabLayout_3.showDot(4);
-        tabLayout_2.showDot(4);
+//        tabLayout_1.showDot(4);
+//        tabLayout_3.showDot(4);
+//        tabLayout_2.showDot(4);
+//
+//        tabLayout_2.showMsg(3, 5);
+//        tabLayout_2.setMsgMargin(3, 0, 10);
+//        MsgView rtv_2_3 = tabLayout_2.getMsgView(3);
+//        if (rtv_2_3 != null) {
+//            rtv_2_3.setBackgroundColor(Color.parseColor("#6D8FB0"));
+//        }
+//
+//        tabLayout_2.showMsg(5, 5);
+//        tabLayout_2.setMsgMargin(5, 0, 10);
 
-        tabLayout_2.showMsg(3, 5);
-        tabLayout_2.setMsgMargin(3, 0, 10);
-        MsgView rtv_2_3 = tabLayout_2.getMsgView(3);
-        if (rtv_2_3 != null) {
-            rtv_2_3.setBackgroundColor(Color.parseColor("#6D8FB0"));
-        }
+//        for (String title : mTitles) {
 
-        tabLayout_2.showMsg(5, 5);
-        tabLayout_2.setMsgMargin(5, 0, 10);
 
 //        tabLayout_7.setOnTabSelectListener(new OnTabSelectListener() {
 //            @Override
