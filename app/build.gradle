@@ -118,4 +118,5 @@ dependencies {
     implementation 'com.jakewharton.scalpel:scalpel:1.1.2'
     implementation project(path: ':networklibrary')
     implementation project(path: ':video')
+    implementation project(path: ':FlycoTabLayout_Lib')
 }

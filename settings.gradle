@@ -1,4 +1,4 @@
-include ':app', ':networklibrary', ':video'
+include ':app', ':networklibrary', ':video', ':FlycoTabLayout_Lib'
 //include ':retrofit_coroutine'
 //include ':e_l_m'
 //include ':mycustomkeyboard'

@@ -36,6 +36,20 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+                android:name="com.kuanquan.universalcomponents.flycotablayout.ui.SimpleHomeActivity"
+                android:label="@string/app_name"
+                android:theme="@style/AppTheme">
+        </activity>
+        <activity
+                android:name="com.kuanquan.universalcomponents.flycotablayout.ui.CommonTabActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name="com.kuanquan.universalcomponents.flycotablayout.ui.SlidingTabActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name="com.kuanquan.universalcomponents.flycotablayout.ui.SegmentTabActivity"
+                android:screenOrientation="portrait"/>
         <activity android:name=".rx.RxActivity"/>
         <activity android:name=".kotlinTest.TestActivity"/>
         <activity android:name=".kotlinTest.DemoKotlin"/>

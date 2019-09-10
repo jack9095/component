@@ -11,6 +11,7 @@ import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
 import com.kuanquan.networklibrary.test.CoroutineTestActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
+import com.kuanquan.universalcomponents.flycotablayout.ui.SimpleHomeActivity
 import com.kuanquan.universalcomponents.javaTest.hook.viewclick.ViewHookActivity
 import com.kuanquan.universalcomponents.kotlinTest.HigherOrderFunActivity
 import com.kuanquan.universalcomponents.kotlinTest.SpreadFunctionTest
@@ -80,6 +81,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         coroutine_view_request.setOnClickListener(this)
         video_view.setOnClickListener(this)
         video_view1.setOnClickListener(this)
+        tab_layout.setOnClickListener(this)
 
 //        val spreadFunction = SpreadFunction(1)
     }
@@ -152,6 +154,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.video_view1 -> {
                 startActivity(Intent(this, MediaVideoActivity::class.java))
+            }
+            R.id.tab_layout -> {
+                startActivity(Intent(this, SimpleHomeActivity::class.java))
             }
         }
     }
