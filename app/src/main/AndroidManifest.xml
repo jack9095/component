@@ -12,6 +12,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".kotlinTest.FuncationActivity">
+        </activity>
         <activity android:name=".javaTest.hook.openpage.OpenPagerActivity">
         </activity>
         <activity android:name=".javaTest.hook.viewclick.ViewHookActivity">
@@ -25,6 +27,9 @@
                 android:screenOrientation="portrait"
                 android:theme="@style/AppThemeDialogIsTranslucent"
                 android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <!--<activity
+                android:name=".HomeActivity"
+                android:theme="@style/Theme.imgFullScreen"/>-->
         <activity
                 android:name=".main.HomeActivity"
                 android:theme="@style/Theme.imgFullScreen"/>
@@ -61,7 +66,15 @@
         <activity android:name=".main.SearchActivity"/>
         <activity android:name=".slide.StartFActivity"/>
         <activity android:name=".slide.SlideOtherTypeActivity"/>
-        <activity android:name=".slide.GuideActivity">
+        <activity android:name=".slide.GuideActivity"/>
+        <!--<activity android:name=".CommodityDetailsActivity"/>
+        <activity android:name=".SearchActivity"/>-->
+        <activity android:name=".slide.StartFActivity"
+                  tools:ignore="DuplicateActivity"/>
+        <activity android:name=".slide.SlideOtherTypeActivity"
+                  tools:ignore="DuplicateActivity"/>
+        <activity android:name=".slide.GuideActivity"
+                  tools:ignore="DuplicateActivity">
         </activity>
         <activity android:name=".slide.SmartRefreshLayoutActivity"/>
         <activity android:name=".slide.SlideActivity"/>
