@@ -94,8 +94,8 @@ class TestActivity : AppCompatActivity() {
             Log.e("CoroutineTestActivity","x在这个区间内")
         }
 
-        Log.e("MainActivity", "首页" + sun(3,6))
-        Log.e("MainActivity", "首页" + sum(3,6))
+        Log.e("HtmlActivity", "首页" + sun(3,6))
+        Log.e("HtmlActivity", "首页" + sum(3,6))
     }
 
 

@@ -3,6 +3,11 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.kuanquan.universalcomponents">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
             android:name=".app.MyApplication"
             android:allowBackup="true"
@@ -12,6 +17,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name="com.maxxipoint.html.HtmlActivity"/>
         <activity android:name=".kotlinTest.FuncationActivity">
         </activity>
         <activity android:name=".javaTest.hook.openpage.OpenPagerActivity">

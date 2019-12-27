@@ -128,4 +128,5 @@ dependencies {
     implementation project(path: ':networklibrary')
     implementation project(path: ':video')
     implementation project(path: ':FlycoTabLayout_Lib')
+    implementation project(path: ':html')
 }

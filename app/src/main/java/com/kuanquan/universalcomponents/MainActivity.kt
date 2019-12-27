@@ -21,8 +21,8 @@ import com.kuanquan.universalcomponents.main.HomeActivity
 import com.kuanquan.universalcomponents.main.SearchActivity
 import com.kuanquan.universalcomponents.rx.RxActivity
 import com.kuanquan.universalcomponents.slide.GuideActivity
+import com.maxxipoint.html.HtmlActivity
 import com.maxxipoint.video.demo.MediaPlayActivity
-import com.maxxipoint.video.test.VideoActivity
 import com.maxxipoint.video.video.MediaVideoActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -34,22 +34,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        val mainView = layoutInflater.inflate(R.layout.activity_main, null)
+//        val mainView = layoutInflater.inflate(R.layout.activity_html, null)
 //        val mScalpelFrameLayout = ScalpelFrameLayout(this)
 //        mScalpelFrameLayout.addView(mainView)
 //        mScalpelFrameLayout.isLayerInteractionEnabled = true //开启 3D 效果
-//mScalpelFrameLayout.setDrawIds(true); //是否显示控件 id
-//mScalpelFrameLayout.setDrawViews(false); //是否展示控件内容，默认为 true
-//mScalpelFrameLayout.setChromeColor(Color.RED); //修改边框颜色
-//mScalpelFrameLayout.setChromeShadowColor(Color.YELLOW); //修改阴影颜色
+//        mScalpelFrameLayout.setDrawIds(true); //是否显示控件 id
+//        mScalpelFrameLayout.setDrawViews(false); //是否展示控件内容，默认为 true
+//        mScalpelFrameLayout.setChromeColor(Color.RED); //修改边框颜色
+//        mScalpelFrameLayout.setChromeShadowColor(Color.YELLOW); //修改阴影颜色
 //        setContentView(mScalpelFrameLayout)
 
-
-
         // 获取控件的写法
-        val btn: Button = findViewById(R.id.jump_rx)
+//        val btn: Button = findViewById(R.id.jump_rx)
         val adapter = findViewById<Button>(R.id.jump_adapter)
-        btn.setOnClickListener(this)
+        jump_rx.setOnClickListener(this)
         adapter.setOnClickListener(this)
         // 点击事件的写法
 //        btn.setOnClickListener(object: View.OnClickListener{
@@ -82,6 +80,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         video_view.setOnClickListener(this)
         video_view1.setOnClickListener(this)
         tab_layout.setOnClickListener(this)
+        html.setOnClickListener(this)
 
 //        val spreadFunction = SpreadFunction(1)
     }
@@ -157,6 +156,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.tab_layout -> {
                 startActivity(Intent(this, SimpleHomeActivity::class.java))
+            }
+            R.id.html -> {
+                startActivity(Intent(this, HtmlActivity::class.java))
             }
         }
     }

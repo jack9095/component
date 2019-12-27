@@ -31,7 +31,7 @@ public class BottomNavigationView extends FrameLayout implements View.OnClickLis
     private FragmentActivity mFragmentActivity;
     private int frameLayout; // 在 activity 中替换 fragment 的布局
 
-    // 每一个 button 对应的角标，可用于App奔溃后，在 MainActivity 的 onRestoreInstanceState 和 onSaveInstanceState 使用，可保护fragment不错乱
+    // 每一个 button 对应的角标，可用于App奔溃后，在 HtmlActivity 的 onRestoreInstanceState 和 onSaveInstanceState 使用，可保护fragment不错乱
     private int index;
     private int currentTabIndex; // 当前选中的角标
     private ImageView mImageView;
@@ -57,7 +57,7 @@ public class BottomNavigationView extends FrameLayout implements View.OnClickLis
         init();
     }
 
-    // 每一个 button 对应的角标，可用于App奔溃后，在 MainActivity 的 onRestoreInstanceState 和 onSaveInstanceState 使用，可保护fragment不错乱
+    // 每一个 button 对应的角标，可用于App奔溃后，在 HtmlActivity 的 onRestoreInstanceState 和 onSaveInstanceState 使用，可保护fragment不错乱
     public int getIndex(){
         return index;
     }
