@@ -12,9 +12,12 @@
             <option value="$PROJECT_DIR$/FlycoTabLayout_Lib" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baselibrary" />
+            <option value="$PROJECT_DIR$/camera" />
+            <option value="$PROJECT_DIR$/camera2" />
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/html" />
             <option value="$PROJECT_DIR$/mine" />
+            <option value="$PROJECT_DIR$/myapplication" />
             <option value="$PROJECT_DIR$/networklibrary" />
             <option value="$PROJECT_DIR$/video" />
           </set>

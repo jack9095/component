@@ -10,6 +10,7 @@ import com.kuanquan.home.coroutine.HomeCoroutineActivity
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
 import com.kuanquan.networklibrary.test.CoroutineTestActivity
+import com.kuanquan.universalcomponents.camera.CameraActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
 import com.kuanquan.universalcomponents.flycotablayout.ui.SimpleHomeActivity
 import com.kuanquan.universalcomponents.javaTest.hook.viewclick.ViewHookActivity
@@ -81,6 +82,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         video_view1.setOnClickListener(this)
         tab_layout.setOnClickListener(this)
         html.setOnClickListener(this)
+        camera.setOnClickListener(this)
 
 //        val spreadFunction = SpreadFunction(1)
     }
@@ -159,6 +161,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.html -> {
                 startActivity(Intent(this, HtmlActivity::class.java))
+            }
+            R.id.camera -> {
+                startActivity(Intent(this, CameraActivity::class.java))
             }
         }
     }
