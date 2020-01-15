@@ -240,6 +240,7 @@ public abstract class BaseCameraActivity extends AppCompatActivity implements Vi
         mTextureView = (AutoFitTextureView) findViewById(R.id.texture);
         findViewById(R.id.picture).setOnClickListener(this);
         findViewById(R.id.info).setOnClickListener(this);
+        findViewById(R.id.re_start).setOnClickListener(this);
         //创建文件
         mFile = new File(getExternalFilesDir(null), "pic.jpg");
     }

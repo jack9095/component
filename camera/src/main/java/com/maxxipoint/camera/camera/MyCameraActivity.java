@@ -59,14 +59,30 @@ public class MyCameraActivity extends BaseCameraActivity {
         }
     }
 
+    protected void onPause() {
+        if (null != mCameraDevice) {
+            mCameraDevice.close();
+            mCameraDevice = null;
+        }
+        if (null != mImageReader) {
+            mImageReader.close();
+            mImageReader = null;
+        }
+        super.onPause();
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.picture:
+                lockFocus();
                 break;
-        }
-        if (v.getId() == R.id.picture) {
-            lockFocus();
+            case R.id.info:  // 再次打开
+                openCamera(mTextureView.getWidth(), mTextureView.getHeight());
+                break;
+            case R.id.re_start: // 关掉
+                onPause();
+                break;
         }
     }
 }
