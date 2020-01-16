@@ -78,9 +78,11 @@ public class MyCameraActivity extends BaseCameraActivity {
                 lockFocus();
                 break;
             case R.id.info:  // 再次打开
+                mTextureView.setVisibility(View.VISIBLE);
                 openCamera(mTextureView.getWidth(), mTextureView.getHeight());
                 break;
             case R.id.re_start: // 关掉
+                mTextureView.setVisibility(View.GONE);
                 onPause();
                 break;
         }

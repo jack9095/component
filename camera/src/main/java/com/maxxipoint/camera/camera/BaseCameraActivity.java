@@ -275,7 +275,8 @@ public abstract class BaseCameraActivity extends AppCompatActivity implements Vi
                 CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
                 // 不使用前置摄像头。
                 Integer facing = characteristics.get(CameraCharacteristics.LENS_FACING);
-                if (facing != null && facing == CameraCharacteristics.LENS_FACING_FRONT) {
+//                if (facing != null && facing == CameraCharacteristics.LENS_FACING_FRONT) {  // 前置摄像头
+                if (facing != null && facing == CameraCharacteristics.LENS_FACING_BACK) { // 后置摄像头
                     continue;
                 }
                 StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
@@ -291,11 +292,10 @@ public abstract class BaseCameraActivity extends AppCompatActivity implements Vi
                 //添加ImageAvailableListener事件，当图片可得到的时候回到，也就是点击拍照的时候
                 mImageReader.setOnImageAvailableListener(mOnImageAvailableListener, mBackgroundHandler);
 
-                // Find out if we need to swap dimension to get the preview size relative to sensor
-                // coordinate.
+                // 找出是否需要交换尺寸以获得相对于传感器坐标的预览尺寸
                 // 获取手机旋转的角度以调整图片的方向
                 int displayRotation = this.getWindowManager().getDefaultDisplay().getRotation();
-                //noinspection ConstantConditions
+                // noinspection ConstantConditions
                 mSensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 boolean swappedDimensions = false;
                 switch (displayRotation) {
