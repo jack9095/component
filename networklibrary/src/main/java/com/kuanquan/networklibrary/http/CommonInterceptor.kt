@@ -1,7 +1,7 @@
 package com.kuanquan.networklibrary.http
 
 import android.text.TextUtils
-import com.alibaba.android.arouter.launcher.ARouter
+//import com.alibaba.android.arouter.launcher.ARouter
 import com.kuanquan.networklibrary.util.GsonUtils
 import com.kuanquan.networklibrary.util.LogUtil
 import com.kuanquan.networklibrary.util.SharedPreferencesUtils
@@ -27,13 +27,13 @@ class CommonInterceptor: Interceptor {
 //            .addHeader("Authorization", token)
             .build()
 
-        LogUtil.e("$TAG   request  URL Method", "request:$request")
-        LogUtil.e("$TAG   request  head", "request:" + request.headers().toString())
+//        LogUtil.e("$TAG   request  URL Method", "request:$request")
+//        LogUtil.e("$TAG   request  head", "request:" + request.headers().toString())
         val body = request.body()
         if (body is FormBody) {
             val formBody = body as FormBody?
             for (i in 0 until formBody!!.size()) {
-                LogUtil.e("$TAG   request  body", "key: " + formBody.name(i) + "   value: " + formBody.value(i))
+//                LogUtil.e("$TAG   request  body", "key: " + formBody.name(i) + "   value: " + formBody.value(i))
             }
         }
 
@@ -45,10 +45,10 @@ class CommonInterceptor: Interceptor {
             content = response.body()?.string().toString()
         }
 
-        LogUtil.e("$TAG   response", "response body:$content")
+//        LogUtil.e("$TAG   response", "response body:$content")
         if (!TextUtils.isEmpty(content)) {
             try {
-                val baseBean = GsonUtils().instance.fromJson<Any>(content, BaseResponse::class.java) as BaseResponse<*>
+//                val baseBean = GsonUtils().instance.fromJson<Any>(content, BaseResponse::class.java) as? BaseResponse<*>
 //                if (baseBean.code == 999) { // 会话已失效
 //                    ARouter.getInstance().build("/main/login").navigation()
 //                }

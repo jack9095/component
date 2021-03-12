@@ -13,16 +13,37 @@ import com.kuanquan.home.coroutine.repository.TAGF
 import kotlinx.android.synthetic.main.activity_main_home.*
 import kotlinx.coroutines.*
 
+/**
+ * 协程，是线程中的，也就是说一个线程中可能包含多个协程，协程与协程之间是可以嵌套的
+ */
 class HomeCoroutineActivity : AppCompatActivity() {
 
+    lateinit var job: Job
+
     // 懒加载
+    /*
+    TODO
+    通过创建一个Job的实例来控制我们协程的生命周期，把它绑定到activity的生命周期上。
+    在activity被创建时，使用工厂方法Job()创建一个job实例;当activity被销毁时，它如下这样被取消： job.cancel()
+    https://www.jianshu.com/p/40bbea76489f
+
+    Dispatchers 调度器，决定协程在哪个线程上执行
+     */
     val presenterScope: CoroutineScope by lazy {
-        CoroutineScope(Dispatchers.Main + Job())
+        CoroutineScope(Dispatchers.Main + job)
+    }
+
+    @ExperimentalCoroutinesApi
+    override fun onDestroy() {
+        super.onDestroy()
+        presenterScope.cancel()
+        job.cancel() // Cancel job on activity destroy. After destroy all children jobs will be cancelled automatically
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_home)
+        job = Job()
         // 切换协程-顺序异步请求
         syncWithContextBtn.setOnClickListener {
             presenterScope.launch {
@@ -143,10 +164,6 @@ class HomeCoroutineActivity : AppCompatActivity() {
         Toast.makeText(this, "加载失败", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        presenterScope.cancel()
-    }
 }
 
 fun View.showSelf() {

@@ -98,7 +98,9 @@ class RecycleViewDivider: RecyclerView.ItemDecoration {
                 mDivider!!.draw(canvas)
             }
             if (mPaint != null) {
-                canvas.drawRect(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat(), mPaint)
+                canvas.drawRect(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat(),
+                    mPaint!!
+                )
             }
         }
     }
@@ -118,7 +120,9 @@ class RecycleViewDivider: RecyclerView.ItemDecoration {
                 mDivider!!.draw(canvas)
             }
             if (mPaint != null) {
-                canvas.drawRect(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat(), mPaint)
+                canvas.drawRect(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat(),
+                    mPaint!!
+                )
             }
         }
     }

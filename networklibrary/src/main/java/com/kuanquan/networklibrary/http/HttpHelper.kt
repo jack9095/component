@@ -7,17 +7,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object HttpHelper{
+object HttpHelper {
 
     @Volatile
     private var mHttpHelper: HttpHelper? = null
 
     private var mOkHttpClient: OkHttpClient? = null  // okhttp的委托
-
     private var mRetrofit: Retrofit? = null
-
     private var mBuilder: OkHttpClient.Builder? = null
-
     private var BASE_URL: String? = null
 
     fun getInstance(): HttpHelper? {
@@ -38,6 +35,7 @@ object HttpHelper{
             .createRetrofit(baseUrl)
             .build()
     }
+
     class Builder {
         internal var mOkHttpClient: OkHttpClient? = null
 
@@ -84,7 +82,7 @@ object HttpHelper{
          */
         fun addInterceptor(mInterceptor: Interceptor): Builder {
             checkNotNull(mInterceptor)
-            this.mBuilder!!.addNetworkInterceptor(mInterceptor)
+            this.mBuilder?.addNetworkInterceptor(mInterceptor)
             return this
         }
 
@@ -97,6 +95,7 @@ object HttpHelper{
         fun createRetrofit(baseUrl: String): Builder {
             val builder = Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
+//                .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .baseUrl(baseUrl)
             BASE_URL = baseUrl
             this.mOkHttpClient = mBuilder!!.build()

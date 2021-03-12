@@ -10,16 +10,9 @@ import com.kuanquan.networklibrary.util.LogUtil
 class CoroutineTestActivity : BaseViewModelActivity<UserViewModel>() {
 
     private val TAG = this.javaClass.simpleName
-
     override fun providerVMClass(): Class<UserViewModel>?  = UserViewModel::class.java
-
-    override fun isBindEventBusHere(): Boolean {
-        return false
-    }
-
-    override fun getLayoutId(): Int {
-        return R.layout.activity_test
-    }
+    override fun isBindEventBusHere(): Boolean = false
+    override fun getLayoutId(): Int = R.layout.activity_test
 
     override fun initView() {
         super.initView()
@@ -27,15 +20,15 @@ class CoroutineTestActivity : BaseViewModelActivity<UserViewModel>() {
 
     override fun initData() {
         viewModel.loadData()
-        viewModel.loadData()
-        viewModel.loadData()
-        viewModel.loadData()
-        viewModel.loadData()
+//        viewModel.loadData()
+//        viewModel.loadData()
+//        viewModel.loadData()
+//        viewModel.loadData()
     }
 
     override fun dataObserver() {
         viewModel.dataLiveData.observe(this, Observer {
-            LogUtil.e(TAG, "数据：" + GsonUtils.toJson(it))
+//            LogUtil.e(TAG, "数据：" + GsonUtils.toJson(it))
         })
     }
 

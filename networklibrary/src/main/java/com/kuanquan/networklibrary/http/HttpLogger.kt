@@ -14,7 +14,7 @@ class HttpLogger: HttpLoggingInterceptor.Logger {
             mMessage.setLength(0)
         }
         if (message.startsWith("{") && message.endsWith("}") || message.startsWith("[") && message.endsWith("]")) {
-                        LogUtil.json(message)
+//                        LogUtil.json(message)
         }
         mMessage.append(message + "\n")
         if (message.startsWith("<-- END HTTP")) {

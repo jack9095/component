@@ -9,7 +9,6 @@ import com.base.library.utils.LogUtil
 import com.kuanquan.home.coroutine.HomeCoroutineActivity
 import com.kuanquan.mine.MineActivity
 import com.kuanquan.mine.MyReceivingAddressActivity
-import com.kuanquan.networklibrary.test.CoroutineTestActivity
 import com.kuanquan.universalcomponents.camera.CameraActivity
 import com.kuanquan.universalcomponents.dialog.BottomDialog
 import com.kuanquan.universalcomponents.flycotablayout.ui.SimpleHomeActivity
@@ -22,7 +21,7 @@ import com.kuanquan.universalcomponents.main.HomeActivity
 import com.kuanquan.universalcomponents.main.SearchActivity
 import com.kuanquan.universalcomponents.rx.RxActivity
 import com.kuanquan.universalcomponents.slide.GuideActivity
-import com.maxxipoint.html.HtmlActivity
+//import com.maxxipoint.html.HtmlActivity
 import com.maxxipoint.video.demo.MediaPlayActivity
 import com.maxxipoint.video.video.MediaVideoActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -130,7 +129,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val intent = Intent(this, MineActivity::class.java)
                 startActivity(intent)
             }
-            R.id.height_fun -> {
+            R.id.height_fun -> { // 高阶函数
                 val intent = Intent(this, HigherOrderFunActivity::class.java)
                 startActivity(intent)
             }
@@ -146,8 +145,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.hook_view -> {
                 startActivity(Intent(this, ViewHookActivity::class.java))
             }
-            R.id.coroutine_view_request -> {
-                startActivity(Intent(this, CoroutineTestActivity::class.java))
+            R.id.coroutine_view_request -> { // 协程用于网络请求
+//                startActivity(Intent(this, CoroutineTestActivity::class.java))
             }
             R.id.video_view -> {
 //                startActivity(Intent(this, VideoActivity::class.java))
@@ -160,7 +159,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(this, SimpleHomeActivity::class.java))
             }
             R.id.html -> {
-                startActivity(Intent(this, HtmlActivity::class.java))
+//                startActivity(Intent(this, HtmlActivity::class.java))
             }
             R.id.camera -> {
                 startActivity(Intent(this, CameraActivity::class.java))

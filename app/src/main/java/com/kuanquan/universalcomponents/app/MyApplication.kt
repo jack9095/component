@@ -8,8 +8,6 @@ import com.alibaba.android.arouter.launcher.ARouter
 //import com.base.library.base.network.http.HttpHelper
 import com.base.library.utils.LogUtil
 import com.base.library.utils.SharedPreferencesUtils
-import com.kuanquan.networklibrary.http.HttpHelper
-import com.kuanquan.networklibrary.http.UrlConfig
 import com.kuanquan.universalcomponents.BuildConfig
 import com.kuanquan.universalcomponents.javaTest.hook.packageHook.PackageManagerHook
 import com.tencent.bugly.Bugly
@@ -30,7 +28,7 @@ class MyApplication : Application() {
         initARouter()
         initLog()
 //        HttpHelper.getInstance().init(URLConfig.BASE_URL)
-        HttpHelper.getInstance()?.init(UrlConfig.BASE_URL) // 初始化网络请求
+//        HttpHelper.getInstance()?.init(UrlConfig.BASE_URL) // 初始化网络请求
         SharedPreferencesUtils.getInstance("demo_fl", this.applicationContext)
         LogUtil.e("TestApplication 初始化次数")
         Bugly.init(applicationContext, "897534689", false)

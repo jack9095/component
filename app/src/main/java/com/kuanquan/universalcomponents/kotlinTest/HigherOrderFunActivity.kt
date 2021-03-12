@@ -21,6 +21,8 @@ import kotlinx.android.synthetic.main.activity_higher_order_fun.*
 /**
  * Kotlin标准库中的高阶函数
  * https://www.jianshu.com/p/b6befb149b5d
+ * 高阶函数：将函数作为参数或返回一个函数
+ * https://www.imooc.com/article/22500
  */
 class HigherOrderFunActivity : AppCompatActivity(), View.OnClickListener {
 

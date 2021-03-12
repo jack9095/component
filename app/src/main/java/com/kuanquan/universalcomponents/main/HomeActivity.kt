@@ -51,12 +51,12 @@ class HomeActivity : BaseViewModelActivity<MainViewModel>() {
     }
 
     @SuppressLint("MissingSuperCall")
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         outState?.putInt("index", bottom_navigation_view.index)
 //        super.onSaveInstanceState(outState)
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         val savedIndex = savedInstanceState?.getInt("index")
         if (savedIndex != bottom_navigation_view.index) {

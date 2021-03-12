@@ -122,12 +122,12 @@ dependencies {
     implementation project(path: ':baselibrary')
 
 //    kotlin协程
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
 
     // 手机上 3D 展示布局
     implementation 'com.jakewharton.scalpel:scalpel:1.1.2'
-    implementation project(path: ':networklibrary')
+//    implementation project(path: ':networklibrary')
     implementation project(path: ':video')
     implementation project(path: ':FlycoTabLayout_Lib')
-    implementation project(path: ':html')
+//    implementation project(path: ':html')
 }

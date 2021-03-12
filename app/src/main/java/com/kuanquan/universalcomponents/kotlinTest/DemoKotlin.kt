@@ -52,7 +52,7 @@ class DemoKotlin : AppCompatActivity() {
 
         // 你可以通过 trimMargin() 函数去除前导空格：
 
-        val text = "  " + "123" + "  ".trimMargin()
+        val text = "  " + "123" + "  ".trimMargin() as? String
 
         // 字符串模板  它不支持反斜杠转义
         val price = """ ${'$'}9.99 """

@@ -6,6 +6,7 @@ import com.base.library.utils.GsonUtils
 import com.base.library.utils.LogUtil
 
 /**
+ * 扩展函数：不用继承对象，就可以给对象增加新的函数实现某一功能
  * 扩展函数测试案例
  */
 class SpreadFunctionTest : AppCompatActivity(){
